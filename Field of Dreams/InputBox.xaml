@@ -1,0 +1,21 @@
+﻿<Window x:Class="Field_of_Dreams.InputBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Ввод слова целиком" Height="150" Width="300"
+        ContentRendered="ContentRender" MinWidth="300" MinHeight="150" MaxWidth="300" MaxHeight="150" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF2D2D30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Name="Question" Foreground="White" FontSize="12" Margin="3" TextWrapping="Wrap"/>
+        <TextBox Name="TAnswer" Grid.Row="1" Margin="50,3,50,0" Text="Ответ" Height="19" VerticalAlignment="Top"/>
+
+        <Button IsDefault="True" x:Name="Reply" Background="#FF1E1E1E" BorderBrush="White" Foreground="White" Grid.Row="1" Content="Ответить" VerticalAlignment="Bottom" Margin="3,26,3,0"/>
+        <Button IsCancel="True" Background="#FF1E1E1E" BorderBrush="White" Foreground="White" Grid.Row="1" Content="Отмена" Margin="3,0,3,-22" VerticalAlignment="Bottom"/>
+    </Grid>
+</Window>

@@ -1,12 +1,30 @@
-﻿<Window x:Class="Field_of_Dreams.MainWindow"
+﻿<Window x:Name="window" x:Class="Field_of_Dreams.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Field_of_Dreams"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Height="200" Width="400" Background="{x:Null}" WindowStartupLocation="CenterScreen" Foreground="White" MinWidth="260" MinHeight="200" MaxHeight="200" MaxWidth="400">
+    <Grid x:Name="grid" Background="#FF2D2D30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="105"/>
+            <ColumnDefinition Width="105"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="Start_Game" Content="Начать игру!" Margin="0,5,5,5" BorderBrush="Black" Foreground="White" Background="#FF1E1E1E" HorizontalAlignment="Right" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="Hand" Grid.Column="2" Grid.RowSpan="4">
+            <Button.LayoutTransform>
+                <RotateTransform Angle="-90"/>
+            </Button.LayoutTransform>
+        </Button>
+        <StackPanel Margin="5" Grid.ColumnSpan="2">
+            <TextBlock x:Name="Number_of_Players_Text" Height="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+            <Slider x:Name="Number_of_Players" Height="30" VerticalAlignment="Top" Minimum="2" Maximum="6" TickPlacement="BottomRight" Foreground="White" SmallChange="1" SelectionEnd="2" SelectionStart="2" AutomationProperties.HelpText="Кол-во игроков которые участвуют в игре" Cursor="Hand" IsSnapToTickEnabled="True" Ticks="2,3,4,5" />
+        </StackPanel>
     </Grid>
 </Window>

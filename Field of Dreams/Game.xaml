@@ -1,0 +1,52 @@
+﻿<Window x:Name="window" x:Class="Field_of_Dreams.Game"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Field of Dreams" Height="450" Width="800" WindowStartupLocation="CenterScreen" MinWidth="800" MinHeight="450">
+    <Grid x:Name="grid" Background="#FF2D2D30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="Drum" Grid.Column="1" Margin="0" Grid.Row="1" Grid.ColumnSpan="12" Stretch="Fill" Grid.RowSpan="2">
+            <Image.Source>
+                <ImageSource>Res/drum.png</ImageSource>
+            </Image.Source>
+            <Image.RenderTransform>
+                <RotateTransform x:Name="DrumRotate" Angle="0" CenterX="150" CenterY="150"></RotateTransform>
+            </Image.RenderTransform>
+        </Image>
+        <Image Grid.Column="13" Margin="0,0,0,138" Grid.Row="1" HorizontalAlignment="Left" Stretch="Fill" Grid.RowSpan="2" Source="Res/Arrow.png" Width="25" Height="24" VerticalAlignment="Bottom"/>
+        <TextBlock x:Name="DrumValueText" Grid.Column="1" Margin="10,3" Grid.Row="3" TextWrapping="Wrap" Grid.ColumnSpan="13" Foreground="White"/>
+        <Button x:Name="SpinTheDrum" Content="Крутить барабан" Margin="10,3" Grid.Row="4" FontSize="14" Grid.Column="1" BorderBrush="White" Foreground="White" Background="#FF1E1E1E" Padding="1,1,1,3" Grid.ColumnSpan="6"/>
+        <Button x:Name="TypeTheWholeWord" Content="Ввести слово целиком" Margin="10,3" Grid.Row="4" Grid.Column="7" BorderBrush="White" Foreground="White" Background="#FF1E1E1E" Padding="1,1,1,3" Visibility="Hidden" Grid.ColumnSpan="6"/>
+        <StackPanel HorizontalAlignment="Left" Height="100" Grid.RowSpan="2" VerticalAlignment="Top" Width="100"/>
+        <StackPanel x:Name="stackPanel" Grid.Column="13" Grid.Row="1" Grid.RowSpan="2" Margin="40,50,3,50">
+            <TextBlock x:Name="Player1Text" TextWrapping="Wrap" Foreground="White" FontSize="16"/>
+            <TextBlock x:Name="Player2Text" TextWrapping="Wrap" Foreground="White" FontSize="16"/>
+            <TextBlock x:Name="Player3Text" TextWrapping="Wrap" Foreground="White" FontSize="16"/>
+            <TextBlock x:Name="Player4Text" TextWrapping="Wrap" Foreground="White" FontSize="16"/>
+            <TextBlock x:Name="Player5Text" TextWrapping="Wrap" Foreground="White" FontSize="16"/>
+            <TextBlock x:Name="Player6Text" TextWrapping="Wrap" Foreground="White" FontSize="16"/>
+        </StackPanel>
+        <TextBlock x:Name="question" Margin="10" Grid.Row="1" TextWrapping="Wrap" Foreground="White" FontSize="16"/>
+    </Grid>
+</Window>
