@@ -58,7 +58,7 @@ public partial class App : Application
     /// <returns>Список <see cref="LanguageInfo"/> поддерживаемых языков, отсортированный по имени. Возвращает список с резервным языком, если обнаружение не удалось.</returns>
     private static List<LanguageInfo> DiscoverSupportedLanguages()
     {
-        List<LanguageInfo> languages = new();
+        List<LanguageInfo> languages = [];
         string neutralCultureCode = string.Empty;
         CultureInfo currentUiCulture = CultureInfo.CurrentUICulture;
 
@@ -161,13 +161,12 @@ public partial class App : Application
             }
         }
 
-        return languages.OrderBy(l => l.DisplayName).ToList();
+        return [.. languages.OrderBy(l => l.DisplayName)];
     }
-
 
     /// <summary>Загружает код сохраненной культуры из файла настроек MessagePack.</summary>
     /// <returns>Код культуры или null, если файл не найден, поврежден или произошла ошибка.</returns>
-    private string? LoadCultureSetting()
+    private static string? LoadCultureSetting()
     {
         if (!File.Exists(SettingsFilePath))
         {
@@ -218,44 +217,39 @@ public partial class App : Application
 
     /// <summary>Сохраняет выбранный код культуры в файл настроек MessagePack.</summary>
     /// <param name="cultureCode">Код культуры для сохранения.</param>
-    private void SaveCultureSetting(string cultureCode)
+    private static void SaveCultureSetting(string cultureCode)
     {
         try
         {
-            var settings = new AppSettings { SelectedCulture = cultureCode };
+            AppSettings settings = new() { SelectedCulture = cultureCode };
             byte[] fileBytes = MessagePackSerializer.Serialize(settings);
 
             string? directory = Path.GetDirectoryName(SettingsFilePath);
-            if (directory != null)
-            {
-                Directory.CreateDirectory(directory);
-            }
-            else
-            {
-                throw new DirectoryNotFoundException($"Не удалось определить директорию для файла настроек: {SettingsFilePath}");
-            }
+            _ = directory != null
+                ? Directory.CreateDirectory(directory)
+                : throw new DirectoryNotFoundException($"Не удалось определить директорию для файла настроек: {SettingsFilePath}");
 
             File.WriteAllBytes(SettingsFilePath, fileBytes);
         }
         catch (UnauthorizedAccessException)
         {
-            MessageBox.Show($"Не удалось сохранить настройки языка.\nОтказано в доступе к файлу:\n{SettingsFilePath}\n\nПроверьте права на запись.",
+            _ = MessageBox.Show($"Не удалось сохранить настройки языка.\nОтказано в доступе к файлу:\n{SettingsFilePath}\n\nПроверьте права на запись.",
                             "Ошибка сохранения настроек", MessageBoxButton.OK, MessageBoxImage.Error);
         }
         catch (IOException ioEx)
         {
-            MessageBox.Show($"Произошла ошибка при записи файла настроек '{SettingsFileName}':\n{ioEx.Message}",
+            _ = MessageBox.Show($"Произошла ошибка при записи файла настроек '{SettingsFileName}':\n{ioEx.Message}",
                             "Ошибка сохранения настроек", MessageBoxButton.OK, MessageBoxImage.Error);
         }
         catch (Exception ex)
         {
-            MessageBox.Show($"Произошла непредвиденная ошибка при сохранении настроек:\n{ex.Message}",
+            _ = MessageBox.Show($"Произошла непредвиденная ошибка при сохранении настроек:\n{ex.Message}",
                             "Ошибка сохранения настроек", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 
     /// <summary>Безопасно пытается удалить файл настроек. Ошибки удаления игнорируются.</summary>
-    private void TryDeleteSettingsFile()
+    private static void TryDeleteSettingsFile()
     {
         try
         {
@@ -278,15 +272,13 @@ public partial class App : Application
     {
         try
         {
-            var cultureToApply = new CultureInfo(cultureCode);
+            CultureInfo cultureToApply = new(cultureCode);
             Thread.CurrentThread.CurrentUICulture = cultureToApply;
-            // Если нужно менять форматирование дат/чисел:
-            // Thread.CurrentThread.CurrentCulture = cultureToApply;
             CurrentAppliedCulture = cultureToApply;
         }
         catch (CultureNotFoundException ex)
         {
-            MessageBox.Show($"Выбранный язык '{cultureCode}' не найден ({ex.Message}).\nБудет использован язык по умолчанию.",
+            _ = MessageBox.Show($"Выбранный язык '{cultureCode}' не найден ({ex.Message}).\nБудет использован язык по умолчанию.",
                             "Ошибка установки языка", MessageBoxButton.OK, MessageBoxImage.Warning);
 
             List<LanguageInfo> safeLanguages = DiscoverSupportedLanguages();
@@ -296,31 +288,30 @@ public partial class App : Application
             {
                 try
                 {
-                    var defaultCultureInfo = new CultureInfo(defaultCultureCode);
+                    CultureInfo defaultCultureInfo = new(defaultCultureCode);
                     Thread.CurrentThread.CurrentUICulture = defaultCultureInfo;
-                    // Thread.CurrentThread.CurrentCulture = defaultCultureInfo;
                     CurrentAppliedCulture = defaultCultureInfo;
                 }
                 catch (Exception innerEx)
                 {
-                    MessageBox.Show($"Критическая ошибка: Не удалось установить язык по умолчанию '{defaultCultureCode}'.\n{innerEx.Message}",
+                    _ = MessageBox.Show($"Критическая ошибка: Не удалось установить язык по умолчанию '{defaultCultureCode}'.\n{innerEx.Message}",
                                     "Ошибка языка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             else
             {
-                MessageBox.Show($"Критическая ошибка: Язык по умолчанию '{defaultCultureCode}' не найден.",
+                _ = MessageBox.Show($"Критическая ошибка: Язык по умолчанию '{defaultCultureCode}' не найден.",
                                 "Ошибка языка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         catch (Exception ex)
         {
-            MessageBox.Show($"Произошла непредвиденная ошибка при установке языка:\n{ex.Message}",
+            _ = MessageBox.Show($"Произошла непредвиденная ошибка при установке языка:\n{ex.Message}",
                             "Ошибка языка", MessageBoxButton.OK, MessageBoxImage.Error);
             // Попытка установить жестко заданную резервную культуру
             try
             {
-                var fallbackCulture = new CultureInfo("ru-RU");
+                CultureInfo fallbackCulture = new("ru-RU");
                 Thread.CurrentThread.CurrentUICulture = fallbackCulture;
                 CurrentAppliedCulture = fallbackCulture;
             }

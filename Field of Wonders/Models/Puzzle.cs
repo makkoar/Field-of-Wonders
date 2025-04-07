@@ -51,14 +51,7 @@ public class Puzzle
         _revealedLetters = new char[Answer.Length];
         for (int i = 0; i < Answer.Length; i++)
         {
-            if (!char.IsLetter(Answer[i]))
-            {
-                _revealedLetters[i] = Answer[i];
-            }
-            else
-            {
-                _revealedLetters[i] = Placeholder;
-            }
+            _revealedLetters[i] = !char.IsLetter(Answer[i]) ? Answer[i] : Placeholder;
         }
     }
 
@@ -68,10 +61,7 @@ public class Puzzle
 
     /// <summary>Возвращает строку, представляющую текущее состояние отгадываемого слова.</summary>
     /// <returns>Строка с текущим состоянием слова (например, "_ О _ Е _ _ _ Е _").</returns>
-    public string GetCurrentState()
-    {
-        return new string(_revealedLetters);
-    }
+    public string GetCurrentState() => new(_revealedLetters);
 
     /// <summary>Проверяет наличие указанной буквы в загаданном слове и открывает ее.</summary>
     /// <param name="letter">Предполагаемая буква.</param>
@@ -114,20 +104,10 @@ public class Puzzle
     /// <summary>Проверяет, совпадает ли предложенное слово с загаданным словом (без учета регистра).</summary>
     /// <param name="word">Предполагаемое слово целиком.</param>
     /// <returns><c>true</c>, если слова совпадают; иначе <c>false</c>.</returns>
-    public bool GuessWord(string word)
-    {
-        if (string.IsNullOrWhiteSpace(word))
-        {
-            return false;
-        }
-        return Answer.Equals(word.Trim(), StringComparison.OrdinalIgnoreCase);
-    }
+    public bool GuessWord(string word) => !string.IsNullOrWhiteSpace(word) && Answer.Equals(word.Trim(), StringComparison.OrdinalIgnoreCase);
 
     /// <summary>Открывает все буквы в слове.</summary>
-    public void RevealAll()
-    {
-        Array.Copy(Answer.ToCharArray(), _revealedLetters, Answer.Length);
-    }
+    public void RevealAll() => Array.Copy(Answer.ToCharArray(), _revealedLetters, Answer.Length);
 
     #endregion
 }

@@ -35,15 +35,9 @@ public partial class MainWindow : Window
     /// <param name="userMessage">Текст сообщения об ошибке для пользователя.</param>
     private void HandleInitializationError(string userMessage)
     {
-        MessageBox.Show(userMessage, Lang.Error_Critical_Title, MessageBoxButton.OK, MessageBoxImage.Error);
+        _ = MessageBox.Show(userMessage, Lang.Error_Critical_Title, MessageBoxButton.OK, MessageBoxImage.Error);
 
         // Безопасное завершение приложения через Dispatcher, если окно еще не полностью готово.
-        Dispatcher.Invoke(() =>
-        {
-            if (Application.Current != null)
-            {
-                Application.Current.Shutdown(1); // Завершение с кодом ошибки
-            }
-        });
+        Dispatcher.Invoke(static () => Application.Current?.Shutdown(1));
     }
 }
