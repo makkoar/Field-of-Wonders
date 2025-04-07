@@ -72,7 +72,7 @@ public class SettingsService
                 ShowError(string.Format(Lang.Error_SaveSettings_DirectoryNotFound_Format, SettingsFilePath), Lang.Error_SaveSettings_Title, MessageBoxImage.Error);
                 return false;
             }
-            _ = Directory.CreateDirectory(directory);
+            _ = Directory.CreateDirectory(directory); // Убеждаемся, что директория существует
 
             File.WriteAllBytes(SettingsFilePath, fileBytes);
             return true;
@@ -104,11 +104,10 @@ public class SettingsService
                 File.Delete(SettingsFilePath);
             }
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             // Ошибка удаления файла не критична для работы приложения при следующем запуске.
-            // Можно добавить логирование вместо вывода в консоль.
-            System.Diagnostics.Debug.WriteLine($"Warning: Failed to delete settings file '{SettingsFilePath}': {ex.Message}");
+            // Логирование здесь не требуется.
         }
     }
 
