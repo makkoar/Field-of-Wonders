@@ -22,12 +22,10 @@ public partial class MainWindow : Window
         catch (ArgumentException argEx) // Ошибка валидации начальных данных (например, пустой вопрос/ответ)
         {
             HandleInitializationError($"{Lang.Error_DataInitializationFailed_Prefix}\n{argEx.Message}");
-            // Конструктор прерывается здесь при ошибке
         }
         catch (Exception ex) // Другие непредвиденные ошибки при инициализации
         {
             HandleInitializationError($"{Lang.Error_UnexpectedInitializationFailed_Prefix}\n{ex.Message}");
-            // Конструктор прерывается здесь при ошибке
         }
     }
 
@@ -38,6 +36,6 @@ public partial class MainWindow : Window
         _ = MessageBox.Show(userMessage, Lang.Error_Critical_Title, MessageBoxButton.OK, MessageBoxImage.Error);
 
         // Безопасное завершение приложения через Dispatcher, если окно еще не полностью готово.
-        Dispatcher.Invoke(static () => Application.Current?.Shutdown(1));
+        Dispatcher.Invoke(() => Application.Current?.Shutdown(1));
     }
 }
