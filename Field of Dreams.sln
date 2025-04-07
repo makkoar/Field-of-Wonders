@@ -5,7 +5,7 @@ VisualStudioVersion = 17.14.35906.104
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Field of Dreams", "Field of Dreams\Field of Dreams.csproj", "{C5094AE3-278F-4E0F-8ABE-BCB57B494177}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Field of Wonders", "..\..\..\Users\1\Desktop\Projects\Field of Wonders\Field of Wonders.csproj", "{5374F953-F259-453C-AB16-586D1B934274}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Field of Wonders", "Field of Wonders\Field of Wonders.csproj", "{5374F953-F259-453C-AB16-586D1B934274}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
