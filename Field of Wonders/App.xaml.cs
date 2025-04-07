@@ -1,82 +1,79 @@
-﻿// --- App.xaml.cs ---
-using Field_of_Wonders.Services; // Добавляем using для сервисов
+﻿namespace Field_of_Wonders;
 
-namespace Field_of_Wonders;
-
-/// <summary>Управляет жизненным циклом приложения, координируя инициализацию сервисов и UI.</summary>
+/// <summary>Управляет жизненным циклом приложения, инициализирует локализацию и главное окно.</summary>
 public partial class App : Application
 {
-    // Экземпляры сервисов (для простоты создаем здесь, в идеале - использовать DI)
-    private readonly SettingsService _settingsService = new();
+    // Экземпляры сервисов можно хранить здесь или использовать DI контейнер.
+    // Статические методы сервисов используются напрямую в OnStartup для простоты.
+    // private readonly SettingsService _settingsService = new(); // Пока не используется напрямую
     private readonly LocalizationService _localizationService = new();
 
-    /// <summary>Выполняется при запуске приложения. Инициализирует выбор языка, применяет культуру и отображает главное окно.</summary>
+    /// <summary>Инициализирует приложение: определяет язык, применяет культуру и отображает главное окно.</summary>
     /// <param name="e">Аргументы события запуска.</param>
     protected override void OnStartup(StartupEventArgs e)
     {
-        base.OnStartup(e); // Вызываем базовый метод в начале
+        base.OnStartup(e);
 
-        // 1. Получаем список языков
         List<LanguageInfo> supportedLanguages = LocalizationService.DiscoverSupportedLanguages();
         if (supportedLanguages.Count is 0)
         {
             ShowCriticalError(Lang.Error_Critical_NoLanguagesFound);
-            Shutdown(1); // Завершаем приложение с кодом ошибки
+            Shutdown(1);
             return;
         }
 
-        // 2. Загружаем настройки
         AppSettings? settings = SettingsService.LoadSettings();
         string? selectedCultureName = settings?.SelectedCulture;
 
-        // 3. Определяем, нужен ли выбор языка
         bool needsSelection = string.IsNullOrEmpty(selectedCultureName) ||
                               !supportedLanguages.Any(l => l.CultureCode.Equals(selectedCultureName, StringComparison.OrdinalIgnoreCase));
 
         if (needsSelection)
         {
+            // Показываем окно выбора языка
             LanguageSelectionWindow selectionWindow = new(supportedLanguages);
             bool? dialogResult = selectionWindow.ShowDialog();
 
             if (dialogResult == true && selectionWindow.SelectedLanguage != null)
             {
+                // Пользователь выбрал язык и нажал OK
                 selectedCultureName = selectionWindow.SelectedLanguage.CultureCode;
-                // Сохраняем только если пользователь выбрал язык и нажал ОК
-                AppSettings newSettings = settings ?? new AppSettings(); // Используем старые настройки или создаем новые
+                AppSettings newSettings = settings ?? new AppSettings();
                 newSettings.SelectedCulture = selectedCultureName;
-                _ = SettingsService.SaveSettings(newSettings); // Сохраняем через сервис
+                _ = SettingsService.SaveSettings(newSettings); // Сохраняем выбор
             }
             else
             {
-                // Если пользователь закрыл окно или не выбрал язык, используем первый в списке
+                // Пользователь закрыл окно или не выбрал язык - используем первый доступный
                 selectedCultureName = supportedLanguages.First().CultureCode;
-                // Настройки не сохраняются, окно появится снова при следующем запуске.
+                // Настройки не сохраняем, окно выбора появится снова при следующем запуске.
             }
         }
 
-        // 4. Применяем культуру
+        // Применяем выбранную или первую доступную культуру
         string cultureToApply = selectedCultureName ?? supportedLanguages.First().CultureCode;
         bool cultureApplied = _localizationService.ApplyCulture(cultureToApply);
 
         if (!cultureApplied)
         {
-            // Если не удалось применить выбранную/сохраненную культуру, пытаемся применить первую из списка
+            // Резервный вариант: пытаемся применить первую культуру из списка, если выбранная не сработала
             cultureApplied = _localizationService.ApplyCulture(supportedLanguages.First().CultureCode);
             if (!cultureApplied)
             {
-                // Если и это не удалось, показываем критическую ошибку и выходим
+                // Крайний случай: не удалось применить ни одну культуру
                 ShowCriticalError(Lang.Error_Critical_CannotSetAnyLanguage);
                 Shutdown(1);
                 return;
             }
         }
 
-        // 5. Отображаем главное окно
+        // Запускаем главное окно
         MainWindow mainWindow = new();
         mainWindow.Show();
     }
 
     /// <summary>Отображает критическое сообщение об ошибке.</summary>
     /// <param name="message">Текст сообщения.</param>
-    private static void ShowCriticalError(string message) => _ = MessageBox.Show(message, Lang.Error_Critical_Title, MessageBoxButton.OK, MessageBoxImage.Error);
+    private static void ShowCriticalError(string message) =>
+        _ = MessageBox.Show(message, Lang.Error_Critical_Title, MessageBoxButton.OK, MessageBoxImage.Error);
 }

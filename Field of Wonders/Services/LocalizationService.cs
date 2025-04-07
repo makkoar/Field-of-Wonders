@@ -7,19 +7,19 @@ public class LocalizationService
     public CultureInfo? CurrentAppliedCulture { get; private set; }
 
     /// <summary>Динамически обнаруживает поддерживаемые языки на основе ресурсных сборок.</summary>
-    /// <returns>Список <see cref="LanguageInfo"/> поддерживаемых языков, отсортированный по имени. Возвращает список с резервным языком, если обнаружение не удалось.</returns>
+    /// <returns>Список <see cref="LanguageInfo"/> поддерживаемых языков, отсортированный по имени.</returns>
     public static List<LanguageInfo> DiscoverSupportedLanguages()
     {
         List<LanguageInfo> languages = [];
         string neutralCultureCode = string.Empty;
-        CultureInfo currentUiCulture = CultureInfo.CurrentUICulture; // Используем текущую культуру для форматирования имен
+        CultureInfo currentUiCulture = CultureInfo.CurrentUICulture; // Для форматирования NativeName
 
         try
         {
             Assembly entryAssembly = Assembly.GetEntryAssembly() ?? typeof(App).Assembly;
             NeutralResourcesLanguageAttribute? neutralResourcesAttr = entryAssembly.GetCustomAttribute<NeutralResourcesLanguageAttribute>();
 
-            // 1. Определяем нейтральный язык
+            // Определяем нейтральный язык из атрибута сборки
             if (neutralResourcesAttr != null)
             {
                 try
@@ -29,16 +29,11 @@ public class LocalizationService
                     string displayName = currentUiCulture.TextInfo.ToTitleCase(neutralCulture.NativeName);
                     languages.Add(new LanguageInfo(displayName, neutralCulture.Name));
                 }
-                catch (CultureNotFoundException)
-                {
-                    // Предупреждение: Нейтральная культура, указанная в атрибуте сборки, не найдена.
-                    neutralCultureCode = string.Empty; // Сбрасываем, если не найден
-                }
+                catch (CultureNotFoundException) { neutralCultureCode = string.Empty; } // Сбрасываем, если не найден
             }
             else
             {
-                // Предупреждение: Атрибут NeutralResourcesLanguage не найден. Рассмотрите возможность его добавления.
-                // Пытаемся добавить русский как предполагаемый нейтральный/основной
+                // Пытаемся добавить русский как предполагаемый нейтральный/основной, если атрибута нет
                 if (!languages.Any(l => l.CultureCode.Equals("ru-RU", StringComparison.OrdinalIgnoreCase)))
                 {
                     TryAddCulture(languages, currentUiCulture, "ru-RU");
@@ -46,7 +41,7 @@ public class LocalizationService
                 }
             }
 
-            // 2. Ищем сателлитные сборки
+            // Ищем сателлитные сборки в подпапках
             string baseDirectory = AppContext.BaseDirectory;
             string resourceAssemblyName = $"{entryAssembly.GetName().Name}.resources.dll";
 
@@ -55,10 +50,9 @@ public class LocalizationService
                 foreach (string dir in Directory.GetDirectories(baseDirectory))
                 {
                     string potentialCultureCode = Path.GetFileName(dir);
-                    if (string.IsNullOrEmpty(potentialCultureCode) ||
-                        potentialCultureCode.Equals(neutralCultureCode, StringComparison.OrdinalIgnoreCase)) // Пропускаем нейтральную культуру
+                    if (string.IsNullOrEmpty(potentialCultureCode) || potentialCultureCode.Equals(neutralCultureCode, StringComparison.OrdinalIgnoreCase))
                     {
-                        continue;
+                        continue; // Пропускаем нейтральную культуру
                     }
 
                     CultureInfo? culture = GetCultureInfoSafe(potentialCultureCode);
@@ -78,13 +72,13 @@ public class LocalizationService
             ShowError(string.Format(Lang.Error_DiscoverLanguages_Failed_Format, ex.Message), Lang.Error_DiscoverLanguages_Title, MessageBoxImage.Warning);
         }
 
-        // 3. Гарантируем наличие хотя бы одного языка
+        // Гарантируем наличие хотя бы одного языка (резервные варианты)
         EnsureAtLeastOneLanguage(languages, currentUiCulture);
 
         return [.. languages.OrderBy(l => l.DisplayName)];
     }
 
-    /// <summary>Применяет указанную культуру к текущему потоку UI.</summary>
+    /// <summary>Применяет указанную культуру к текущему потоку UI и потоку по умолчанию.</summary>
     /// <param name="cultureCode">Код культуры для применения (например, "ru-RU").</param>
     /// <returns><c>true</c> если культура успешно применена, иначе <c>false</c>.</returns>
     public bool ApplyCulture(string cultureCode)
@@ -102,25 +96,29 @@ public class LocalizationService
         catch (CultureNotFoundException ex)
         {
             ShowError(string.Format(Lang.Error_ApplyCulture_NotFound_Format, cultureCode, ex.Message), Lang.Error_ApplyCulture_Title, MessageBoxImage.Warning);
-            CurrentAppliedCulture = null; // Сбрасываем, если не удалось применить
+            CurrentAppliedCulture = null;
             return false;
         }
         catch (Exception ex)
         {
             ShowError(string.Format(Lang.Error_ApplyCulture_Unexpected_Format, ex.Message), Lang.Error_ApplyCulture_Title, MessageBoxImage.Error);
-            CurrentAppliedCulture = null; // Сбрасываем, если не удалось применить
+            CurrentAppliedCulture = null;
             return false;
         }
     }
 
     /// <summary>Безопасно пытается получить объект CultureInfo.</summary>
+    /// <param name="cultureCode">Код культуры для поиска.</param>
     private static CultureInfo? GetCultureInfoSafe(string cultureCode)
     {
         try { return CultureInfo.GetCultureInfo(cultureCode); }
         catch (CultureNotFoundException) { return null; }
     }
 
-    /// <summary>Пытается добавить информацию о культуре в список, если она существует.</summary>
+    /// <summary>Пытается добавить информацию о культуре в список, если она существует и еще не добавлена.</summary>
+    /// <param name="languages">Список языков для пополнения.</param>
+    /// <param name="currentUiCulture">Текущая культура UI для форматирования имени.</param>
+    /// <param name="cultureCodeToAdd">Код культуры для добавления.</param>
     private static void TryAddCulture(List<LanguageInfo> languages, CultureInfo currentUiCulture, string cultureCodeToAdd)
     {
         try
@@ -132,23 +130,23 @@ public class LocalizationService
                 languages.Add(new LanguageInfo(displayName, culture.Name));
             }
         }
-        catch (CultureNotFoundException) { /* Игнорируем, если культура не найдена */ }
+        catch (CultureNotFoundException) { /* Игнорируем */ }
     }
 
-    /// <summary>Убеждается, что в списке есть хотя бы один язык, добавляя резервные при необходимости.</summary>
+    /// <summary>Убеждается, что в списке есть хотя бы один язык, добавляя резервные варианты.</summary>
+    /// <param name="languages">Список языков для проверки.</param>
+    /// <param name="currentUiCulture">Текущая культура UI для форматирования имени резервных языков.</param>
     private static void EnsureAtLeastOneLanguage(List<LanguageInfo> languages, CultureInfo currentUiCulture)
     {
         if (languages.Count is not 0) return;
 
-        // 1. Пытаемся добавить русский
+        // Резервные варианты: ru -> en -> язык системы -> ru (жестко)
         TryAddCulture(languages, currentUiCulture, "ru-RU");
         if (languages.Count is not 0) return;
 
-        // 2. Пытаемся добавить английский
         TryAddCulture(languages, currentUiCulture, "en-US");
         if (languages.Count is not 0) return;
 
-        // 3. Пытаемся добавить язык системы
         try
         {
             CultureInfo sysCulture = CultureInfo.InstalledUICulture;
@@ -161,14 +159,16 @@ public class LocalizationService
         }
         catch { /* Игнорируем ошибку получения системной культуры */ }
 
-        // 4. Самый крайний случай - добавляем русский жестко
         if (languages.Count is 0)
         {
-            languages.Add(new LanguageInfo("Русский", "ru-RU"));
+            languages.Add(new LanguageInfo("Русский", "ru-RU")); // Крайний случай
         }
     }
 
-    /// <summary>Отображает сообщение об ошибке.</summary>
+    /// <summary>Отображает сообщение об ошибке в потоке UI.</summary>
+    /// <param name="message">Текст сообщения.</param>
+    /// <param name="caption">Заголовок окна сообщения.</param>
+    /// <param name="icon">Иконка сообщения.</param>
     private static void ShowError(string message, string caption, MessageBoxImage icon) => Application.Current?.Dispatcher.Invoke(() =>
     {
         _ = MessageBox.Show(message, caption, MessageBoxButton.OK, icon);

@@ -1,6 +1,6 @@
 ﻿namespace Field_of_Wonders.MessagePackModels;
 
-/// <summary>Модель данных для сохранения и загрузки настроек приложения с использованием MessagePack.</summary>
+/// <summary>Модель данных для сохранения и загрузки настроек приложения.</summary>
 [MessagePackObject]
 public class AppSettings
 {
@@ -8,7 +8,5 @@ public class AppSettings
     [Key(0)]
     public string? SelectedCulture { get; set; }
 
-    // Примечание: В будущем сюда можно добавить другие настройки,
-    // например, громкость звука, имя пользователя и т.д.,
-    // присвоив им следующие индексы [Key(1)], [Key(2)]...
+    // Сюда можно добавить другие настройки (громкость, имя и т.д.) с ключами [Key(1)], [Key(2)]...
 }

@@ -3,27 +3,18 @@
 /// <summary>Логика взаимодействия для главного окна приложения MainWindow.xaml.</summary>
 public partial class MainWindow : Window
 {
-    /// <summary>Инициализирует новый экземпляр класса <see cref="MainWindow"/>. Пытается создать базовую игровую логику и обрабатывает критические ошибки инициализации.</summary>
+    /// <summary>Инициализирует новый экземпляр класса <see cref="MainWindow"/> и обрабатывает критические ошибки инициализации.</summary>
     public MainWindow()
     {
         InitializeComponent();
 
         try
         {
-            // Временная инициализация для проверки.
-            // В будущем здесь будет инициализация ViewModel или GameManager
-            // Важно: Передан непустой вопрос, чтобы избежать ArgumentException.
-            Puzzle puzzle = new("Какой цвет у неба?", "Голубой", "Цвета");
-
             // TODO: Здесь будет основная инициализация ViewModel и привязка DataContext
-            // this.DataContext = new MainViewModel(puzzle);
-
+            // Например: this.DataContext = new MainViewModel();
+            //           ((MainViewModel)this.DataContext).InitializeGame();
         }
-        catch (ArgumentException argEx) // Ошибка валидации начальных данных (например, пустой вопрос/ответ)
-        {
-            HandleInitializationError(string.Format(Lang.Error_DataInitializationFailed_Format, argEx.Message));
-        }
-        catch (Exception ex) // Другие непредвиденные ошибки при инициализации
+        catch (Exception ex) // Перехватываем общие ошибки при инициализации ViewModel или игровой логики
         {
             HandleInitializationError(string.Format(Lang.Error_UnexpectedInitializationFailed_Format, ex.Message));
         }
@@ -34,8 +25,7 @@ public partial class MainWindow : Window
     private void HandleInitializationError(string userMessage)
     {
         _ = MessageBox.Show(userMessage, Lang.Error_Critical_Title, MessageBoxButton.OK, MessageBoxImage.Error);
-
-        // Безопасное завершение приложения через Dispatcher, если окно еще не полностью готово.
+        // Безопасное завершение приложения через Dispatcher
         Dispatcher.Invoke(() => Application.Current?.Shutdown(1));
     }
 }
