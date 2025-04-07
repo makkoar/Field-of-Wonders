@@ -118,24 +118,88 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Error_AnswerCannotBeEmpty" xml:space="preserve">
-    <value>Ответ не может быть пустым или состоять из пробелов.</value>
-    <comment>Текст ошибки, генерируемой конструктором Puzzle, когда переданный ответ (загаданное слово) является null, пустой строкой или строкой, содержащей только пробельные символы. Используется для проверки входных данных.</comment>
+    <value>Ответ не может быть пустым.</value>
+    <comment>Сообщение об ошибке, если при создании экземпляра Puzzle передан пустой ответ.</comment>
+  </data>
+  <data name="Error_ApplyCulture_NotFound_Format" xml:space="preserve">
+    <value>Выбранный язык '{0}' не найден ({1}).\nБудет использован язык по умолчанию.</value>
+    <comment>Сообщение об ошибке, если указанная культура не найдена в системе. {0} - код культуры, {1} - сообщение исключения CultureNotFoundException.</comment>
+  </data>
+  <data name="Error_ApplyCulture_Title" xml:space="preserve">
+    <value>Ошибка установки языка</value>
+    <comment>Заголовок окна сообщения об ошибке при применении выбранной культуры к потоку.</comment>
+  </data>
+  <data name="Error_ApplyCulture_Unexpected_Format" xml:space="preserve">
+    <value>Произошла непредвиденная ошибка при установке языка:\n{0}</value>
+    <comment>Сообщение о непредвиденной ошибке при применении культуры к потоку. {0} - сообщение общего исключения Exception.</comment>
+  </data>
+  <data name="Error_Critical_CannotSetAnyLanguage" xml:space="preserve">
+    <value>Критическая ошибка: Не удалось установить ни один из доступных языков. Приложение будет закрыто.</value>
+    <comment>Критическая ошибка: не удалось применить ни выбранный/сохраненный язык, ни язык по умолчанию. Приложение не может запуститься.</comment>
+  </data>
+  <data name="Error_Critical_NoLanguagesFound" xml:space="preserve">
+    <value>Не удалось обнаружить поддерживаемые языки. Приложение будет закрыто.</value>
+    <comment>Критическая ошибка: не найдено ни одного языка (даже резервного). Приложение не может запуститься.</comment>
   </data>
   <data name="Error_Critical_Title" xml:space="preserve">
     <value>Критическая ошибка</value>
-    <comment>Заголовок окна сообщения, информирующего пользователя о критической ошибке (например, при сбое инициализации в MainWindow), которая препятствует запуску или продолжению работы приложения. Используется в методе HandleInitializationError в MainWindow.xaml.cs.</comment>
+    <comment>Общий заголовок окна для критических ошибок, приводящих к завершению приложения.</comment>
   </data>
-  <data name="Error_DataInitializationFailed_Prefix" xml:space="preserve">
-    <value>Ошибка данных для инициализации игры:</value>
-    <comment>Префикс сообщения об ошибке, отображаемого при сбое инициализации игры из-за неверных входных данных (например, пустого вопроса или ответа в Puzzle). После этого префикса добавляется конкретное сообщение об ошибке (argEx.Message). Используется в MainWindow.xaml.cs в конструкторе при обработке ArgumentException.</comment>
+  <data name="Error_DataInitializationFailed_Format" xml:space="preserve">
+    <value>Ошибка инициализации данных игры:\n{0}</value>
+    <comment>Формат сообщения об ошибке валидации данных при инициализации игры. {0} - сообщение исключения ArgumentException.</comment>
+  </data>
+  <data name="Error_DiscoverLanguages_Failed_Format" xml:space="preserve">
+    <value>Произошла ошибка при автоматическом определении языков:\n{0}\n\nБудет использован язык по умолчанию.</value>
+    <comment>Сообщение об ошибке при сбое автоматического определения доступных языков. {0} - сообщение исключения Exception.</comment>
+  </data>
+  <data name="Error_DiscoverLanguages_Title" xml:space="preserve">
+    <value>Ошибка определения языков</value>
+    <comment>Заголовок окна сообщения об ошибке при автоматическом определении доступных языков.</comment>
+  </data>
+  <data name="Error_LoadSettings_IOException_Format" xml:space="preserve">
+    <value>Ошибка чтения файла настроек '{0}':\n{1}\n\nПроверьте права доступа к папке приложения.</value>
+    <comment>Сообщение об ошибке ввода-вывода при чтении файла настроек. {0} - имя файла, {1} - сообщение исключения IOException.</comment>
+  </data>
+  <data name="Error_LoadSettings_ReadFailed_Format" xml:space="preserve">
+    <value>Ошибка при чтении файла настроек '{0}':\n{1}\n\nФайл будет удален. При следующем запуске потребуется выбрать язык.</value>
+    <comment>Сообщение об ошибке при сбое десериализации файла настроек MessagePack. {0} - имя файла, {1} - сообщение исключения MessagePackSerializationException.</comment>
+  </data>
+  <data name="Error_LoadSettings_Title" xml:space="preserve">
+    <value>Ошибка загрузки настроек</value>
+    <comment>Заголовок окна сообщения об ошибке при загрузке файла настроек.</comment>
+  </data>
+  <data name="Error_LoadSettings_Unexpected_Format" xml:space="preserve">
+    <value>Непредвиденная ошибка при загрузке настроек из '{0}':\n{1}\n\nФайл будет удален. При следующем запуске потребуется выбрать язык.</value>
+    <comment>Сообщение о непредвиденной ошибке при загрузке настроек. {0} - имя файла, {1} - сообщение общего исключения Exception.</comment>
   </data>
   <data name="Error_QuestionCannotBeEmpty" xml:space="preserve">
-    <value>Вопрос не может быть пустым или состоять из пробелов.</value>
-    <comment>Текст ошибки, генерируемой конструктором Puzzle, когда переданный вопрос является null, пустой строкой или строкой, содержащей только пробельные символы. Используется для проверки входных данных.</comment>
+    <value>Вопрос не может быть пустым.</value>
+    <comment>Сообщение об ошибке, если при создании экземпляра Puzzle передан пустой вопрос.</comment>
   </data>
-  <data name="Error_UnexpectedInitializationFailed_Prefix" xml:space="preserve">
-    <value>Произошла непредвиденная ошибка при запуске игры:</value>
-    <comment>Префикс сообщения об ошибке, отображаемого при возникновении других (не связанных с данными) исключений во время инициализации MainWindow. После этого префикса добавляется конкретное сообщение об ошибке (ex.Message). Используется в MainWindow.xaml.cs в конструкторе при обработке общего Exception.</comment>
+  <data name="Error_SaveSettings_DirectoryNotFound_Format" xml:space="preserve">
+    <value>Не удалось сохранить настройки.\nНе удалось определить директорию для файла настроек: {0}</value>
+    <comment>Сообщение об ошибке, если не удалось получить путь к директории для сохранения файла настроек. {0} - полный путь к файлу.</comment>
+  </data>
+  <data name="Error_SaveSettings_IOException_Format" xml:space="preserve">
+    <value>Произошла ошибка при записи файла настроек '{0}':\n{1}</value>
+    <comment>Сообщение об ошибке ввода-вывода при записи файла настроек. {0} - имя файла, {1} - сообщение исключения IOException.</comment>
+  </data>
+  <data name="Error_SaveSettings_Title" xml:space="preserve">
+    <value>Ошибка сохранения настроек</value>
+    <comment>Заголовок окна сообщения об ошибке при сохранении файла настроек.</comment>
+  </data>
+  <data name="Error_SaveSettings_Unauthorized_Format" xml:space="preserve">
+    <value>Не удалось сохранить настройки.\nОтказано в доступе к файлу:\n{0}\n\nПроверьте права на запись.</value>
+    <comment>Сообщение об ошибке при отсутствии прав на запись файла настроек. {0} - полный путь к файлу.</comment>
+  </data>
+  <data name="Error_SaveSettings_Unexpected_Format" xml:space="preserve">
+    <value>Произошла непредвиденная ошибка при сохранении настроек:\n{0}</value>
+    <comment>Сообщение о непредвиденной ошибке при сохранении настроек. {0} - сообщение общего исключения Exception.</comment>
+  </data>
+  <data name="Error_UnexpectedInitializationFailed_Format" xml:space="preserve">
+    <value>Непредвиденная ошибка при инициализации игры:\n{0}</value>
+    <comment>Формат сообщения о других непредвиденных ошибках при инициализации игры. {0} - сообщение исключения Exception.</comment>
   </data>
   <data name="MainWindow_Title" xml:space="preserve">
     <value>Поле Чудес</value>

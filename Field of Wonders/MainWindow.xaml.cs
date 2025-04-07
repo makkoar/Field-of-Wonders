@@ -21,11 +21,11 @@ public partial class MainWindow : Window
         }
         catch (ArgumentException argEx) // Ошибка валидации начальных данных (например, пустой вопрос/ответ)
         {
-            HandleInitializationError($"{Lang.Error_DataInitializationFailed_Prefix}\n{argEx.Message}");
+            HandleInitializationError(string.Format(Lang.Error_DataInitializationFailed_Format, argEx.Message));
         }
         catch (Exception ex) // Другие непредвиденные ошибки при инициализации
         {
-            HandleInitializationError($"{Lang.Error_UnexpectedInitializationFailed_Prefix}\n{ex.Message}");
+            HandleInitializationError(string.Format(Lang.Error_UnexpectedInitializationFailed_Format, ex.Message));
         }
     }
 

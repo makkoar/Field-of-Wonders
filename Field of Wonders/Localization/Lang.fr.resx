@@ -118,20 +118,68 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Error_AnswerCannotBeEmpty" xml:space="preserve">
-    <value>La réponse ne peut pas être vide ou composée d'espaces blancs.</value>
+    <value>La réponse ne peut pas être vide.</value>
+  </data>
+  <data name="Error_ApplyCulture_NotFound_Format" xml:space="preserve">
+    <value>Langue sélectionnée '{0}' introuvable ({1}).\nLa langue par défaut sera utilisée.</value>
+  </data>
+  <data name="Error_ApplyCulture_Title" xml:space="preserve">
+    <value>Erreur de définition de la langue</value>
+  </data>
+  <data name="Error_ApplyCulture_Unexpected_Format" xml:space="preserve">
+    <value>Une erreur inattendue s'est produite lors de la définition de la langue :\n{0}</value>
+  </data>
+  <data name="Error_Critical_CannotSetAnyLanguage" xml:space="preserve">
+    <value>Erreur critique : Échec de la définition de l'une des langues disponibles. L'application va se fermer.</value>
+  </data>
+  <data name="Error_Critical_NoLanguagesFound" xml:space="preserve">
+    <value>Échec de la détection des langues prises en charge. L'application va se fermer.</value>
   </data>
   <data name="Error_Critical_Title" xml:space="preserve">
     <value>Erreur critique</value>
   </data>
-  <data name="Error_DataInitializationFailed_Prefix" xml:space="preserve">
-    <value>Erreur de données lors de l'initialisation du jeu :</value>
+  <data name="Error_DataInitializationFailed_Format" xml:space="preserve">
+    <value>Erreur d'initialisation des données du jeu :\n{0}</value>
+  </data>
+  <data name="Error_DiscoverLanguages_Failed_Format" xml:space="preserve">
+    <value>Une erreur s'est produite lors de la détection automatique de la langue :\n{0}\n\nLa langue par défaut sera utilisée.</value>
+  </data>
+  <data name="Error_DiscoverLanguages_Title" xml:space="preserve">
+    <value>Erreur de détection des langues</value>
+  </data>
+  <data name="Error_LoadSettings_IOException_Format" xml:space="preserve">
+    <value>Erreur lors de la lecture du fichier de paramètres '{0}':\n{1}\n\nVeuillez vérifier les autorisations d'accès au dossier de l'application.</value>
+  </data>
+  <data name="Error_LoadSettings_ReadFailed_Format" xml:space="preserve">
+    <value>Erreur lors de la lecture du fichier de paramètres '{0}':\n{1}\n\nLe fichier sera supprimé. La sélection de la langue sera requise au prochain lancement.</value>
+  </data>
+  <data name="Error_LoadSettings_Title" xml:space="preserve">
+    <value>Erreur de chargement des paramètres</value>
+  </data>
+  <data name="Error_LoadSettings_Unexpected_Format" xml:space="preserve">
+    <value>Erreur inattendue lors du chargement des paramètres depuis '{0}':\n{1}\n\nLe fichier sera supprimé. La sélection de la langue sera requise au prochain lancement.</value>
   </data>
   <data name="Error_QuestionCannotBeEmpty" xml:space="preserve">
-    <value>La question ne peut pas être vide ou composée d'espaces blancs.</value>
+    <value>La question ne peut pas être vide.</value>
     <comment>Текст ошибки, генерируемой конструктором Puzzle, когда переданный вопрос является null, пустой строкой или строкой, содержащей только пробельные символы. Используется для проверки входных данных.</comment>
   </data>
-  <data name="Error_UnexpectedInitializationFailed_Prefix" xml:space="preserve">
-    <value>Une erreur inattendue s'est produite lors du démarrage du jeu :</value>
+  <data name="Error_SaveSettings_DirectoryNotFound_Format" xml:space="preserve">
+    <value>Échec de l'enregistrement des paramètres.\nImpossible de déterminer le répertoire du fichier de paramètres : {0}</value>
+  </data>
+  <data name="Error_SaveSettings_IOException_Format" xml:space="preserve">
+    <value>Une erreur s'est produite lors de l'écriture du fichier de paramètres '{0}':\n{1}</value>
+  </data>
+  <data name="Error_SaveSettings_Title" xml:space="preserve">
+    <value>Erreur d'enregistrement des paramètres</value>
+  </data>
+  <data name="Error_SaveSettings_Unauthorized_Format" xml:space="preserve">
+    <value>Échec de l'enregistrement des paramètres.\nAccès refusé au fichier :\n{0}\n\nVeuillez vérifier les autorisations d'écriture.</value>
+  </data>
+  <data name="Error_SaveSettings_Unexpected_Format" xml:space="preserve">
+    <value>Une erreur inattendue s'est produite lors de l'enregistrement des paramètres:\n{0}</value>
+  </data>
+  <data name="Error_UnexpectedInitializationFailed_Format" xml:space="preserve">
+    <value>Erreur inattendue lors de l'initialisation du jeu :\n{0}</value>
   </data>
   <data name="MainWindow_Title" xml:space="preserve">
     <value>Champ des Merveilles</value>

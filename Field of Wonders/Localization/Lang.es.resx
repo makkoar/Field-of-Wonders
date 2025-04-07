@@ -118,22 +118,70 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Error_AnswerCannotBeEmpty" xml:space="preserve">
-    <value>La respuesta no puede estar vacía ni contener solo espacios en blanco.</value>
+    <value>La respuesta no puede estar vacía.</value>
+  </data>
+  <data name="Error_ApplyCulture_NotFound_Format" xml:space="preserve">
+    <value>Idioma seleccionado '{0}' no encontrado ({1}).\nSe utilizará el idioma predeterminado.</value>
+  </data>
+  <data name="Error_ApplyCulture_Title" xml:space="preserve">
+    <value>Error al establecer el idioma</value>
+  </data>
+  <data name="Error_ApplyCulture_Unexpected_Format" xml:space="preserve">
+    <value>Se produjo un error inesperado al establecer el idioma:\n{0}</value>
+  </data>
+  <data name="Error_Critical_CannotSetAnyLanguage" xml:space="preserve">
+    <value>Error crítico: No se pudo establecer ninguno de los idiomas disponibles. La aplicación se cerrará.</value>
+  </data>
+  <data name="Error_Critical_NoLanguagesFound" xml:space="preserve">
+    <value>No se pudieron detectar los idiomas admitidos. La aplicación se cerrará.</value>
   </data>
   <data name="Error_Critical_Title" xml:space="preserve">
     <value>Error crítico</value>
   </data>
-  <data name="Error_DataInitializationFailed_Prefix" xml:space="preserve">
-    <value>Error de datos durante la inicialización del juego:</value>
+  <data name="Error_DataInitializationFailed_Format" xml:space="preserve">
+    <value>Error al inicializar los datos del juego:\n{0}</value>
+  </data>
+  <data name="Error_DiscoverLanguages_Failed_Format" xml:space="preserve">
+    <value>Se produjo un error durante la detección automática de idiomas:\n{0}\n\nSe utilizará el idioma predeterminado.</value>
+  </data>
+  <data name="Error_DiscoverLanguages_Title" xml:space="preserve">
+    <value>Error al detectar idiomas</value>
+  </data>
+  <data name="Error_LoadSettings_IOException_Format" xml:space="preserve">
+    <value>Error al leer el archivo de configuración '{0}':\n{1}\n\nPor favor, compruebe los permisos de acceso a la carpeta de la aplicación.</value>
+  </data>
+  <data name="Error_LoadSettings_ReadFailed_Format" xml:space="preserve">
+    <value>Error al leer el archivo de configuración '{0}':\n{1}\n\nEl archivo será eliminado. Se requerirá la selección de idioma en el próximo inicio.</value>
+  </data>
+  <data name="Error_LoadSettings_Title" xml:space="preserve">
+    <value>Error al cargar la configuración</value>
+  </data>
+  <data name="Error_LoadSettings_Unexpected_Format" xml:space="preserve">
+    <value>Error inesperado al cargar la configuración desde '{0}':\n{1}\n\nEl archivo será eliminado. Se requerirá la selección de idioma en el próximo inicio.</value>
   </data>
   <data name="Error_QuestionCannotBeEmpty" xml:space="preserve">
-    <value>La pregunta no puede estar vacía ni contener solo espacios en blanco.</value>
+    <value>La pregunta no puede estar vacía.</value>
     <comment>Текст ошибки, генерируемой конструктором Puzzle, когда переданный вопрос является null, пустой строкой или строкой, содержащей только пробельные символы. Используется для проверки входных данных.</comment>
   </data>
-  <data name="Error_UnexpectedInitializationFailed_Prefix" xml:space="preserve">
-    <value>Se produjo un error inesperado al iniciar el juego:</value>
+  <data name="Error_SaveSettings_DirectoryNotFound_Format" xml:space="preserve">
+    <value>Error al guardar la configuración.\nNo se pudo determinar el directorio para el archivo de configuración: {0}</value>
+  </data>
+  <data name="Error_SaveSettings_IOException_Format" xml:space="preserve">
+    <value>Se produjo un error al escribir el archivo de configuración '{0}':\n{1}</value>
+  </data>
+  <data name="Error_SaveSettings_Title" xml:space="preserve">
+    <value>Error al guardar la configuración</value>
+  </data>
+  <data name="Error_SaveSettings_Unauthorized_Format" xml:space="preserve">
+    <value>Error al guardar la configuración.\nAcceso denegado al archivo:\n{0}\n\nPor favor, compruebe los permisos de escritura.</value>
+  </data>
+  <data name="Error_SaveSettings_Unexpected_Format" xml:space="preserve">
+    <value>Se produjo un error inesperado al guardar la configuración:\n{0}</value>
+  </data>
+  <data name="Error_UnexpectedInitializationFailed_Format" xml:space="preserve">
+    <value>Error inesperado durante la inicialización del juego:\n{0}</value>
   </data>
   <data name="MainWindow_Title" xml:space="preserve">
-    <value>Campo de los Milagros</value>
+    <value>Campo de Maravillas</value>
   </data>
 </root>

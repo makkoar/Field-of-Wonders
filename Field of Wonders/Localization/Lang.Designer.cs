@@ -36,7 +36,7 @@ namespace Field_of_Wonders.Localization {
         ///   Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Field_of_Wonders.Localization.Lang", typeof(Lang).Assembly);
@@ -51,7 +51,7 @@ namespace Field_of_Wonders.Localization {
         ///   обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,47 +61,191 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Ответ не может быть пустым или состоять из пробелов..
+        ///   Ищет локализованную строку, похожую на Ответ не может быть пустым..
         /// </summary>
-        internal static string Error_AnswerCannotBeEmpty {
+        public static string Error_AnswerCannotBeEmpty {
             get {
                 return ResourceManager.GetString("Error_AnswerCannotBeEmpty", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Выбранный язык &apos;{0}&apos; не найден ({1}).\nБудет использован язык по умолчанию..
+        /// </summary>
+        public static string Error_ApplyCulture_NotFound_Format {
+            get {
+                return ResourceManager.GetString("Error_ApplyCulture_NotFound_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка установки языка.
+        /// </summary>
+        public static string Error_ApplyCulture_Title {
+            get {
+                return ResourceManager.GetString("Error_ApplyCulture_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Произошла непредвиденная ошибка при установке языка:\n{0}.
+        /// </summary>
+        public static string Error_ApplyCulture_Unexpected_Format {
+            get {
+                return ResourceManager.GetString("Error_ApplyCulture_Unexpected_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Критическая ошибка: Не удалось установить ни один из доступных языков. Приложение будет закрыто..
+        /// </summary>
+        public static string Error_Critical_CannotSetAnyLanguage {
+            get {
+                return ResourceManager.GetString("Error_Critical_CannotSetAnyLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Не удалось обнаружить поддерживаемые языки. Приложение будет закрыто..
+        /// </summary>
+        public static string Error_Critical_NoLanguagesFound {
+            get {
+                return ResourceManager.GetString("Error_Critical_NoLanguagesFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Критическая ошибка.
         /// </summary>
-        internal static string Error_Critical_Title {
+        public static string Error_Critical_Title {
             get {
                 return ResourceManager.GetString("Error_Critical_Title", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Ошибка данных для инициализации игры:.
+        ///   Ищет локализованную строку, похожую на Ошибка инициализации данных игры:\n{0}.
         /// </summary>
-        internal static string Error_DataInitializationFailed_Prefix {
+        public static string Error_DataInitializationFailed_Format {
             get {
-                return ResourceManager.GetString("Error_DataInitializationFailed_Prefix", resourceCulture);
+                return ResourceManager.GetString("Error_DataInitializationFailed_Format", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Вопрос не может быть пустым или состоять из пробелов..
+        ///   Ищет локализованную строку, похожую на Произошла ошибка при автоматическом определении языков:\n{0}\n\nБудет использован язык по умолчанию..
         /// </summary>
-        internal static string Error_QuestionCannotBeEmpty {
+        public static string Error_DiscoverLanguages_Failed_Format {
+            get {
+                return ResourceManager.GetString("Error_DiscoverLanguages_Failed_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка определения языков.
+        /// </summary>
+        public static string Error_DiscoverLanguages_Title {
+            get {
+                return ResourceManager.GetString("Error_DiscoverLanguages_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка чтения файла настроек &apos;{0}&apos;:\n{1}\n\nПроверьте права доступа к папке приложения..
+        /// </summary>
+        public static string Error_LoadSettings_IOException_Format {
+            get {
+                return ResourceManager.GetString("Error_LoadSettings_IOException_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка при чтении файла настроек &apos;{0}&apos;:\n{1}\n\nФайл будет удален. При следующем запуске потребуется выбрать язык..
+        /// </summary>
+        public static string Error_LoadSettings_ReadFailed_Format {
+            get {
+                return ResourceManager.GetString("Error_LoadSettings_ReadFailed_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка загрузки настроек.
+        /// </summary>
+        public static string Error_LoadSettings_Title {
+            get {
+                return ResourceManager.GetString("Error_LoadSettings_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Непредвиденная ошибка при загрузке настроек из &apos;{0}&apos;:\n{1}\n\nФайл будет удален. При следующем запуске потребуется выбрать язык..
+        /// </summary>
+        public static string Error_LoadSettings_Unexpected_Format {
+            get {
+                return ResourceManager.GetString("Error_LoadSettings_Unexpected_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вопрос не может быть пустым..
+        /// </summary>
+        public static string Error_QuestionCannotBeEmpty {
             get {
                 return ResourceManager.GetString("Error_QuestionCannotBeEmpty", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Произошла непредвиденная ошибка при запуске игры:.
+        ///   Ищет локализованную строку, похожую на Не удалось сохранить настройки.\nНе удалось определить директорию для файла настроек: {0}.
         /// </summary>
-        internal static string Error_UnexpectedInitializationFailed_Prefix {
+        public static string Error_SaveSettings_DirectoryNotFound_Format {
             get {
-                return ResourceManager.GetString("Error_UnexpectedInitializationFailed_Prefix", resourceCulture);
+                return ResourceManager.GetString("Error_SaveSettings_DirectoryNotFound_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Произошла ошибка при записи файла настроек &apos;{0}&apos;:\n{1}.
+        /// </summary>
+        public static string Error_SaveSettings_IOException_Format {
+            get {
+                return ResourceManager.GetString("Error_SaveSettings_IOException_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка сохранения настроек.
+        /// </summary>
+        public static string Error_SaveSettings_Title {
+            get {
+                return ResourceManager.GetString("Error_SaveSettings_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Не удалось сохранить настройки.\nОтказано в доступе к файлу:\n{0}\n\nПроверьте права на запись..
+        /// </summary>
+        public static string Error_SaveSettings_Unauthorized_Format {
+            get {
+                return ResourceManager.GetString("Error_SaveSettings_Unauthorized_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Произошла непредвиденная ошибка при сохранении настроек:\n{0}.
+        /// </summary>
+        public static string Error_SaveSettings_Unexpected_Format {
+            get {
+                return ResourceManager.GetString("Error_SaveSettings_Unexpected_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Непредвиденная ошибка при инициализации игры:\n{0}.
+        /// </summary>
+        public static string Error_UnexpectedInitializationFailed_Format {
+            get {
+                return ResourceManager.GetString("Error_UnexpectedInitializationFailed_Format", resourceCulture);
             }
         }
         

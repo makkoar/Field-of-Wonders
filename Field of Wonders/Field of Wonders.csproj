@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <Folder Include="ViewModels\" />
-    <Folder Include="Services\" />
     <Folder Include="Helpers\" />
   </ItemGroup>
 
@@ -30,26 +29,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Localization\Lang.hi.resx">
-      <LastGenOutput>Lang.hi.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Localization\Lang.ar.resx">
-      <LastGenOutput>Lang.ar.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Localization\Lang.ko.resx">
-      <LastGenOutput>Lang.ko.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Localization\Lang.ja.resx">
-      <LastGenOutput>Lang.ja.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Localization\Lang.zh-Hans.resx">
-      <LastGenOutput>Lang.zh-Hans.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Localization\Lang.pt.resx">
       <LastGenOutput>Lang.pt.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,7 +54,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Localization\Lang.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Lang.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

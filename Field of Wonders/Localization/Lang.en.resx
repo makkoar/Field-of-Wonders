@@ -118,19 +118,67 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Error_AnswerCannotBeEmpty" xml:space="preserve">
-    <value>Answer cannot be null or whitespace.</value>
+    <value>Answer cannot be empty.</value>
+  </data>
+  <data name="Error_ApplyCulture_NotFound_Format" xml:space="preserve">
+    <value>Selected language '{0}' not found ({1}).\nDefault language will be used.</value>
+  </data>
+  <data name="Error_ApplyCulture_Title" xml:space="preserve">
+    <value>Error Setting Language</value>
+  </data>
+  <data name="Error_ApplyCulture_Unexpected_Format" xml:space="preserve">
+    <value>An unexpected error occurred while setting the language:\n{0}</value>
+  </data>
+  <data name="Error_Critical_CannotSetAnyLanguage" xml:space="preserve">
+    <value>Critical Error: Failed to set any of the available languages. The application will close.</value>
+  </data>
+  <data name="Error_Critical_NoLanguagesFound" xml:space="preserve">
+    <value>Failed to detect supported languages. The application will close.</value>
   </data>
   <data name="Error_Critical_Title" xml:space="preserve">
     <value>Critical Error</value>
   </data>
-  <data name="Error_DataInitializationFailed_Prefix" xml:space="preserve">
-    <value>Data error during game initialization:</value>
+  <data name="Error_DataInitializationFailed_Format" xml:space="preserve">
+    <value>Error initializing game data:\n{0}</value>
+  </data>
+  <data name="Error_DiscoverLanguages_Failed_Format" xml:space="preserve">
+    <value>An error occurred during automatic language detection:\n{0}\n\nThe default language will be used.</value>
+  </data>
+  <data name="Error_DiscoverLanguages_Title" xml:space="preserve">
+    <value>Error Discovering Languages</value>
+  </data>
+  <data name="Error_LoadSettings_IOException_Format" xml:space="preserve">
+    <value>Error reading settings file '{0}':\n{1}\n\nPlease check access permissions to the application folder.</value>
+  </data>
+  <data name="Error_LoadSettings_ReadFailed_Format" xml:space="preserve">
+    <value>Error reading settings file '{0}':\n{1}\n\nThe file will be deleted. Language selection will be required on next launch.</value>
+  </data>
+  <data name="Error_LoadSettings_Title" xml:space="preserve">
+    <value>Error Loading Settings</value>
+  </data>
+  <data name="Error_LoadSettings_Unexpected_Format" xml:space="preserve">
+    <value>Unexpected error loading settings from '{0}':\n{1}\n\nThe file will be deleted. Language selection will be required on next launch.</value>
   </data>
   <data name="Error_QuestionCannotBeEmpty" xml:space="preserve">
-    <value>Question cannot be null or whitespace.</value>
+    <value>Question cannot be empty.</value>
   </data>
-  <data name="Error_UnexpectedInitializationFailed_Prefix" xml:space="preserve">
-    <value>An unexpected error occurred while starting the game:</value>
+  <data name="Error_SaveSettings_DirectoryNotFound_Format" xml:space="preserve">
+    <value>Failed to save settings.\nCould not determine the directory for the settings file: {0}</value>
+  </data>
+  <data name="Error_SaveSettings_IOException_Format" xml:space="preserve">
+    <value>An error occurred while writing the settings file '{0}':\n{1}</value>
+  </data>
+  <data name="Error_SaveSettings_Title" xml:space="preserve">
+    <value>Error Saving Settings</value>
+  </data>
+  <data name="Error_SaveSettings_Unauthorized_Format" xml:space="preserve">
+    <value>Failed to save settings.\nAccess denied to file:\n{0}\n\nPlease check write permissions.</value>
+  </data>
+  <data name="Error_SaveSettings_Unexpected_Format" xml:space="preserve">
+    <value>An unexpected error occurred while saving settings:\n{0}</value>
+  </data>
+  <data name="Error_UnexpectedInitializationFailed_Format" xml:space="preserve">
+    <value>Unexpected error during game initialization:\n{0}</value>
   </data>
   <data name="MainWindow_Title" xml:space="preserve">
     <value>Field of Wonders</value>

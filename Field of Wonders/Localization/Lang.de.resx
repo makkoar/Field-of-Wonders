@@ -118,22 +118,70 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Error_AnswerCannotBeEmpty" xml:space="preserve">
-    <value>Die Antwort darf nicht leer sein oder nur aus Leerzeichen bestehen.</value>
+    <value>Die Antwort darf nicht leer sein.</value>
+  </data>
+  <data name="Error_ApplyCulture_NotFound_Format" xml:space="preserve">
+    <value>Ausgewählte Sprache '{0}' nicht gefunden ({1}).\nStandardsprache wird verwendet.</value>
+  </data>
+  <data name="Error_ApplyCulture_Title" xml:space="preserve">
+    <value>Fehler beim Einstellen der Sprache</value>
+  </data>
+  <data name="Error_ApplyCulture_Unexpected_Format" xml:space="preserve">
+    <value>Beim Einstellen der Sprache ist ein unerwarteter Fehler aufgetreten:\n{0}</value>
+  </data>
+  <data name="Error_Critical_CannotSetAnyLanguage" xml:space="preserve">
+    <value>Kritischer Fehler: Keine der verfügbaren Sprachen konnte eingestellt werden. Die Anwendung wird geschlossen.</value>
+  </data>
+  <data name="Error_Critical_NoLanguagesFound" xml:space="preserve">
+    <value>Unterstützte Sprachen konnten nicht erkannt werden. Die Anwendung wird geschlossen.</value>
   </data>
   <data name="Error_Critical_Title" xml:space="preserve">
     <value>Kritischer Fehler</value>
   </data>
-  <data name="Error_DataInitializationFailed_Prefix" xml:space="preserve">
-    <value>Datenfehler bei der Spielinitialisierung:</value>
+  <data name="Error_DataInitializationFailed_Format" xml:space="preserve">
+    <value>Fehler bei der Initialisierung der Spieldaten:\n{0}</value>
+  </data>
+  <data name="Error_DiscoverLanguages_Failed_Format" xml:space="preserve">
+    <value>Bei der automatischen Spracherkennung ist ein Fehler aufgetreten:\n{0}\n\nEs wird die Standardsprache verwendet.</value>
+  </data>
+  <data name="Error_DiscoverLanguages_Title" xml:space="preserve">
+    <value>Fehler bei der Spracherkennung</value>
+  </data>
+  <data name="Error_LoadSettings_IOException_Format" xml:space="preserve">
+    <value>Fehler beim Lesen der Einstellungsdatei '{0}':\n{1}\n\nÜberprüfen Sie die Zugriffsberechtigungen für den Anwendungsordner.</value>
+  </data>
+  <data name="Error_LoadSettings_ReadFailed_Format" xml:space="preserve">
+    <value>Fehler beim Lesen der Einstellungsdatei '{0}':\n{1}\n\nDie Datei wird gelöscht. Beim nächsten Start muss die Sprache ausgewählt werden.</value>
+  </data>
+  <data name="Error_LoadSettings_Title" xml:space="preserve">
+    <value>Fehler beim Laden der Einstellungen</value>
+  </data>
+  <data name="Error_LoadSettings_Unexpected_Format" xml:space="preserve">
+    <value>Unerwarteter Fehler beim Laden der Einstellungen aus '{0}':\n{1}\n\nDie Datei wird gelöscht. Beim nächsten Start muss die Sprache ausgewählt werden.</value>
   </data>
   <data name="Error_QuestionCannotBeEmpty" xml:space="preserve">
-    <value>Die Frage darf nicht leer sein oder nur aus Leerzeichen bestehen.</value>
+    <value>Die Frage darf nicht leer sein.</value>
     <comment>Текст ошибки, генерируемой конструктором Puzzle, когда переданный вопрос является null, пустой строкой или строкой, содержащей только пробельные символы. Используется для проверки входных данных.</comment>
   </data>
-  <data name="Error_UnexpectedInitializationFailed_Prefix" xml:space="preserve">
-    <value>Beim Starten des Spiels ist ein unerwarteter Fehler aufgetreten:</value>
+  <data name="Error_SaveSettings_DirectoryNotFound_Format" xml:space="preserve">
+    <value>Speichern der Einstellungen fehlgeschlagen.\nDas Verzeichnis für die Einstellungsdatei konnte nicht ermittelt werden: {0}</value>
+  </data>
+  <data name="Error_SaveSettings_IOException_Format" xml:space="preserve">
+    <value>Beim Schreiben der Einstellungsdatei '{0}' ist ein Fehler aufgetreten:\n{1}</value>
+  </data>
+  <data name="Error_SaveSettings_Title" xml:space="preserve">
+    <value>Fehler beim Speichern der Einstellungen</value>
+  </data>
+  <data name="Error_SaveSettings_Unauthorized_Format" xml:space="preserve">
+    <value>Speichern der Einstellungen fehlgeschlagen.\nZugriff auf Datei verweigert:\n{0}\n\nBitte überprüfen Sie die Schreibberechtigungen.</value>
+  </data>
+  <data name="Error_SaveSettings_Unexpected_Format" xml:space="preserve">
+    <value>Beim Speichern der Einstellungen ist ein unerwarteter Fehler aufgetreten:\n{0}</value>
+  </data>
+  <data name="Error_UnexpectedInitializationFailed_Format" xml:space="preserve">
+    <value>Unerwarteter Fehler bei der Spielinitialisierung:\n{0}</value>
   </data>
   <data name="MainWindow_Title" xml:space="preserve">
-    <value>Feld der Wunder</value>
+    <value>Glücksrad (Feld der Wunder)</value>
   </data>
 </root>
