@@ -1,4 +1,6 @@
-﻿<Window x:Class="Field_of_Wonders.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+﻿<Window x:Class="Field_of_Wonders.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:lang="clr-namespace:Field_of_Wonders.Localization"
         Title="{x:Static lang:Lang.MainWindow_Title}"
         WindowStartupLocation="CenterScreen"

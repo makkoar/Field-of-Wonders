@@ -1,26 +1,24 @@
 ﻿namespace Field_of_Wonders.Views;
 
-/// <summary>Окно для выбора языка при первом запуске.</summary>
+/// <summary>Окно для выбора языка приложения. Использует статичные строки, не зависящие от текущей локализации.</summary>
 public partial class LanguageSelectionWindow : Window
 {
-    /// <summary>Получает выбранный пользователем язык.</summary>
+    /// <summary>Получает информацию о языке, выбранном пользователем.</summary>
     public LanguageInfo? SelectedLanguage { get; private set; }
 
     /// <summary>Инициализирует новый экземпляр окна <see cref="LanguageSelectionWindow"/>.</summary>
-    /// <param name="supportedLanguages">Список поддерживаемых языков для отображения в выпадающем списке.</param>
+    /// <param name="supportedLanguages">Коллекция поддерживаемых языков для отображения в выпадающем списке.</param>
     public LanguageSelectionWindow(IEnumerable<LanguageInfo> supportedLanguages)
     {
         InitializeComponent();
 
         LanguageComboBox.ItemsSource = supportedLanguages;
-        // LanguageComboBox.DisplayMemberPath больше не нужен, если используется ItemTemplate
-        LanguageComboBox.SelectedIndex = 0; // Выбираем первый язык по умолчанию
-
-        // Заголовок, текст и кнопка теперь заданы статически в XAML,
-        // нет необходимости устанавливать их из ресурсов Lang.
+        LanguageComboBox.SelectedIndex = 0;
     }
 
-    /// <summary>Обработчик нажатия кнопки OK. Сохраняет выбор и закрывает окно.</summary>
+    /// <summary>Обрабатывает нажатие кнопки "OK". Сохраняет выбранный язык в свойство <see cref="SelectedLanguage"/> и закрывает окно с результатом <c>true</c>.</summary>
+    /// <param name="sender">Источник события.</param>
+    /// <param name="e">Аргументы события.</param>
     private void OkButton_Click(object sender, RoutedEventArgs e)
     {
         SelectedLanguage = LanguageComboBox.SelectedItem as LanguageInfo;
