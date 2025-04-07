@@ -70,11 +70,38 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Критическая ошибка.
+        /// </summary>
+        internal static string Error_Critical_Title {
+            get {
+                return ResourceManager.GetString("Error_Critical_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка данных для инициализации игры:.
+        /// </summary>
+        internal static string Error_DataInitializationFailed_Prefix {
+            get {
+                return ResourceManager.GetString("Error_DataInitializationFailed_Prefix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Вопрос не может быть пустым или состоять из пробелов..
         /// </summary>
         internal static string Error_QuestionCannotBeEmpty {
             get {
                 return ResourceManager.GetString("Error_QuestionCannotBeEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Произошла непредвиденная ошибка при запуске игры:.
+        /// </summary>
+        internal static string Error_UnexpectedInitializationFailed_Prefix {
+            get {
+                return ResourceManager.GetString("Error_UnexpectedInitializationFailed_Prefix", resourceCulture);
             }
         }
     }

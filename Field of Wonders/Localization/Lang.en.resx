@@ -120,7 +120,16 @@
   <data name="Error_AnswerCannotBeEmpty" xml:space="preserve">
     <value>Answer cannot be null or whitespace.</value>
   </data>
+  <data name="Error_Critical_Title" xml:space="preserve">
+    <value>Critical Error</value>
+  </data>
+  <data name="Error_DataInitializationFailed_Prefix" xml:space="preserve">
+    <value>Data error during game initialization:</value>
+  </data>
   <data name="Error_QuestionCannotBeEmpty" xml:space="preserve">
     <value>Question cannot be null or whitespace.</value>
+  </data>
+  <data name="Error_UnexpectedInitializationFailed_Prefix" xml:space="preserve">
+    <value>An unexpected error occurred while starting the game:</value>
   </data>
 </root>

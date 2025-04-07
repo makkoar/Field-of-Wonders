@@ -120,8 +120,17 @@
   <data name="Error_AnswerCannotBeEmpty" xml:space="preserve">
     <value>答案不能为空或仅包含空白字符。</value>
   </data>
+  <data name="Error_Critical_Title" xml:space="preserve">
+    <value>严重错误</value>
+  </data>
+  <data name="Error_DataInitializationFailed_Prefix" xml:space="preserve">
+    <value>游戏初始化期间数据错误：</value>
+  </data>
   <data name="Error_QuestionCannotBeEmpty" xml:space="preserve">
     <value>问题不能为空或仅包含空白字符。</value>
     <comment>Текст ошибки, генерируемой конструктором Puzzle, когда переданный вопрос является null, пустой строкой или строкой, содержащей только пробельные символы. Используется для проверки входных данных.</comment>
+  </data>
+  <data name="Error_UnexpectedInitializationFailed_Prefix" xml:space="preserve">
+    <value>启动游戏时发生意外错误：</value>
   </data>
 </root>

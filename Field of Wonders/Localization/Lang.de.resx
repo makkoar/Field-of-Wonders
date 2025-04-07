@@ -120,8 +120,17 @@
   <data name="Error_AnswerCannotBeEmpty" xml:space="preserve">
     <value>Die Antwort darf nicht leer sein oder nur aus Leerzeichen bestehen.</value>
   </data>
+  <data name="Error_Critical_Title" xml:space="preserve">
+    <value>Kritischer Fehler</value>
+  </data>
+  <data name="Error_DataInitializationFailed_Prefix" xml:space="preserve">
+    <value>Datenfehler bei der Spielinitialisierung:</value>
+  </data>
   <data name="Error_QuestionCannotBeEmpty" xml:space="preserve">
     <value>Die Frage darf nicht leer sein oder nur aus Leerzeichen bestehen.</value>
     <comment>Текст ошибки, генерируемой конструктором Puzzle, когда переданный вопрос является null, пустой строкой или строкой, содержащей только пробельные символы. Используется для проверки входных данных.</comment>
+  </data>
+  <data name="Error_UnexpectedInitializationFailed_Prefix" xml:space="preserve">
+    <value>Beim Starten des Spiels ist ein unerwarteter Fehler aufgetreten:</value>
   </data>
 </root>

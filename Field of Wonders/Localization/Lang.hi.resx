@@ -120,8 +120,17 @@
   <data name="Error_AnswerCannotBeEmpty" xml:space="preserve">
     <value>उत्तर रिक्त या केवल व्हाइटस्पेस वर्णों से युक्त नहीं हो सकता।</value>
   </data>
+  <data name="Error_Critical_Title" xml:space="preserve">
+    <value>गंभीर त्रुटि</value>
+  </data>
+  <data name="Error_DataInitializationFailed_Prefix" xml:space="preserve">
+    <value>गेम आरंभीकरण के दौरान डेटा त्रुटि:</value>
+  </data>
   <data name="Error_QuestionCannotBeEmpty" xml:space="preserve">
     <value>प्रश्न रिक्त या केवल व्हाइटस्पेस वर्णों से युक्त नहीं हो सकता।</value>
     <comment>Текст ошибки, генерируемой конструктором Puzzle, когда переданный вопрос является null, пустой строкой или строкой, содержащей только пробельные символы. Используется для проверки входных данных.</comment>
+  </data>
+  <data name="Error_UnexpectedInitializationFailed_Prefix" xml:space="preserve">
+    <value>गेम शुरू करते समय एक अप्रत्याशित त्रुटि हुई:</value>
   </data>
 </root>

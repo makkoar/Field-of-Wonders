@@ -120,8 +120,17 @@
   <data name="Error_AnswerCannotBeEmpty" xml:space="preserve">
     <value>لا يمكن أن تكون الإجابة فارغة أو تتكون من مسافات بيضاء فقط.</value>
   </data>
+  <data name="Error_Critical_Title" xml:space="preserve">
+    <value>خطأ فادح</value>
+  </data>
+  <data name="Error_DataInitializationFailed_Prefix" xml:space="preserve">
+    <value>خطأ في البيانات أثناء تهيئة اللعبة:</value>
+  </data>
   <data name="Error_QuestionCannotBeEmpty" xml:space="preserve">
     <value> لا يمكن أن يكون السؤال فارغًا أو يتكون من مسافات بيضاء فقط</value>
     <comment>Текст ошибки, генерируемой конструктором Puzzle, когда переданный вопрос является null, пустой строкой или строкой, содержащей только пробельные символы. Используется для проверки входных данных.</comment>
+  </data>
+  <data name="Error_UnexpectedInitializationFailed_Prefix" xml:space="preserve">
+    <value>حدث خطأ غير متوقع أثناء بدء اللعبة:</value>
   </data>
 </root>

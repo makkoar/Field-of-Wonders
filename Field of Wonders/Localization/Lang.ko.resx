@@ -120,8 +120,17 @@
   <data name="Error_AnswerCannotBeEmpty" xml:space="preserve">
     <value>답변은 비어 있거나 공백 문자로만 구성될 수 없습니다.</value>
   </data>
+  <data name="Error_Critical_Title" xml:space="preserve">
+    <value>심각한 오류</value>
+  </data>
+  <data name="Error_DataInitializationFailed_Prefix" xml:space="preserve">
+    <value>게임 초기화 중 데이터 오류:</value>
+  </data>
   <data name="Error_QuestionCannotBeEmpty" xml:space="preserve">
     <value>질문은 비어 있거나 공백 문자로만 구성될 수 없습니다.</value>
     <comment>Текст ошибки, генерируемой конструктором Puzzle, когда переданный вопрос является null, пустой строкой или строкой, содержащей только пробельные символы. Используется для проверки входных данных.</comment>
+  </data>
+  <data name="Error_UnexpectedInitializationFailed_Prefix" xml:space="preserve">
+    <value>게임 시작 중 예기치 않은 오류가 발생했습니다:</value>
   </data>
 </root>

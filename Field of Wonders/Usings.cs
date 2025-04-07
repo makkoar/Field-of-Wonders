@@ -1,7 +1,11 @@
-﻿global using Field_of_Wonders.Models;
+﻿global using Field_of_Wonders.Localization;
+global using Field_of_Wonders.MessagePackModels;
+global using Field_of_Wonders.Models;
 global using Field_of_Wonders.Views;
 global using MessagePack;
 global using System;
 global using System.Globalization;
 global using System.IO;
+global using System.Reflection;
+global using System.Resources;
 global using System.Windows;

@@ -1,6 +1,4 @@
-﻿using Field_of_Wonders.Localization;
-
-namespace Field_of_Wonders.Models;
+﻿namespace Field_of_Wonders.Models;
 
 /// <summary>Представляет загадку (слово и вопрос) в игре "Поле Чудес". Хранит состояние отгадываемого слова и управляет процессом его открытия.</summary>
 public class Puzzle
@@ -17,7 +15,7 @@ public class Puzzle
     /// <summary>Получает текст вопроса или подсказки для загаданного слова.</summary>
     public string Question { get; }
 
-    /// <summary>Получает загаданное слово (в верхнем регистре для согласованности). Используется для проверки, но не отображается игроку напрямую.</summary>
+    /// <summary>Получает загаданное слово (в верхнем регистре для согласованности).</summary>
     public string Answer { get; }
 
     /// <summary>Получает категорию или тему загаданного слова (опционально).</summary>
@@ -27,7 +25,7 @@ public class Puzzle
 
     #region Приватные поля
 
-    /// <summary>Массив символов, представляющий текущее видимое состояние слова. Неотгаданные буквы представлены символом-заполнителем <see cref="Placeholder"/>.</summary>
+    /// <summary>Массив символов, представляющий текущее видимое состояние слова.</summary>
     private readonly char[] _revealedLetters;
 
     #endregion
@@ -38,25 +36,21 @@ public class Puzzle
     /// <param name="question">Текст вопроса или подсказки.</param>
     /// <param name="answer">Загаданное слово.</param>
     /// <param name="category">Категория слова (необязательно).</param>
-    /// <exception cref="ArgumentNullException">Генерируется, если <paramref name="question"/> или <paramref name="answer"/> равны null.</exception>
-    /// <exception cref="ArgumentException">Генерируется, если <paramref name="answer"/> или <paramref name="question"/> являются пустой строкой или строкой из пробельных символов.</exception>
+    /// <exception cref="ArgumentException">Генерируется, если <paramref name="question"/> или <paramref name="answer"/> являются пустой строкой или строкой из пробельных символов.</exception>
     public Puzzle(string question, string answer, string category = "")
     {
-        // Проверка входных данных
         if (string.IsNullOrWhiteSpace(question))
             throw new ArgumentException(Lang.Error_QuestionCannotBeEmpty, nameof(question));
         if (string.IsNullOrWhiteSpace(answer))
             throw new ArgumentException(Lang.Error_AnswerCannotBeEmpty, nameof(answer));
-            
-        Question = question;
-        Answer = answer.ToUpperInvariant(); // Сразу приводим ответ к верхнему регистру
-        Category = category ?? string.Empty; // Убедимся, что Category не null
 
-        // Инициализация массива для отображения букв
+        Question = question;
+        Answer = answer.ToUpperInvariant();
+        Category = category ?? string.Empty;
+
         _revealedLetters = new char[Answer.Length];
         for (int i = 0; i < Answer.Length; i++)
         {
-            // Сразу открываем не-буквы
             if (!char.IsLetter(Answer[i]))
             {
                 _revealedLetters[i] = Answer[i];
@@ -72,14 +66,14 @@ public class Puzzle
 
     #region Публичные методы
 
-    /// <summary>Возвращает строку, представляющую текущее состояние отгадываемого слова, где неоткрытые буквы заменены на символ-заполнитель (<see cref="Placeholder"/>).</summary>
+    /// <summary>Возвращает строку, представляющую текущее состояние отгадываемого слова.</summary>
     /// <returns>Строка с текущим состоянием слова (например, "_ О _ Е _ _ _ Е _").</returns>
     public string GetCurrentState()
     {
         return new string(_revealedLetters);
     }
 
-    /// <summary>Проверяет наличие указанной буквы в загаданном слове и открывает ее, если она найдена. Сравнение происходит без учета регистра. Буквы, не являющиеся стандартными буквами алфавита, игнорируются.</summary>
+    /// <summary>Проверяет наличие указанной буквы в загаданном слове и открывает ее.</summary>
     /// <param name="letter">Предполагаемая буква.</param>
     /// <returns><c>true</c>, если хотя бы одна новая буква была открыта; иначе <c>false</c>.</returns>
     public bool GuessLetter(char letter)
@@ -89,7 +83,7 @@ public class Puzzle
 
         if (!char.IsLetter(upperLetter))
         {
-            return false; // Игнорируем не-буквы
+            return false;
         }
 
         for (int i = 0; i < Answer.Length; i++)
@@ -103,7 +97,7 @@ public class Puzzle
         return letterFound;
     }
 
-    /// <summary>Проверяет, полностью ли отгадано слово (все ли буквы открыты).</summary>
+    /// <summary>Проверяет, полностью ли отгадано слово.</summary>
     /// <returns><c>true</c>, если все буквы в слове открыты; иначе <c>false</c>.</returns>
     public bool IsSolved()
     {
@@ -111,13 +105,13 @@ public class Puzzle
         {
             if (char.IsLetter(Answer[i]) && _revealedLetters[i] == Placeholder)
             {
-                return false; // Нашли неоткрытую букву
+                return false;
             }
         }
-        return true; // Неоткрытых букв не найдено
+        return true;
     }
 
-    /// <summary>Проверяет, совпадает ли предложенное слово с загаданным словом. Сравнение происходит без учета регистра.</summary>
+    /// <summary>Проверяет, совпадает ли предложенное слово с загаданным словом (без учета регистра).</summary>
     /// <param name="word">Предполагаемое слово целиком.</param>
     /// <returns><c>true</c>, если слова совпадают; иначе <c>false</c>.</returns>
     public bool GuessWord(string word)
@@ -126,13 +120,12 @@ public class Puzzle
         {
             return false;
         }
-        return Answer.Equals(word.ToUpperInvariant(), StringComparison.OrdinalIgnoreCase);
+        return Answer.Equals(word.Trim(), StringComparison.OrdinalIgnoreCase);
     }
 
-    /// <summary>Открывает все буквы в слове. Может использоваться, например, при неправильном угадывании слова целиком или для отображения ответа в конце раунда.</summary>
+    /// <summary>Открывает все буквы в слове.</summary>
     public void RevealAll()
     {
-        // Копируем символы из строки Answer в массив _revealedLetters
         Array.Copy(Answer.ToCharArray(), _revealedLetters, Answer.Length);
     }
 

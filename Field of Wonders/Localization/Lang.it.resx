@@ -120,8 +120,17 @@
   <data name="Error_AnswerCannotBeEmpty" xml:space="preserve">
     <value>La risposta non può essere vuota o composta da spazi bianchi.</value>
   </data>
+  <data name="Error_Critical_Title" xml:space="preserve">
+    <value>Errore critico</value>
+  </data>
+  <data name="Error_DataInitializationFailed_Prefix" xml:space="preserve">
+    <value>Errore nei dati durante l'inizializzazione del gioco:</value>
+  </data>
   <data name="Error_QuestionCannotBeEmpty" xml:space="preserve">
     <value>La domanda non può essere vuota o composta da spazi bianchi.</value>
     <comment>Текст ошибки, генерируемой конструктором Puzzle, когда переданный вопрос является null, пустой строкой или строкой, содержащей только пробельные символы. Используется для проверки входных данных.</comment>
+  </data>
+  <data name="Error_UnexpectedInitializationFailed_Prefix" xml:space="preserve">
+    <value>Si è verificato un errore imprevisto durante l'avvio del gioco:</value>
   </data>
 </root>

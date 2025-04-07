@@ -120,8 +120,17 @@
   <data name="Error_AnswerCannotBeEmpty" xml:space="preserve">
     <value>La réponse ne peut pas être vide ou composée d'espaces blancs.</value>
   </data>
+  <data name="Error_Critical_Title" xml:space="preserve">
+    <value>Erreur critique</value>
+  </data>
+  <data name="Error_DataInitializationFailed_Prefix" xml:space="preserve">
+    <value>Erreur de données lors de l'initialisation du jeu :</value>
+  </data>
   <data name="Error_QuestionCannotBeEmpty" xml:space="preserve">
     <value>La question ne peut pas être vide ou composée d'espaces blancs.</value>
     <comment>Текст ошибки, генерируемой конструктором Puzzle, когда переданный вопрос является null, пустой строкой или строкой, содержащей только пробельные символы. Используется для проверки входных данных.</comment>
+  </data>
+  <data name="Error_UnexpectedInitializationFailed_Prefix" xml:space="preserve">
+    <value>Une erreur inattendue s'est produite lors du démarrage du jeu :</value>
   </data>
 </root>
