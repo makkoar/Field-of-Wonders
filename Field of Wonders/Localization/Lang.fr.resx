@@ -133,4 +133,7 @@
   <data name="Error_UnexpectedInitializationFailed_Prefix" xml:space="preserve">
     <value>Une erreur inattendue s'est produite lors du démarrage du jeu :</value>
   </data>
+  <data name="MainWindow_Title" xml:space="preserve">
+    <value>Champ des Merveilles</value>
+  </data>
 </root>

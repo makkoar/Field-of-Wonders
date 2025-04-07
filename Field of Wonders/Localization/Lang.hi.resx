@@ -133,4 +133,7 @@
   <data name="Error_UnexpectedInitializationFailed_Prefix" xml:space="preserve">
     <value>गेम शुरू करते समय एक अप्रत्याशित त्रुटि हुई:</value>
   </data>
+  <data name="MainWindow_Title" xml:space="preserve">
+    <value>अजूबों का मैदान</value>
+  </data>
 </root>

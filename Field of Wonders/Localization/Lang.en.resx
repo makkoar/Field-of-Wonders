@@ -132,4 +132,7 @@
   <data name="Error_UnexpectedInitializationFailed_Prefix" xml:space="preserve">
     <value>An unexpected error occurred while starting the game:</value>
   </data>
+  <data name="MainWindow_Title" xml:space="preserve">
+    <value>Field of Wonders</value>
+  </data>
 </root>

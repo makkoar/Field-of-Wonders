@@ -133,4 +133,7 @@
   <data name="Error_UnexpectedInitializationFailed_Prefix" xml:space="preserve">
     <value>Si è verificato un errore imprevisto durante l'avvio del gioco:</value>
   </data>
+  <data name="MainWindow_Title" xml:space="preserve">
+    <value>Campo delle Meraviglie</value>
+  </data>
 </root>

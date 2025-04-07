@@ -8,7 +8,7 @@ public partial class App : Application
 {
     // --- Настройки ---
     /// <summary>Имя файла для сохранения настроек приложения.</summary>
-    private const string SettingsFileName = "settings.msgpack";
+    private const string SettingsFileName = "Settings.msgpack";
     /// <summary>Полный путь к файлу настроек приложения.</summary>
     private static readonly string SettingsFilePath = Path.Combine(AppContext.BaseDirectory, SettingsFileName);
 

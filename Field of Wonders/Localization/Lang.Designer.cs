@@ -22,7 +22,7 @@ namespace Field_of_Wonders.Localization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Lang {
+    public class Lang {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -102,6 +102,15 @@ namespace Field_of_Wonders.Localization {
         internal static string Error_UnexpectedInitializationFailed_Prefix {
             get {
                 return ResourceManager.GetString("Error_UnexpectedInitializationFailed_Prefix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Поле Чудес.
+        /// </summary>
+        public static string MainWindow_Title {
+            get {
+                return ResourceManager.GetString("MainWindow_Title", resourceCulture);
             }
         }
     }

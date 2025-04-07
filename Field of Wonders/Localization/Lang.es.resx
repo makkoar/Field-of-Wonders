@@ -133,4 +133,7 @@
   <data name="Error_UnexpectedInitializationFailed_Prefix" xml:space="preserve">
     <value>Se produjo un error inesperado al iniciar el juego:</value>
   </data>
+  <data name="MainWindow_Title" xml:space="preserve">
+    <value>Campo de los Milagros</value>
+  </data>
 </root>

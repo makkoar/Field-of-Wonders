@@ -133,4 +133,7 @@
   <data name="Error_UnexpectedInitializationFailed_Prefix" xml:space="preserve">
     <value>启动游戏时发生意外错误：</value>
   </data>
+  <data name="MainWindow_Title" xml:space="preserve">
+    <value>奇迹之地</value>
+  </data>
 </root>

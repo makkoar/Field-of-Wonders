@@ -133,4 +133,7 @@
   <data name="Error_UnexpectedInitializationFailed_Prefix" xml:space="preserve">
     <value>حدث خطأ غير متوقع أثناء بدء اللعبة:</value>
   </data>
+  <data name="MainWindow_Title" xml:space="preserve">
+    <value>حقل العجائب</value>
+  </data>
 </root>
