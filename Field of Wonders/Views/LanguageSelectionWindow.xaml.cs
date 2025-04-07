@@ -16,9 +16,8 @@ public partial class LanguageSelectionWindow : Window
         // LanguageComboBox.DisplayMemberPath больше не нужен, если используется ItemTemplate
         LanguageComboBox.SelectedIndex = 0; // Выбираем первый язык по умолчанию
 
-        // Можно установить Title и Label из ресурсов, если они уже настроены для дефолтного языка
-        // Title = Lang.LanguageSelection_Title; // Пример
-        // LabelSelect.Content = Lang.LanguageSelection_Prompt; // Пример
+        // Заголовок, текст и кнопка теперь заданы статически в XAML,
+        // нет необходимости устанавливать их из ресурсов Lang.
     }
 
     /// <summary>Обработчик нажатия кнопки OK. Сохраняет выбор и закрывает окно.</summary>
