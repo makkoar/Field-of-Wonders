@@ -147,6 +147,9 @@
   <data name="Error_DiscoverLanguages_Title" xml:space="preserve">
     <value>Erreur de détection des langues</value>
   </data>
+  <data name="Error_DispatcherUnhandledException_Format" xml:space="preserve">
+    <value>Exception UI non g?r?e : {0}</value>
+  </data>
   <data name="Error_LoadSettings_IOException_Format" xml:space="preserve">
     <value>Erreur lors de la lecture du fichier de paramètres '{0}':\n{1}\n\nVeuillez vérifier les autorisations d'accès au dossier de l'application.</value>
   </data>
@@ -181,11 +184,131 @@
   <data name="Error_UnexpectedInitializationFailed_Format" xml:space="preserve">
     <value>Erreur inattendue lors de l'initialisation du jeu :\n{0}</value>
   </data>
+  <data name="Error_UnhandledException_Format" xml:space="preserve">
+    <value>Exception non g?r?e : {0}</value>
+  </data>
+  <data name="Error_UnhandledException_NoExceptionObject" xml:space="preserve">
+    <value>Erreur critique. Exception non g?r?e, d?tails non disponibles.</value>
+  </data>
+  <data name="Log_AddedCultureToList" xml:space="preserve">
+    <value>Culture « {0} » ajout?e ? la liste.</value>
+  </data>
+  <data name="Log_AddedFallbackLanguage" xml:space="preserve">
+    <value>Langue de secours ajout?e : {0}.</value>
+  </data>
+  <data name="Log_AddedHardcodedFallback" xml:space="preserve">
+    <value>Impossible d'ajouter une langue de secours autre que ru-RU cod? en dur.</value>
+  </data>
+  <data name="Log_AppCurrentNull" xml:space="preserve">
+    <value>Application.Current ?tait nul. Impossible d'effectuer un arr?t normal.</value>
+  </data>
+  <data name="Log_AppExiting" xml:space="preserve">
+    <value>L'application se termine avec le code {0}.</value>
+  </data>
+  <data name="Log_ApplyingCulture_Attempt" xml:space="preserve">
+    <value>Tentative d'application de la culture : {0}</value>
+  </data>
+  <data name="Log_ApplyingCulture_Failed" xml:space="preserve">
+    <value>Une erreur inattendue s'est produite lors de l'application de la culture {0}.</value>
+  </data>
+  <data name="Log_ApplyingCulture_Fallback" xml:space="preserve">
+    <value>Impossible d'appliquer la culture s?lectionn?e/enregistr?e : {0}. Tentative de secours.</value>
+  </data>
+  <data name="Log_ApplyingCulture_FallbackSuccess" xml:space="preserve">
+    <value>Culture de secours appliqu?e avec succ?s : {0}.</value>
+  </data>
+  <data name="Log_ApplyingCulture_NotFound" xml:space="preserve">
+    <value>Culture « {0} » introuvable. Impossible d'appliquer.</value>
+  </data>
+  <data name="Log_ApplyingCulture_Success" xml:space="preserve">
+    <value>Culture {0} appliqu?e avec succ?s au thread actuel.</value>
+  </data>
   <data name="Log_AppStarting" xml:space="preserve">
     <value>Démarrage de l'application. Service de journalisation initialisé.</value>
   </data>
+  <data name="Log_AppStarting1" xml:space="preserve">
+    <value>D?marrage de l'application. Service de journalisation initialis?.</value>
+  </data>
+  <data name="Log_BaseDirectoryNotExist" xml:space="preserve">
+    <value>Le r?pertoire de base « {0} » n'existe pas. Impossible de rechercher des assemblys satellites.</value>
+  </data>
+  <data name="Log_CriticalError" xml:space="preserve">
+    <value>Erreur critique : {0}</value>
+  </data>
+  <data name="Log_CultureAddNotFound" xml:space="preserve">
+    <value>Tentative d'ajout de la culture « {0} », mais elle n'a pas ?t? trouv?e.</value>
+  </data>
+  <data name="Log_CultureInvalid" xml:space="preserve">
+    <value>Le code de culture « {0} » n'est pas valide.</value>
+  </data>
+  <data name="Log_DiscoveringLanguages" xml:space="preserve">
+    <value>D?tection des langues prises en charge...</value>
+  </data>
+  <data name="Log_DiscoveryFailed" xml:space="preserve">
+    <value>?chec de la d?tection des langues prises en charge.</value>
+  </data>
   <data name="Log_FlushingLogs" xml:space="preserve">
     <value>Arrêt de l'application. Vidage des journaux...</value>
+  </data>
+  <data name="Log_FlushingLogs1" xml:space="preserve">
+    <value>Arr?t de l'application. Vidage des journaux...</value>
+  </data>
+  <data name="Log_FoundLanguagesResult" xml:space="preserve">
+    <value>{0} langues prises en charge trouv?es : {1}</value>
+  </data>
+  <data name="Log_FoundNeutralLanguage" xml:space="preserve">
+    <value>Langue neutre « {0} » trouv?e ? partir de l'attribut d'assembly.</value>
+  </data>
+  <data name="Log_FoundSatelliteAssembly" xml:space="preserve">
+    <value>Assembly satellite trouv? pour la culture « {0} ».</value>
+  </data>
+  <data name="Log_InvalidCultureDirectory" xml:space="preserve">
+    <value>Le nom de r?pertoire « {0} » n'est pas un code de culture valide.</value>
+  </data>
+  <data name="Log_LanguageSelectionNeeded" xml:space="preserve">
+    <value>Aucune langue valide s?lectionn?e ou trouv?e dans les param?tres. Affichage de la fen?tre de s?lection de la langue.</value>
+  </data>
+  <data name="Log_MainWindowInitArgumentError" xml:space="preserve">
+    <value>Erreur d'initialisation critique dans MainWindow (ArgumentException) : {0}</value>
+  </data>
+  <data name="Log_MainWindowInitError" xml:space="preserve">
+    <value>Erreur d'initialisation critique dans MainWindow : {0}</value>
+  </data>
+  <data name="Log_MainWindowInitialized" xml:space="preserve">
+    <value>MainWindow initialis? avec succ?s (configuration ViewModel en attente).</value>
+  </data>
+  <data name="Log_MainWindowInitializing" xml:space="preserve">
+    <value>Initialisation de MainWindow.</value>
+  </data>
+  <data name="Log_MainWindowShutdownAttempt" xml:space="preserve">
+    <value>Tentative d'arr?t de l'application en raison d'une erreur d'initialisation critique.</value>
+  </data>
+  <data name="Log_MainWindowTempPuzzle" xml:space="preserve">
+    <value>Objet Puzzle temporaire cr?? pour les tests.</value>
+  </data>
+  <data name="Log_NoLanguagesFound_AddingFallbacks" xml:space="preserve">
+    <value>Aucune langue prise en charge trouv?e automatiquement. Tentative d'ajout de langues de secours.</value>
+  </data>
+  <data name="Log_SaveLanguageSettingFailed" xml:space="preserve">
+    <value>?chec de l'enregistrement du param?tre de langue s?lectionn?.</value>
+  </data>
+  <data name="Log_SystemCultureAddFailed" xml:space="preserve">
+    <value>Impossible d'obtenir ou d'ajouter la culture de l'interface utilisateur syst?me comme secours.</value>
+  </data>
+  <data name="Log_UnhandledExceptionAppDomain" xml:space="preserve">
+    <value>Exception non g?r?e dans AppDomain. Terminaison : {0}</value>
+  </data>
+  <data name="Log_UnhandledExceptionAppDomain_NoException" xml:space="preserve">
+    <value>Exception non g?r?e dans AppDomain, mais aucun objet exception trouv?. Terminaison : {0}</value>
+  </data>
+  <data name="Log_UnhandledExceptionDispatcher" xml:space="preserve">
+    <value>Exception non g?r?e dans Dispatcher.</value>
+  </data>
+  <data name="Log_UserClosedLanguageSelection" xml:space="preserve">
+    <value>L'utilisateur a ferm? la s?lection de la langue ou aucune s?lection n'a ?t? faite. Retour ? la premi?re langue disponible : {0}</value>
+  </data>
+  <data name="Log_UserSelectedLanguage" xml:space="preserve">
+    <value>L'utilisateur a s?lectionn? la langue : {0}</value>
   </data>
   <data name="MainWindow_Title" xml:space="preserve">
     <value>Champ des Merveilles</value>

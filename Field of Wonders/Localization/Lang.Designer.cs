@@ -151,6 +151,15 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Необработанное исключение UI: {0}.
+        /// </summary>
+        public static string Error_DispatcherUnhandledException_Format {
+            get {
+                return ResourceManager.GetString("Error_DispatcherUnhandledException_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Ошибка чтения файла настроек &apos;{0}&apos;:\n{1}\n\nПроверьте права доступа к папке приложения..
         /// </summary>
         public static string Error_LoadSettings_IOException_Format {
@@ -250,6 +259,123 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Необработанное исключение: {0}.
+        /// </summary>
+        public static string Error_UnhandledException_Format {
+            get {
+                return ResourceManager.GetString("Error_UnhandledException_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Критическая ошибка. Необработанное исключение, детали недоступны..
+        /// </summary>
+        public static string Error_UnhandledException_NoExceptionObject {
+            get {
+                return ResourceManager.GetString("Error_UnhandledException_NoExceptionObject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Культура &apos;{0}&apos; добавлена в список..
+        /// </summary>
+        public static string Log_AddedCultureToList {
+            get {
+                return ResourceManager.GetString("Log_AddedCultureToList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Добавлен резервный язык: {0}..
+        /// </summary>
+        public static string Log_AddedFallbackLanguage {
+            get {
+                return ResourceManager.GetString("Log_AddedFallbackLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Не удалось добавить резервные языки, кроме жестко заданного ru-RU..
+        /// </summary>
+        public static string Log_AddedHardcodedFallback {
+            get {
+                return ResourceManager.GetString("Log_AddedHardcodedFallback", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Application.Current был null. Невозможно выполнить корректное завершение..
+        /// </summary>
+        public static string Log_AppCurrentNull {
+            get {
+                return ResourceManager.GetString("Log_AppCurrentNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Завершение работы приложения с кодом {0}..
+        /// </summary>
+        public static string Log_AppExiting {
+            get {
+                return ResourceManager.GetString("Log_AppExiting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Попытка применения культуры: {0}.
+        /// </summary>
+        public static string Log_ApplyingCulture_Attempt {
+            get {
+                return ResourceManager.GetString("Log_ApplyingCulture_Attempt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Непредвиденная ошибка при применении культуры {0}..
+        /// </summary>
+        public static string Log_ApplyingCulture_Failed {
+            get {
+                return ResourceManager.GetString("Log_ApplyingCulture_Failed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Не удалось применить выбранную/сохраненную культуру: {0}. Попытка использовать резервную..
+        /// </summary>
+        public static string Log_ApplyingCulture_Fallback {
+            get {
+                return ResourceManager.GetString("Log_ApplyingCulture_Fallback", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Успешно применена резервная культура: {0}.
+        /// </summary>
+        public static string Log_ApplyingCulture_FallbackSuccess {
+            get {
+                return ResourceManager.GetString("Log_ApplyingCulture_FallbackSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Культура &apos;{0}&apos; не найдена. Применение невозможно..
+        /// </summary>
+        public static string Log_ApplyingCulture_NotFound {
+            get {
+                return ResourceManager.GetString("Log_ApplyingCulture_NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Культура {0} успешно применена к текущему потоку..
+        /// </summary>
+        public static string Log_ApplyingCulture_Success {
+            get {
+                return ResourceManager.GetString("Log_ApplyingCulture_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Запуск приложения. Инициализация службы логирования..
         /// </summary>
         public static string Log_AppStarting {
@@ -259,11 +385,254 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Запуск приложения. Инициализация службы логирования..
+        /// </summary>
+        public static string Log_AppStarting1 {
+            get {
+                return ResourceManager.GetString("Log_AppStarting1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Базовая директория &apos;{0}&apos; не существует. Сканирование сателлитных сборок невозможно..
+        /// </summary>
+        public static string Log_BaseDirectoryNotExist {
+            get {
+                return ResourceManager.GetString("Log_BaseDirectoryNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Критическая ошибка: {0}.
+        /// </summary>
+        public static string Log_CriticalError {
+            get {
+                return ResourceManager.GetString("Log_CriticalError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Попытка добавить культуру &apos;{0}&apos;, но она не найдена..
+        /// </summary>
+        public static string Log_CultureAddNotFound {
+            get {
+                return ResourceManager.GetString("Log_CultureAddNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Код культуры &apos;{0}&apos; недействителен..
+        /// </summary>
+        public static string Log_CultureInvalid {
+            get {
+                return ResourceManager.GetString("Log_CultureInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Обнаружение поддерживаемых языков....
+        /// </summary>
+        public static string Log_DiscoveringLanguages {
+            get {
+                return ResourceManager.GetString("Log_DiscoveringLanguages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка при обнаружении поддерживаемых языков..
+        /// </summary>
+        public static string Log_DiscoveryFailed {
+            get {
+                return ResourceManager.GetString("Log_DiscoveryFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Завершение работы приложения. Сброс буферов лога....
         /// </summary>
         public static string Log_FlushingLogs {
             get {
                 return ResourceManager.GetString("Log_FlushingLogs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Завершение работы приложения. Сброс буферов лога....
+        /// </summary>
+        public static string Log_FlushingLogs1 {
+            get {
+                return ResourceManager.GetString("Log_FlushingLogs1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Обнаружено {0} поддерживаемых языков: {1}.
+        /// </summary>
+        public static string Log_FoundLanguagesResult {
+            get {
+                return ResourceManager.GetString("Log_FoundLanguagesResult", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Обнаружен нейтральный язык &apos;{0}&apos; из атрибута сборки..
+        /// </summary>
+        public static string Log_FoundNeutralLanguage {
+            get {
+                return ResourceManager.GetString("Log_FoundNeutralLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Найдена сателлитная сборка для культуры &apos;{0}&apos;..
+        /// </summary>
+        public static string Log_FoundSatelliteAssembly {
+            get {
+                return ResourceManager.GetString("Log_FoundSatelliteAssembly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Имя директории &apos;{0}&apos; не является валидным кодом культуры..
+        /// </summary>
+        public static string Log_InvalidCultureDirectory {
+            get {
+                return ResourceManager.GetString("Log_InvalidCultureDirectory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Не выбран или не найден допустимый язык в настройках. Отображение окна выбора языка..
+        /// </summary>
+        public static string Log_LanguageSelectionNeeded {
+            get {
+                return ResourceManager.GetString("Log_LanguageSelectionNeeded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Критическая ошибка инициализации MainWindow (ArgumentException): {0}.
+        /// </summary>
+        public static string Log_MainWindowInitArgumentError {
+            get {
+                return ResourceManager.GetString("Log_MainWindowInitArgumentError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Критическая ошибка инициализации MainWindow: {0}.
+        /// </summary>
+        public static string Log_MainWindowInitError {
+            get {
+                return ResourceManager.GetString("Log_MainWindowInitError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на MainWindow успешно инициализировано (настройка ViewModel ожидается)..
+        /// </summary>
+        public static string Log_MainWindowInitialized {
+            get {
+                return ResourceManager.GetString("Log_MainWindowInitialized", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Инициализация MainWindow..
+        /// </summary>
+        public static string Log_MainWindowInitializing {
+            get {
+                return ResourceManager.GetString("Log_MainWindowInitializing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Попытка завершить работу приложения из-за критической ошибки инициализации..
+        /// </summary>
+        public static string Log_MainWindowShutdownAttempt {
+            get {
+                return ResourceManager.GetString("Log_MainWindowShutdownAttempt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Временный объект Puzzle создан для тестирования..
+        /// </summary>
+        public static string Log_MainWindowTempPuzzle {
+            get {
+                return ResourceManager.GetString("Log_MainWindowTempPuzzle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Поддерживаемые языки не найдены автоматически. Попытка добавить резервные..
+        /// </summary>
+        public static string Log_NoLanguagesFound_AddingFallbacks {
+            get {
+                return ResourceManager.GetString("Log_NoLanguagesFound_AddingFallbacks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Не удалось сохранить настройку выбранного языка..
+        /// </summary>
+        public static string Log_SaveLanguageSettingFailed {
+            get {
+                return ResourceManager.GetString("Log_SaveLanguageSettingFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Не удалось получить или добавить системную UI культуру как резервную..
+        /// </summary>
+        public static string Log_SystemCultureAddFailed {
+            get {
+                return ResourceManager.GetString("Log_SystemCultureAddFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Необработанное исключение в AppDomain. Завершение: {0}.
+        /// </summary>
+        public static string Log_UnhandledExceptionAppDomain {
+            get {
+                return ResourceManager.GetString("Log_UnhandledExceptionAppDomain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Необработанное исключение в AppDomain, объект исключения отсутствует. Завершение: {0}.
+        /// </summary>
+        public static string Log_UnhandledExceptionAppDomain_NoException {
+            get {
+                return ResourceManager.GetString("Log_UnhandledExceptionAppDomain_NoException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Необработанное исключение в Dispatcher..
+        /// </summary>
+        public static string Log_UnhandledExceptionDispatcher {
+            get {
+                return ResourceManager.GetString("Log_UnhandledExceptionDispatcher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Пользователь закрыл окно выбора языка или выбор не сделан. Используется первый доступный язык: {0}.
+        /// </summary>
+        public static string Log_UserClosedLanguageSelection {
+            get {
+                return ResourceManager.GetString("Log_UserClosedLanguageSelection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Пользователь выбрал язык: {0}.
+        /// </summary>
+        public static string Log_UserSelectedLanguage {
+            get {
+                return ResourceManager.GetString("Log_UserSelectedLanguage", resourceCulture);
             }
         }
         
