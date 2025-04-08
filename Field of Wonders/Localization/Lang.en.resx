@@ -180,6 +180,12 @@
   <data name="Error_UnexpectedInitializationFailed_Format" xml:space="preserve">
     <value>Unexpected error during game initialization:\n{0}</value>
   </data>
+  <data name="Log_AppStarting" xml:space="preserve">
+    <value>Application Starting. Logging Service Initialized.</value>
+  </data>
+  <data name="Log_FlushingLogs" xml:space="preserve">
+    <value>Application Shutting Down. Flushing logs...</value>
+  </data>
   <data name="MainWindow_Title" xml:space="preserve">
     <value>Field of Wonders</value>
   </data>

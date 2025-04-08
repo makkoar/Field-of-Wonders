@@ -181,6 +181,12 @@
   <data name="Error_UnexpectedInitializationFailed_Format" xml:space="preserve">
     <value>Erreur inattendue lors de l'initialisation du jeu :\n{0}</value>
   </data>
+  <data name="Log_AppStarting" xml:space="preserve">
+    <value>Démarrage de l'application. Service de journalisation initialisé.</value>
+  </data>
+  <data name="Log_FlushingLogs" xml:space="preserve">
+    <value>Arrêt de l'application. Vidage des journaux...</value>
+  </data>
   <data name="MainWindow_Title" xml:space="preserve">
     <value>Champ des Merveilles</value>
   </data>

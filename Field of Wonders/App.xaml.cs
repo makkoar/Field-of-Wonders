@@ -28,6 +28,8 @@ public partial class App : Application
         bool needsSelection = string.IsNullOrEmpty(selectedCultureName) ||
                               !supportedLanguages.Any(l => l.CultureCode.Equals(selectedCultureName, StringComparison.OrdinalIgnoreCase));
 
+        MainWindow mainWindow = new();
+
         if (needsSelection)
         {
             // Показываем окно выбора языка
@@ -68,7 +70,6 @@ public partial class App : Application
         }
 
         // Запускаем главное окно
-        MainWindow mainWindow = new();
         mainWindow.Show();
     }
 

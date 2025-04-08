@@ -250,6 +250,24 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Запуск приложения. Инициализация службы логирования..
+        /// </summary>
+        public static string Log_AppStarting {
+            get {
+                return ResourceManager.GetString("Log_AppStarting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Завершение работы приложения. Сброс буферов лога....
+        /// </summary>
+        public static string Log_FlushingLogs {
+            get {
+                return ResourceManager.GetString("Log_FlushingLogs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Поле Чудес.
         /// </summary>
         public static string MainWindow_Title {

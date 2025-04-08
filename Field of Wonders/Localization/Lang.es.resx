@@ -181,6 +181,12 @@
   <data name="Error_UnexpectedInitializationFailed_Format" xml:space="preserve">
     <value>Error inesperado durante la inicialización del juego:\n{0}</value>
   </data>
+  <data name="Log_AppStarting" xml:space="preserve">
+    <value>Iniciando aplicación. Servicio de registro inicializado.</value>
+  </data>
+  <data name="Log_FlushingLogs" xml:space="preserve">
+    <value>Apagando la aplicación. Vaciando registros...</value>
+  </data>
   <data name="MainWindow_Title" xml:space="preserve">
     <value>Campo de Maravillas</value>
   </data>

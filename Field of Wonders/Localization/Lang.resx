@@ -201,6 +201,14 @@
     <value>Непредвиденная ошибка при инициализации игры:\n{0}</value>
     <comment>Формат сообщения о других непредвиденных ошибках при инициализации игры. {0} - сообщение исключения Exception.</comment>
   </data>
+  <data name="Log_AppStarting" xml:space="preserve">
+    <value>Запуск приложения. Инициализация службы логирования.</value>
+    <comment>Log message (Info). Используется до применения локализации.</comment>
+  </data>
+  <data name="Log_FlushingLogs" xml:space="preserve">
+    <value>Завершение работы приложения. Сброс буферов лога...</value>
+    <comment>Log message (Info). Используется при выходе из приложения.</comment>
+  </data>
   <data name="MainWindow_Title" xml:space="preserve">
     <value>Поле Чудес</value>
     <comment>Заголовок главного окна приложения.</comment>
