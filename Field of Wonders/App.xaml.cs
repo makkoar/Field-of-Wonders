@@ -131,7 +131,7 @@ public partial class App : Application
 
     /// <summary>Отображает критическое сообщение об ошибке и логирует его как Fatal.</summary>
     /// <param name="message">Текст сообщения.</param>
-    private static void ShowAndLogCriticalError(string message)
+    internal static void ShowAndLogCriticalError(string message)
     {
         LoggingService.Logger.Fatal(Lang.Log_CriticalError, message);
         try

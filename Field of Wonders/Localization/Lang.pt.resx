@@ -282,6 +282,15 @@
   <data name="Log_LanguageSelectionNeeded" xml:space="preserve">
     <value>Nenhum idioma valido selecionado ou encontrado nas configuracoes. Mostrando janela de selecao de idioma.</value>
   </data>
+  <data name="Log_LoadSettings_IOException_Format" xml:space="preserve">
+    <value>Erro de E/S ao carregar o arquivo de configuracoes '{0}'. Detalhes: {1}</value>
+  </data>
+  <data name="Log_LoadSettings_ReadFailed_Format" xml:space="preserve">
+    <value>Erro ao ler o arquivo de configuracoes '{0}': arquivo corrompido ou formato incorreto. Detalhes: {1}</value>
+  </data>
+  <data name="Log_LoadSettings_Unexpected_Format" xml:space="preserve">
+    <value>Erro inesperado ao carregar o arquivo de configuracoes '{0}'. Detalhes: {1}</value>
+  </data>
   <data name="Log_MainWindowInitArgumentError" xml:space="preserve">
     <value>Erro critico de inicializacao na MainWindow (ArgumentException): {0}</value>
   </data>
@@ -305,6 +314,30 @@
   </data>
   <data name="Log_SaveLanguageSettingFailed" xml:space="preserve">
     <value>Falha ao salvar a configuracao de idioma selecionada.</value>
+  </data>
+  <data name="Log_SaveSettings_DirectoryNotFound_Format" xml:space="preserve">
+    <value>Falha ao salvar as configuracoes: diretorio para o arquivo '{0}' nao encontrado.</value>
+  </data>
+  <data name="Log_SaveSettings_IOException_Format" xml:space="preserve">
+    <value>Erro de E/S ao salvar o arquivo de configuracoes '{0}'. Detalhes: {1}</value>
+  </data>
+  <data name="Log_SaveSettings_Unauthorized_Format" xml:space="preserve">
+    <value>Sem permissao para salvar as configuracoes no arquivo '{0}'.</value>
+  </data>
+  <data name="Log_SaveSettings_Unexpected_Format" xml:space="preserve">
+    <value>Erro inesperado ao salvar o arquivo de configuracoes '{0}'. Detalhes: {1}</value>
+  </data>
+  <data name="Log_SettingsFileDeleted" xml:space="preserve">
+    <value>Arquivo de configuracoes '{0}' excluido.</value>
+  </data>
+  <data name="Log_SettingsFileDeleteFailed" xml:space="preserve">
+    <value>Falha ao excluir o arquivo de configuracoes '{0}'. Erro ignorado.</value>
+  </data>
+  <data name="Log_SettingsLoaded" xml:space="preserve">
+    <value>Configuracoes carregadas do arquivo '{0}'.</value>
+  </data>
+  <data name="Log_SettingsSaved" xml:space="preserve">
+    <value>Configuracoes salvas com sucesso no arquivo '{0}'.</value>
   </data>
   <data name="Log_SystemCultureAdded" xml:space="preserve">
     <value>Cultura do sistema "{0}" adicionada ? lista.</value>

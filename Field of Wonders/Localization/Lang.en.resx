@@ -282,6 +282,15 @@
   <data name="Log_LanguageSelectionNeeded" xml:space="preserve">
     <value>No valid language selected or found in settings. Showing language selection window.</value>
   </data>
+  <data name="Log_LoadSettings_IOException_Format" xml:space="preserve">
+    <value>I/O error while loading settings file '{0}'. Details: {1}</value>
+  </data>
+  <data name="Log_LoadSettings_ReadFailed_Format" xml:space="preserve">
+    <value>Error reading settings file '{0}': file is corrupted or has incorrect format. Details: {1}</value>
+  </data>
+  <data name="Log_LoadSettings_Unexpected_Format" xml:space="preserve">
+    <value>Unexpected error while loading settings file '{0}'. Details: {1}</value>
+  </data>
   <data name="Log_MainWindowInitArgumentError" xml:space="preserve">
     <value>Critical initialization error in MainWindow (ArgumentException): {0}</value>
   </data>
@@ -305,6 +314,30 @@
   </data>
   <data name="Log_SaveLanguageSettingFailed" xml:space="preserve">
     <value>Failed to save selected language setting.</value>
+  </data>
+  <data name="Log_SaveSettings_DirectoryNotFound_Format" xml:space="preserve">
+    <value>Failed to save settings: directory for file '{0}' not found.</value>
+  </data>
+  <data name="Log_SaveSettings_IOException_Format" xml:space="preserve">
+    <value>I/O error while saving settings file '{0}'. Details: {1}</value>
+  </data>
+  <data name="Log_SaveSettings_Unauthorized_Format" xml:space="preserve">
+    <value>No permission to save settings to file '{0}'.</value>
+  </data>
+  <data name="Log_SaveSettings_Unexpected_Format" xml:space="preserve">
+    <value>Unexpected error while saving settings file '{0}'. Details: {1}</value>
+  </data>
+  <data name="Log_SettingsFileDeleted" xml:space="preserve">
+    <value>Settings file '{0}' was deleted.</value>
+  </data>
+  <data name="Log_SettingsFileDeleteFailed" xml:space="preserve">
+    <value>Failed to delete settings file '{0}'. Error ignored.</value>
+  </data>
+  <data name="Log_SettingsLoaded" xml:space="preserve">
+    <value>Settings loaded from file '{0}'.</value>
+  </data>
+  <data name="Log_SettingsSaved" xml:space="preserve">
+    <value>Settings successfully saved to file '{0}'.</value>
   </data>
   <data name="Log_SystemCultureAdded" xml:space="preserve">
     <value>System culture "{0}" added to the list.</value>

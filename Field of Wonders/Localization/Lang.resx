@@ -337,6 +337,18 @@
     <value>Не выбран или не найден допустимый язык в настройках. Отображение окна выбора языка.</value>
     <comment>Информационное сообщение.</comment>
   </data>
+  <data name="Log_LoadSettings_IOException_Format" xml:space="preserve">
+    <value>Ошибка ввода/вывода при загрузке файла настроек '{0}'. Подробности: {1}</value>
+    <comment>Ошибка ввода/вывода при загрузке файла настроек '{0}'. Подробности: {1}</comment>
+  </data>
+  <data name="Log_LoadSettings_ReadFailed_Format" xml:space="preserve">
+    <value>Ошибка чтения файла настроек '{0}': файл поврежден или имеет неверный формат. Подробности: {1}</value>
+    <comment>Ошибка чтения файла настроек '{0}': файл поврежден или имеет неверный формат. Подробности: {1}</comment>
+  </data>
+  <data name="Log_LoadSettings_Unexpected_Format" xml:space="preserve">
+    <value>Непредвиденная ошибка при загрузке файла настроек '{0}'. Подробности: {1}</value>
+    <comment>Непредвиденная ошибка при загрузке файла настроек '{0}'. Подробности: {1}</comment>
+  </data>
   <data name="Log_MainWindowInitArgumentError" xml:space="preserve">
     <value>Критическая ошибка инициализации MainWindow (ArgumentException): {0}</value>
     <comment>Критическая ошибка. Параметры: {0} Сообщение об ошибке (строка).</comment>
@@ -368,6 +380,38 @@
   <data name="Log_SaveLanguageSettingFailed" xml:space="preserve">
     <value>Не удалось сохранить настройку выбранного языка.</value>
     <comment>Предупреждение.</comment>
+  </data>
+  <data name="Log_SaveSettings_DirectoryNotFound_Format" xml:space="preserve">
+    <value>Не удалось сохранить настройки: директория для файла '{0}' не найдена.</value>
+    <comment>Не удалось сохранить настройки: директория для файла '{0}' не найдена.</comment>
+  </data>
+  <data name="Log_SaveSettings_IOException_Format" xml:space="preserve">
+    <value>Ошибка ввода/вывода при сохранении файла настроек '{0}'. Подробности: {1}</value>
+    <comment>Ошибка ввода/вывода при сохранении файла настроек '{0}'. Подробности: {1}</comment>
+  </data>
+  <data name="Log_SaveSettings_Unauthorized_Format" xml:space="preserve">
+    <value>Нет прав для сохранения настроек в файл '{0}'.</value>
+    <comment>Нет прав для сохранения настроек в файл '{0}'.</comment>
+  </data>
+  <data name="Log_SaveSettings_Unexpected_Format" xml:space="preserve">
+    <value>Непредвиденная ошибка при сохранении файла настроек '{0}'. Подробности: {1}</value>
+    <comment>Непредвиденная ошибка при сохранении файла настроек '{0}'. Подробности: {1}</comment>
+  </data>
+  <data name="Log_SettingsFileDeleted" xml:space="preserve">
+    <value>Файл настроек '{0}' был удален.</value>
+    <comment>Файл настроек '{0}' был удален.</comment>
+  </data>
+  <data name="Log_SettingsFileDeleteFailed" xml:space="preserve">
+    <value>Не удалось удалить файл настроек '{0}'. Ошибка игнорируется.</value>
+    <comment>Не удалось удалить файл настроек '{0}'. Ошибка игнорируется.</comment>
+  </data>
+  <data name="Log_SettingsLoaded" xml:space="preserve">
+    <value>Настройки загружены из файла '{0}'.</value>
+    <comment>Настройки загружены из файла '{0}'.</comment>
+  </data>
+  <data name="Log_SettingsSaved" xml:space="preserve">
+    <value>Настройки успешно сохранены в файл '{0}'.</value>
+    <comment>Настройки успешно сохранены в файл '{0}'.</comment>
   </data>
   <data name="Log_SystemCultureAdded" xml:space="preserve">
     <value>Системная культура "{0}" добавлена в список.</value>

@@ -32,22 +32,23 @@ public class SettingsService
                 TryDeleteSettingsFile();
                 return null;
             }
+            LoggingService.Logger.Information(Lang.Log_SettingsLoaded, SettingsFileName); // Логгируем успех загрузки
             return settings;
         }
         catch (MessagePackSerializationException msgPackEx) // Файл поврежден или не соответствует модели
         {
-            ShowError(string.Format(Lang.Error_LoadSettings_ReadFailed_Format, SettingsFileName, msgPackEx.Message), Lang.Error_LoadSettings_Title, MessageBoxImage.Warning);
+            LoggingService.Logger.Warning(msgPackEx, Lang.Log_LoadSettings_ReadFailed_Format, SettingsFileName, msgPackEx.Message);
             TryDeleteSettingsFile();
             return null;
         }
         catch (IOException ioEx) // Ошибка чтения файла
         {
-            ShowError(string.Format(Lang.Error_LoadSettings_IOException_Format, SettingsFileName, ioEx.Message), Lang.Error_LoadSettings_Title, MessageBoxImage.Error);
+            LoggingService.Logger.Error(ioEx, Lang.Log_LoadSettings_IOException_Format, SettingsFileName, ioEx.Message);
             return null;
         }
         catch (Exception ex) // Непредвиденная ошибка
         {
-            ShowError(string.Format(Lang.Error_LoadSettings_Unexpected_Format, SettingsFileName, ex.Message), Lang.Error_LoadSettings_Title, MessageBoxImage.Error);
+            LoggingService.Logger.Error(ex, Lang.Log_LoadSettings_Unexpected_Format, SettingsFileName, ex.Message);
             TryDeleteSettingsFile();
             return null;
         }
@@ -65,27 +66,28 @@ public class SettingsService
             string? directory = Path.GetDirectoryName(SettingsFilePath);
             if (directory == null)
             {
-                ShowError(string.Format(Lang.Error_SaveSettings_DirectoryNotFound_Format, SettingsFilePath), Lang.Error_SaveSettings_Title, MessageBoxImage.Error);
+                LoggingService.Logger.Error(Lang.Log_SaveSettings_DirectoryNotFound_Format, SettingsFilePath);
                 return false;
             }
             _ = Directory.CreateDirectory(directory); // Гарантируем наличие директории
 
             File.WriteAllBytes(SettingsFilePath, fileBytes);
+            LoggingService.Logger.Information(Lang.Log_SettingsSaved, SettingsFileName); // Логгируем успех сохранения
             return true;
         }
         catch (UnauthorizedAccessException) // Нет прав на запись
         {
-            ShowError(string.Format(Lang.Error_SaveSettings_Unauthorized_Format, SettingsFilePath), Lang.Error_SaveSettings_Title, MessageBoxImage.Error);
+            LoggingService.Logger.Error(Lang.Log_SaveSettings_Unauthorized_Format, SettingsFilePath);
             return false;
         }
         catch (IOException ioEx) // Ошибка записи файла
         {
-            ShowError(string.Format(Lang.Error_SaveSettings_IOException_Format, SettingsFileName, ioEx.Message), Lang.Error_SaveSettings_Title, MessageBoxImage.Error);
+            LoggingService.Logger.Error(ioEx, Lang.Log_SaveSettings_IOException_Format, SettingsFileName, ioEx.Message);
             return false;
         }
         catch (Exception ex) // Непредвиденная ошибка
         {
-            ShowError(string.Format(Lang.Error_SaveSettings_Unexpected_Format, ex.Message), Lang.Error_SaveSettings_Title, MessageBoxImage.Error);
+            LoggingService.Logger.Error(ex, Lang.Log_SaveSettings_Unexpected_Format, ex.Message);
             return false;
         }
     }
@@ -98,20 +100,12 @@ public class SettingsService
             if (File.Exists(SettingsFilePath))
             {
                 File.Delete(SettingsFilePath);
+                LoggingService.Logger.Debug(Lang.Log_SettingsFileDeleted, SettingsFileName); // Логгируем удаление (debug уровень)
             }
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            // Игнорируем ошибки удаления - не критично для следующего запуска.
+            LoggingService.Logger.Warning(ex, Lang.Log_SettingsFileDeleteFailed, SettingsFileName); // Логгируем ошибку удаления, но не прерываем
         }
     }
-
-    /// <summary>Отображает сообщение об ошибке в потоке UI.</summary>
-    /// <param name="message">Текст сообщения.</param>
-    /// <param name="caption">Заголовок окна сообщения.</param>
-    /// <param name="icon">Иконка сообщения.</param>
-    private static void ShowError(string message, string caption, MessageBoxImage icon) => Application.Current?.Dispatcher.Invoke(() =>
-    {
-        _ = MessageBox.Show(message, caption, MessageBoxButton.OK, icon);
-    });
 }

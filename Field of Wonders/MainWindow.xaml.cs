@@ -22,10 +22,10 @@ public partial class MainWindow : Window
 
     /// <summary>Обрабатывает критическую ошибку инициализации: показывает сообщение и завершает приложение.</summary>
     /// <param name="userMessage">Текст сообщения об ошибке для пользователя.</param>
-    private void HandleInitializationError(string userMessage)
+    internal static void HandleInitializationError(string userMessage)
     {
-        _ = MessageBox.Show(userMessage, Lang.Error_Critical_Title, MessageBoxButton.OK, MessageBoxImage.Error);
-        // Безопасное завершение приложения через Dispatcher
-        Dispatcher.Invoke(() => Application.Current?.Shutdown(1));
+        LoggingService.Logger.Fatal(userMessage); // Логгируем критическую ошибку
+        App.ShowAndLogCriticalError(userMessage); // Используем статический метод App для показа MessageBox и логгирования
+        // Приложение завершится в App.ShowAndLogCriticalError
     }
 }

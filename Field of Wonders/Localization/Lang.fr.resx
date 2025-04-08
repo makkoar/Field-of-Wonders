@@ -282,6 +282,15 @@
   <data name="Log_LanguageSelectionNeeded" xml:space="preserve">
     <value>Aucune langue valide selectionnee ou trouvee dans les parametres. Affichage de la fenetre de selection de la langue.</value>
   </data>
+  <data name="Log_LoadSettings_IOException_Format" xml:space="preserve">
+    <value>Erreur d'E/S lors du chargement du fichier de parametres '{0}'. Details : {1}</value>
+  </data>
+  <data name="Log_LoadSettings_ReadFailed_Format" xml:space="preserve">
+    <value>Erreur de lecture du fichier de parametres '{0}': fichier corrompu ou format incorrect. Details : {1}</value>
+  </data>
+  <data name="Log_LoadSettings_Unexpected_Format" xml:space="preserve">
+    <value>Erreur inattendue lors du chargement du fichier de parametres '{0}'. Details : {1}</value>
+  </data>
   <data name="Log_MainWindowInitArgumentError" xml:space="preserve">
     <value>Erreur d'initialisation critique dans MainWindow (ArgumentException) : {0}</value>
   </data>
@@ -305,6 +314,30 @@
   </data>
   <data name="Log_SaveLanguageSettingFailed" xml:space="preserve">
     <value>Echec de l'enregistrement du parametre de langue selectionne.</value>
+  </data>
+  <data name="Log_SaveSettings_DirectoryNotFound_Format" xml:space="preserve">
+    <value>Impossible d'enregistrer les parametres : repertoire pour le fichier '{0}' introuvable.</value>
+  </data>
+  <data name="Log_SaveSettings_IOException_Format" xml:space="preserve">
+    <value>Erreur d'E/S lors de l'enregistrement du fichier de parametres '{0}'. Details : {1}</value>
+  </data>
+  <data name="Log_SaveSettings_Unauthorized_Format" xml:space="preserve">
+    <value>Aucune autorisation pour enregistrer les parametres dans le fichier '{0}'.</value>
+  </data>
+  <data name="Log_SaveSettings_Unexpected_Format" xml:space="preserve">
+    <value>Erreur inattendue lors de l'enregistrement du fichier de parametres '{0}'. Details : {1}</value>
+  </data>
+  <data name="Log_SettingsFileDeleted" xml:space="preserve">
+    <value>Fichier de parametres '{0}' supprime.</value>
+  </data>
+  <data name="Log_SettingsFileDeleteFailed" xml:space="preserve">
+    <value>Impossible de supprimer le fichier de parametres '{0}'. Erreur ignoree.</value>
+  </data>
+  <data name="Log_SettingsLoaded" xml:space="preserve">
+    <value>Parametres charges depuis le fichier '{0}'.</value>
+  </data>
+  <data name="Log_SettingsSaved" xml:space="preserve">
+    <value>Parametres enregistres avec succes dans le fichier '{0}'.</value>
   </data>
   <data name="Log_SystemCultureAdded" xml:space="preserve">
     <value>Culture syst?me "{0}" ajout?e ? la liste.</value>

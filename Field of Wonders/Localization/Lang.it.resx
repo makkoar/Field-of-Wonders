@@ -282,6 +282,15 @@
   <data name="Log_LanguageSelectionNeeded" xml:space="preserve">
     <value>Nessuna lingua valida selezionata o trovata nelle impostazioni. Visualizzazione della finestra di selezione della lingua.</value>
   </data>
+  <data name="Log_LoadSettings_IOException_Format" xml:space="preserve">
+    <value>Errore di I/O durante il caricamento del file delle impostazioni '{0}'. Dettagli: {1}</value>
+  </data>
+  <data name="Log_LoadSettings_ReadFailed_Format" xml:space="preserve">
+    <value>Errore durante la lettura del file di impostazioni '{0}': file danneggiato o formato non corretto. Dettagli: {1}</value>
+  </data>
+  <data name="Log_LoadSettings_Unexpected_Format" xml:space="preserve">
+    <value>Errore imprevisto durante il caricamento del file delle impostazioni '{0}'. Dettagli: {1}</value>
+  </data>
   <data name="Log_MainWindowInitArgumentError" xml:space="preserve">
     <value>Errore critico di inizializzazione in MainWindow (ArgumentException): {0}</value>
   </data>
@@ -305,6 +314,30 @@
   </data>
   <data name="Log_SaveLanguageSettingFailed" xml:space="preserve">
     <value>Impossibile salvare l'impostazione della lingua selezionata.</value>
+  </data>
+  <data name="Log_SaveSettings_DirectoryNotFound_Format" xml:space="preserve">
+    <value>Impossibile salvare le impostazioni: directory per il file '{0}' non trovata.</value>
+  </data>
+  <data name="Log_SaveSettings_IOException_Format" xml:space="preserve">
+    <value>Errore di I/O durante il salvataggio del file delle impostazioni '{0}'. Dettagli: {1}</value>
+  </data>
+  <data name="Log_SaveSettings_Unauthorized_Format" xml:space="preserve">
+    <value>Nessun permesso per salvare le impostazioni nel file '{0}'.</value>
+  </data>
+  <data name="Log_SaveSettings_Unexpected_Format" xml:space="preserve">
+    <value>Errore imprevisto durante il salvataggio del file delle impostazioni '{0}'. Dettagli: {1}</value>
+  </data>
+  <data name="Log_SettingsFileDeleted" xml:space="preserve">
+    <value>File di impostazioni '{0}' eliminato.</value>
+  </data>
+  <data name="Log_SettingsFileDeleteFailed" xml:space="preserve">
+    <value>Impossibile eliminare il file di impostazioni '{0}'. Errore ignorato.</value>
+  </data>
+  <data name="Log_SettingsLoaded" xml:space="preserve">
+    <value>Impostazioni caricate dal file '{0}'.</value>
+  </data>
+  <data name="Log_SettingsSaved" xml:space="preserve">
+    <value>Impostazioni salvate correttamente nel file '{0}'.</value>
   </data>
   <data name="Log_SystemCultureAdded" xml:space="preserve">
     <value>Cultura di sistema "{0}" aggiunta alla lista.</value>

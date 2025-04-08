@@ -556,6 +556,33 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка ввода/вывода при загрузке файла настроек &apos;{0}&apos;. Подробности: {1}.
+        /// </summary>
+        public static string Log_LoadSettings_IOException_Format {
+            get {
+                return ResourceManager.GetString("Log_LoadSettings_IOException_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка чтения файла настроек &apos;{0}&apos;: файл поврежден или имеет неверный формат. Подробности: {1}.
+        /// </summary>
+        public static string Log_LoadSettings_ReadFailed_Format {
+            get {
+                return ResourceManager.GetString("Log_LoadSettings_ReadFailed_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Непредвиденная ошибка при загрузке файла настроек &apos;{0}&apos;. Подробности: {1}.
+        /// </summary>
+        public static string Log_LoadSettings_Unexpected_Format {
+            get {
+                return ResourceManager.GetString("Log_LoadSettings_Unexpected_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Критическая ошибка инициализации MainWindow (ArgumentException): {0}.
         /// </summary>
         public static string Log_MainWindowInitArgumentError {
@@ -624,6 +651,78 @@ namespace Field_of_Wonders.Localization {
         public static string Log_SaveLanguageSettingFailed {
             get {
                 return ResourceManager.GetString("Log_SaveLanguageSettingFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Не удалось сохранить настройки: директория для файла &apos;{0}&apos; не найдена..
+        /// </summary>
+        public static string Log_SaveSettings_DirectoryNotFound_Format {
+            get {
+                return ResourceManager.GetString("Log_SaveSettings_DirectoryNotFound_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка ввода/вывода при сохранении файла настроек &apos;{0}&apos;. Подробности: {1}.
+        /// </summary>
+        public static string Log_SaveSettings_IOException_Format {
+            get {
+                return ResourceManager.GetString("Log_SaveSettings_IOException_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Нет прав для сохранения настроек в файл &apos;{0}&apos;..
+        /// </summary>
+        public static string Log_SaveSettings_Unauthorized_Format {
+            get {
+                return ResourceManager.GetString("Log_SaveSettings_Unauthorized_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Непредвиденная ошибка при сохранении файла настроек &apos;{0}&apos;. Подробности: {1}.
+        /// </summary>
+        public static string Log_SaveSettings_Unexpected_Format {
+            get {
+                return ResourceManager.GetString("Log_SaveSettings_Unexpected_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Файл настроек &apos;{0}&apos; был удален..
+        /// </summary>
+        public static string Log_SettingsFileDeleted {
+            get {
+                return ResourceManager.GetString("Log_SettingsFileDeleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Не удалось удалить файл настроек &apos;{0}&apos;. Ошибка игнорируется..
+        /// </summary>
+        public static string Log_SettingsFileDeleteFailed {
+            get {
+                return ResourceManager.GetString("Log_SettingsFileDeleteFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Настройки загружены из файла &apos;{0}&apos;..
+        /// </summary>
+        public static string Log_SettingsLoaded {
+            get {
+                return ResourceManager.GetString("Log_SettingsLoaded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Настройки успешно сохранены в файл &apos;{0}&apos;..
+        /// </summary>
+        public static string Log_SettingsSaved {
+            get {
+                return ResourceManager.GetString("Log_SettingsSaved", resourceCulture);
             }
         }
         

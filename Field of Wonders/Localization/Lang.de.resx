@@ -282,6 +282,15 @@
   <data name="Log_LanguageSelectionNeeded" xml:space="preserve">
     <value>Keine gultige Sprache in den Einstellungen ausgewahlt oder gefunden. Sprachauswahlfenster wird angezeigt.</value>
   </data>
+  <data name="Log_LoadSettings_IOException_Format" xml:space="preserve">
+    <value>E/A-Fehler beim Laden der Einstellungsdatei '{0}'. Details: {1}</value>
+  </data>
+  <data name="Log_LoadSettings_ReadFailed_Format" xml:space="preserve">
+    <value>Fehler beim Lesen der Einstellungsdatei '{0}': Datei beschadigt oder falsches Format. Details: {1}</value>
+  </data>
+  <data name="Log_LoadSettings_Unexpected_Format" xml:space="preserve">
+    <value>Unerwarteter Fehler beim Laden der Einstellungsdatei '{0}'. Details: {1}</value>
+  </data>
   <data name="Log_MainWindowInitArgumentError" xml:space="preserve">
     <value>Kritischer Initialisierungsfehler in MainWindow (ArgumentException): {0}</value>
   </data>
@@ -305,6 +314,30 @@
   </data>
   <data name="Log_SaveLanguageSettingFailed" xml:space="preserve">
     <value>Einstellung der ausgewahlten Sprache konnte nicht gespeichert werden.</value>
+  </data>
+  <data name="Log_SaveSettings_DirectoryNotFound_Format" xml:space="preserve">
+    <value>Einstellungen konnten nicht gespeichert werden: Verzeichnis fur Datei '{0}' nicht gefunden.</value>
+  </data>
+  <data name="Log_SaveSettings_IOException_Format" xml:space="preserve">
+    <value>E/A-Fehler beim Speichern der Einstellungsdatei '{0}'. Details: {1}</value>
+  </data>
+  <data name="Log_SaveSettings_Unauthorized_Format" xml:space="preserve">
+    <value>Keine Berechtigung zum Speichern der Einstellungen in Datei '{0}'.</value>
+  </data>
+  <data name="Log_SaveSettings_Unexpected_Format" xml:space="preserve">
+    <value>Unerwarteter Fehler beim Speichern der Einstellungsdatei '{0}'. Details: {1}</value>
+  </data>
+  <data name="Log_SettingsFileDeleted" xml:space="preserve">
+    <value>Einstellungsdatei '{0}' wurde geloscht.</value>
+  </data>
+  <data name="Log_SettingsFileDeleteFailed" xml:space="preserve">
+    <value>Einstellungsdatei '{0}' konnte nicht geloscht werden. Fehler ignoriert.</value>
+  </data>
+  <data name="Log_SettingsLoaded" xml:space="preserve">
+    <value>Einstellungen aus Datei '{0}' geladen.</value>
+  </data>
+  <data name="Log_SettingsSaved" xml:space="preserve">
+    <value>Einstellungen erfolgreich in Datei '{0}' gespeichert.</value>
   </data>
   <data name="Log_SystemCultureAdded" xml:space="preserve">
     <value>Systemkultur "{0}" zur Liste hinzugef?gt.</value>
