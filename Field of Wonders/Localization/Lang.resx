@@ -213,6 +213,10 @@
     <value>Критическая ошибка. Необработанное исключение, детали недоступны.</value>
     <comment>Сообщение об ошибке для пользователя.</comment>
   </data>
+  <data name="Key" xml:space="preserve">
+    <value>ru-RU</value>
+    <comment>Описание</comment>
+  </data>
   <data name="Log_AddedCultureToList" xml:space="preserve">
     <value>Культура '{0}' добавлена в список.</value>
     <comment>Отладочное сообщение. Параметры: {0} Код культуры (строка).</comment>
@@ -232,6 +236,14 @@
   <data name="Log_AppExiting" xml:space="preserve">
     <value>Завершение работы приложения с кодом {0}.</value>
     <comment>Информационное сообщение. Параметры: {0} Код выхода (целое число).</comment>
+  </data>
+  <data name="Log_ApplyCulture_NotFound_Format" xml:space="preserve">
+    <value>Культура "{0}" не найдена: {1}</value>
+    <comment>Культура не найдена при попытке применения. {0} - код культуры, {1} - сообщение об исключении.</comment>
+  </data>
+  <data name="Log_ApplyCulture_Unexpected_Format" xml:space="preserve">
+    <value>Непредвиденная ошибка при применении культуры: {0}</value>
+    <comment>Непредвиденная ошибка при применении культуры. {0} - сообщение об исключении.</comment>
   </data>
   <data name="Log_ApplyingCulture_Attempt" xml:space="preserve">
     <value>Попытка применения культуры: {0}</value>
@@ -273,9 +285,17 @@
     <value>Критическая ошибка: {0}</value>
     <comment>Критическая ошибка. Параметры: {0} Сообщение об ошибке (строка).</comment>
   </data>
+  <data name="Log_CultureAddedToList" xml:space="preserve">
+    <value>Культура "{0}" добавлена в список поддерживаемых языков.</value>
+    <comment>Культура добавлена в список. {0} - код культуры.</comment>
+  </data>
   <data name="Log_CultureAddNotFound" xml:space="preserve">
     <value>Попытка добавить культуру '{0}', но она не найдена.</value>
     <comment>Предупреждение. Параметры: {0} Код культуры (строка).</comment>
+  </data>
+  <data name="Log_CultureApplied" xml:space="preserve">
+    <value>Культура "{0}" успешно применена.</value>
+    <comment>Культура успешно применена. {0} - код культуры.</comment>
   </data>
   <data name="Log_CultureInvalid" xml:space="preserve">
     <value>Код культуры '{0}' недействителен.</value>
@@ -285,9 +305,17 @@
     <value>Обнаружение поддерживаемых языков...</value>
     <comment>Информационное сообщение.</comment>
   </data>
+  <data name="Log_DiscoverLanguages_Failed_Format" xml:space="preserve">
+    <value>Не удалось обнаружить языки: {0}</value>
+    <comment>Не удалось обнаружить языки. {0} - сообщение об исключении.</comment>
+  </data>
   <data name="Log_DiscoveryFailed" xml:space="preserve">
     <value>Ошибка при обнаружении поддерживаемых языков.</value>
     <comment>Сообщение об ошибке.</comment>
+  </data>
+  <data name="Log_FallbackCultureAdded" xml:space="preserve">
+    <value>Добавлена резервная культура "Русский", так как не удалось определить другие языки.</value>
+    <comment>Резервная культура добавлена в список, как крайняя мера.</comment>
   </data>
   <data name="Log_FlushingLogs" xml:space="preserve">
     <value>Завершение работы приложения. Сброс буферов лога...</value>
@@ -306,7 +334,7 @@
     <comment>Отладочное сообщение. Параметры: {0} Код культуры (строка).</comment>
   </data>
   <data name="Log_FoundSatelliteAssembly" xml:space="preserve">
-    <value>Найдена сателлитная сборка для культуры '{0}'.</value>
+    <value>Найдена сателлитная сборка для культуры '{0}'. </value>
     <comment>Отладочное сообщение. Параметры: {0} Код культуры (строка).</comment>
   </data>
   <data name="Log_InvalidCultureDirectory" xml:space="preserve">
@@ -349,9 +377,17 @@
     <value>Не удалось сохранить настройку выбранного языка.</value>
     <comment>Предупреждение.</comment>
   </data>
+  <data name="Log_SystemCultureAdded" xml:space="preserve">
+    <value>Системная культура "{0}" добавлена в список.</value>
+    <comment>Системная культура добавлена в список. {0} - код культуры.</comment>
+  </data>
   <data name="Log_SystemCultureAddFailed" xml:space="preserve">
     <value>Не удалось получить или добавить системную UI культуру как резервную.</value>
     <comment>Предупреждение.</comment>
+  </data>
+  <data name="Log_SystemCultureDiscoveryFailed" xml:space="preserve">
+    <value>Не удалось определить системную культуру.</value>
+    <comment>Не удалось определить системную культуру при поиске поддерживаемых языков.</comment>
   </data>
   <data name="Log_UnhandledExceptionAppDomain" xml:space="preserve">
     <value>Необработанное исключение в AppDomain. Завершение: {0}</value>

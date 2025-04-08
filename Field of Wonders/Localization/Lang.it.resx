@@ -118,22 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Error_AnswerCannotBeEmpty" xml:space="preserve">
-    <value>La risposta non può essere vuota.</value>
+    <value>La risposta non puo essere vuota.</value>
   </data>
   <data name="Error_ApplyCulture_NotFound_Format" xml:space="preserve">
-    <value>Lingua selezionata '{0}' non trovata ({1}).\nVerrà utilizzata la lingua predefinita.</value>
+    <value>Lingua selezionata '{0}' non trovata ({1}).\nVerra utilizzata la lingua predefinita.</value>
   </data>
   <data name="Error_ApplyCulture_Title" xml:space="preserve">
     <value>Errore nell'impostazione della lingua</value>
   </data>
   <data name="Error_ApplyCulture_Unexpected_Format" xml:space="preserve">
-    <value>Si è verificato un errore imprevisto durante l'impostazione della lingua:\n{0}</value>
+    <value>Si e verificato un errore imprevisto durante l'impostazione della lingua:\n{0}</value>
   </data>
   <data name="Error_Critical_CannotSetAnyLanguage" xml:space="preserve">
-    <value>Errore critico: impossibile impostare nessuna delle lingue disponibili. L'applicazione verrà chiusa.</value>
+    <value>Errore critico: impossibile impostare nessuna delle lingue disponibili. L'applicazione verra chiusa.</value>
   </data>
   <data name="Error_Critical_NoLanguagesFound" xml:space="preserve">
-    <value>Impossibile rilevare le lingue supportate. L'applicazione verrà chiusa.</value>
+    <value>Impossibile rilevare le lingue supportate. L'applicazione verra chiusa.</value>
   </data>
   <data name="Error_Critical_Title" xml:space="preserve">
     <value>Errore critico</value>
@@ -142,7 +142,7 @@
     <value>Errore durante l'inizializzazione dei dati di gioco:\n{0}</value>
   </data>
   <data name="Error_DiscoverLanguages_Failed_Format" xml:space="preserve">
-    <value>Si è verificato un errore durante il rilevamento automatico della lingua:\n{0}\n\nVerrà utilizzata la lingua predefinita.</value>
+    <value>Si e verificato un errore durante il rilevamento automatico della lingua:\n{0}\n\nVerra utilizzata la lingua predefinita.</value>
   </data>
   <data name="Error_DiscoverLanguages_Title" xml:space="preserve">
     <value>Errore nel rilevamento delle lingue</value>
@@ -154,23 +154,22 @@
     <value>Errore durante la lettura del file delle impostazioni '{0}':\n{1}\n\nVerificare le autorizzazioni di accesso alla cartella dell'applicazione.</value>
   </data>
   <data name="Error_LoadSettings_ReadFailed_Format" xml:space="preserve">
-    <value>Errore durante la lettura del file delle impostazioni '{0}':\n{1}\n\nIl file verrà eliminato. Sarà richiesta la selezione della lingua al prossimo avvio.</value>
+    <value>Errore durante la lettura del file delle impostazioni '{0}':\n{1}\n\nIl file verra eliminato. Sara richiesta la selezione della lingua al prossimo avvio.</value>
   </data>
   <data name="Error_LoadSettings_Title" xml:space="preserve">
     <value>Errore nel caricamento delle impostazioni</value>
   </data>
   <data name="Error_LoadSettings_Unexpected_Format" xml:space="preserve">
-    <value>Errore imprevisto durante il caricamento delle impostazioni da '{0}':\n{1}\n\nIl file verrà eliminato. Sarà richiesta la selezione della lingua al prossimo avvio.</value>
+    <value>Errore imprevisto durante il caricamento delle impostazioni da '{0}':\n{1}\n\nIl file verra eliminato. Sara richiesta la selezione della lingua al prossimo avvio.</value>
   </data>
   <data name="Error_QuestionCannotBeEmpty" xml:space="preserve">
-    <value>La domanda non può essere vuota.</value>
-    <comment>Текст ошибки, генерируемой конструктором Puzzle, когда переданный вопрос является null, пустой строкой или строкой, содержащей только пробельные символы. Используется для проверки входных данных.</comment>
+    <value>La domanda non puo essere vuota.</value>
   </data>
   <data name="Error_SaveSettings_DirectoryNotFound_Format" xml:space="preserve">
     <value>Impossibile salvare le impostazioni.\nImpossibile determinare la directory per il file delle impostazioni: {0}</value>
   </data>
   <data name="Error_SaveSettings_IOException_Format" xml:space="preserve">
-    <value>Si è verificato un errore durante la scrittura del file delle impostazioni '{0}':\n{1}</value>
+    <value>Si e verificato un errore durante la scrittura del file delle impostazioni '{0}':\n{1}</value>
   </data>
   <data name="Error_SaveSettings_Title" xml:space="preserve">
     <value>Errore nel salvataggio delle impostazioni</value>
@@ -179,7 +178,7 @@
     <value>Impossibile salvare le impostazioni.\nAccesso negato al file:\n{0}\n\nVerificare le autorizzazioni di scrittura.</value>
   </data>
   <data name="Error_SaveSettings_Unexpected_Format" xml:space="preserve">
-    <value>Si è verificato un errore imprevisto durante il salvataggio delle impostazioni:\n{0}</value>
+    <value>Si e verificato un errore imprevisto durante il salvataggio delle impostazioni:\n{0}</value>
   </data>
   <data name="Error_UnexpectedInitializationFailed_Format" xml:space="preserve">
     <value>Errore imprevisto durante l'inizializzazione del gioco:\n{0}</value>
@@ -189,6 +188,9 @@
   </data>
   <data name="Error_UnhandledException_NoExceptionObject" xml:space="preserve">
     <value>Errore critico. Eccezione non gestita, dettagli non disponibili.</value>
+  </data>
+  <data name="Key" xml:space="preserve">
+    <value>it-IT</value>
   </data>
   <data name="Log_AddedCultureToList" xml:space="preserve">
     <value>Cultura '{0}' aggiunta all'elenco.</value>
@@ -205,11 +207,17 @@
   <data name="Log_AppExiting" xml:space="preserve">
     <value>Applicazione in uscita con codice {0}.</value>
   </data>
+  <data name="Log_ApplyCulture_NotFound_Format" xml:space="preserve">
+    <value>Cultura "{0}" non trovata: {1}</value>
+  </data>
+  <data name="Log_ApplyCulture_Unexpected_Format" xml:space="preserve">
+    <value>Errore imprevisto durante l'applicazione della cultura: {0}</value>
+  </data>
   <data name="Log_ApplyingCulture_Attempt" xml:space="preserve">
     <value>Tentativo di applicare la cultura: {0}</value>
   </data>
   <data name="Log_ApplyingCulture_Failed" xml:space="preserve">
-    <value>Si ? verificato un errore imprevisto durante l'applicazione della cultura {0}.</value>
+    <value>Si e verificato un errore imprevisto durante l'applicazione della cultura {0}.</value>
   </data>
   <data name="Log_ApplyingCulture_Fallback" xml:space="preserve">
     <value>Impossibile applicare la cultura selezionata/salvata: {0}. Tentativo di fallback.</value>
@@ -235,17 +243,29 @@
   <data name="Log_CriticalError" xml:space="preserve">
     <value>Errore critico: {0}</value>
   </data>
+  <data name="Log_CultureAddedToList" xml:space="preserve">
+    <value>Cultura "{0}" aggiunta alla lista delle lingue supportate.</value>
+  </data>
   <data name="Log_CultureAddNotFound" xml:space="preserve">
-    <value>Tentativo di aggiungere la cultura '{0}', ma non ? stata trovata.</value>
+    <value>Tentativo di aggiungere la cultura '{0}', ma non e stata trovata.</value>
+  </data>
+  <data name="Log_CultureApplied" xml:space="preserve">
+    <value>Cultura "{0}" applicata con successo.</value>
   </data>
   <data name="Log_CultureInvalid" xml:space="preserve">
-    <value>Il codice cultura '{0}' non ? valido.</value>
+    <value>Il codice cultura '{0}' non e valido.</value>
   </data>
   <data name="Log_DiscoveringLanguages" xml:space="preserve">
     <value>Rilevamento lingue supportate...</value>
   </data>
+  <data name="Log_DiscoverLanguages_Failed_Format" xml:space="preserve">
+    <value>Impossibile rilevare le lingue: {0}</value>
+  </data>
   <data name="Log_DiscoveryFailed" xml:space="preserve">
     <value>Impossibile rilevare le lingue supportate.</value>
+  </data>
+  <data name="Log_FallbackCultureAdded" xml:space="preserve">
+    <value>Cultura di fallback "Russo" aggiunta poich? non ? stato possibile determinare altre lingue.</value>
   </data>
   <data name="Log_FlushingLogs" xml:space="preserve">
     <value>Arresto dell'applicazione. Svuotamento dei log...</value>
@@ -260,10 +280,10 @@
     <value>Trovata lingua neutra '{0}' dall'attributo dell'assembly.</value>
   </data>
   <data name="Log_FoundSatelliteAssembly" xml:space="preserve">
-    <value>Trovato assembly satellite per la cultura '{0}'.</value>
+    <value>Trovato assembly satellite per la cultura '{0}'. </value>
   </data>
   <data name="Log_InvalidCultureDirectory" xml:space="preserve">
-    <value>Il nome della directory '{0}' non ? un codice cultura valido.</value>
+    <value>Il nome della directory '{0}' non e un codice cultura valido.</value>
   </data>
   <data name="Log_LanguageSelectionNeeded" xml:space="preserve">
     <value>Nessuna lingua valida selezionata o trovata nelle impostazioni. Visualizzazione della finestra di selezione della lingua.</value>
@@ -292,8 +312,14 @@
   <data name="Log_SaveLanguageSettingFailed" xml:space="preserve">
     <value>Impossibile salvare l'impostazione della lingua selezionata.</value>
   </data>
+  <data name="Log_SystemCultureAdded" xml:space="preserve">
+    <value>Cultura di sistema "{0}" aggiunta alla lista.</value>
+  </data>
   <data name="Log_SystemCultureAddFailed" xml:space="preserve">
     <value>Impossibile ottenere o aggiungere la cultura dell'interfaccia utente di sistema come fallback.</value>
+  </data>
+  <data name="Log_SystemCultureDiscoveryFailed" xml:space="preserve">
+    <value>Impossibile determinare la cultura di sistema.</value>
   </data>
   <data name="Log_UnhandledExceptionAppDomain" xml:space="preserve">
     <value>Eccezione non gestita in AppDomain. Termine: {0}</value>

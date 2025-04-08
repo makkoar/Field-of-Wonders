@@ -69,7 +69,7 @@ public class LocalizationService
         }
         catch (Exception ex)
         {
-            ShowError(string.Format(Lang.Error_DiscoverLanguages_Failed_Format, ex.Message), Lang.Error_DiscoverLanguages_Title, MessageBoxImage.Warning);
+            LoggingService.Logger.Warning(ex, Lang.Log_DiscoverLanguages_Failed_Format, ex.Message);
         }
 
         // Гарантируем наличие хотя бы одного языка (резервные варианты)
@@ -91,17 +91,18 @@ public class LocalizationService
             CultureInfo.DefaultThreadCurrentCulture = cultureToApply;
             CultureInfo.DefaultThreadCurrentUICulture = cultureToApply;
             CurrentAppliedCulture = cultureToApply;
+            LoggingService.Logger.Information(Lang.Log_CultureApplied, cultureCode); // Логгируем успех
             return true;
         }
         catch (CultureNotFoundException ex)
         {
-            ShowError(string.Format(Lang.Error_ApplyCulture_NotFound_Format, cultureCode, ex.Message), Lang.Error_ApplyCulture_Title, MessageBoxImage.Warning);
+            LoggingService.Logger.Warning(ex, Lang.Log_ApplyCulture_NotFound_Format, cultureCode, ex.Message);
             CurrentAppliedCulture = null;
             return false;
         }
         catch (Exception ex)
         {
-            ShowError(string.Format(Lang.Error_ApplyCulture_Unexpected_Format, ex.Message), Lang.Error_ApplyCulture_Title, MessageBoxImage.Error);
+            LoggingService.Logger.Error(ex, Lang.Log_ApplyCulture_Unexpected_Format, ex.Message);
             CurrentAppliedCulture = null;
             return false;
         }
@@ -128,9 +129,13 @@ public class LocalizationService
             {
                 string displayName = currentUiCulture.TextInfo.ToTitleCase(culture.NativeName);
                 languages.Add(new LanguageInfo(displayName, culture.Name));
+                LoggingService.Logger.Debug(Lang.Log_CultureAddedToList, cultureCodeToAdd);
             }
         }
-        catch (CultureNotFoundException) { /* Игнорируем */ }
+        catch (CultureNotFoundException)
+        {
+            LoggingService.Logger.Warning(Lang.Log_CultureAddNotFound, cultureCodeToAdd);
+        }
     }
 
     /// <summary>Убеждается, что в списке есть хотя бы один язык, добавляя резервные варианты.</summary>
@@ -154,23 +159,19 @@ public class LocalizationService
             {
                 string displayName = currentUiCulture.TextInfo.ToTitleCase(sysCulture.NativeName);
                 languages.Add(new LanguageInfo(displayName, sysCulture.Name));
+                LoggingService.Logger.Debug(Lang.Log_SystemCultureAdded, sysCulture.Name);
             }
             if (languages.Count is not 0) return;
         }
-        catch { /* Игнорируем ошибку получения системной культуры */ }
+        catch (Exception ex)
+        {
+            LoggingService.Logger.Warning(ex, Lang.Log_SystemCultureDiscoveryFailed);
+        }
 
         if (languages.Count is 0)
         {
             languages.Add(new LanguageInfo("Русский", "ru-RU")); // Крайний случай
+            LoggingService.Logger.Error(Lang.Log_FallbackCultureAdded);
         }
     }
-
-    /// <summary>Отображает сообщение об ошибке в потоке UI.</summary>
-    /// <param name="message">Текст сообщения.</param>
-    /// <param name="caption">Заголовок окна сообщения.</param>
-    /// <param name="icon">Иконка сообщения.</param>
-    private static void ShowError(string message, string caption, MessageBoxImage icon) => Application.Current?.Dispatcher.Invoke(() =>
-    {
-        _ = MessageBox.Show(message, caption, MessageBoxButton.OK, icon);
-    });
 }

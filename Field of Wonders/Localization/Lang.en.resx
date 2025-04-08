@@ -189,6 +189,9 @@
   <data name="Error_UnhandledException_NoExceptionObject" xml:space="preserve">
     <value>Critical Error. Unhandled exception, details unavailable.</value>
   </data>
+  <data name="Key" xml:space="preserve">
+    <value>en-US</value>
+  </data>
   <data name="Log_AddedCultureToList" xml:space="preserve">
     <value>Culture '{0}' added to the list.</value>
   </data>
@@ -203,6 +206,12 @@
   </data>
   <data name="Log_AppExiting" xml:space="preserve">
     <value>Application exiting with code {0}.</value>
+  </data>
+  <data name="Log_ApplyCulture_NotFound_Format" xml:space="preserve">
+    <value>Culture "{0}" not found: {1}</value>
+  </data>
+  <data name="Log_ApplyCulture_Unexpected_Format" xml:space="preserve">
+    <value>Unexpected error applying culture: {0}</value>
   </data>
   <data name="Log_ApplyingCulture_Attempt" xml:space="preserve">
     <value>Attempting to apply culture: {0}</value>
@@ -234,8 +243,14 @@
   <data name="Log_CriticalError" xml:space="preserve">
     <value>Critical Error: {0}</value>
   </data>
+  <data name="Log_CultureAddedToList" xml:space="preserve">
+    <value>Culture "{0}" added to the list of supported languages.</value>
+  </data>
   <data name="Log_CultureAddNotFound" xml:space="preserve">
     <value>Attempted to add culture '{0}', but it was not found.</value>
+  </data>
+  <data name="Log_CultureApplied" xml:space="preserve">
+    <value>Culture "{0}" successfully applied.</value>
   </data>
   <data name="Log_CultureInvalid" xml:space="preserve">
     <value>Culture code '{0}' is invalid.</value>
@@ -243,8 +258,14 @@
   <data name="Log_DiscoveringLanguages" xml:space="preserve">
     <value>Discovering supported languages...</value>
   </data>
+  <data name="Log_DiscoverLanguages_Failed_Format" xml:space="preserve">
+    <value>Failed to discover languages: {0}</value>
+  </data>
   <data name="Log_DiscoveryFailed" xml:space="preserve">
     <value>Failed to discover supported languages.</value>
+  </data>
+  <data name="Log_FallbackCultureAdded" xml:space="preserve">
+    <value>Fallback culture "Russian" added as other languages could not be determined.</value>
   </data>
   <data name="Log_FlushingLogs" xml:space="preserve">
     <value>Application Shutting Down. Flushing logs...</value>
@@ -259,7 +280,7 @@
     <value>Found neutral language '{0}' from assembly attribute.</value>
   </data>
   <data name="Log_FoundSatelliteAssembly" xml:space="preserve">
-    <value>Found satellite assembly for culture '{0}'.</value>
+    <value>Found satellite assembly for culture '{0}'. </value>
   </data>
   <data name="Log_InvalidCultureDirectory" xml:space="preserve">
     <value>Directory name '{0}' is not a valid culture code.</value>
@@ -291,8 +312,14 @@
   <data name="Log_SaveLanguageSettingFailed" xml:space="preserve">
     <value>Failed to save selected language setting.</value>
   </data>
+  <data name="Log_SystemCultureAdded" xml:space="preserve">
+    <value>System culture "{0}" added to the list.</value>
+  </data>
   <data name="Log_SystemCultureAddFailed" xml:space="preserve">
     <value>Failed to get or add system UI culture as fallback.</value>
+  </data>
+  <data name="Log_SystemCultureDiscoveryFailed" xml:space="preserve">
+    <value>Failed to determine system culture.</value>
   </data>
   <data name="Log_UnhandledExceptionAppDomain" xml:space="preserve">
     <value>Unhandled exception in AppDomain. IsTerminating: {0}</value>
