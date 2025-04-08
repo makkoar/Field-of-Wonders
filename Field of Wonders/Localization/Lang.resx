@@ -273,10 +273,6 @@
     <value>Запуск приложения. Инициализация службы логирования.</value>
     <comment>Log message (Info). Используется до применения локализации.</comment>
   </data>
-  <data name="Log_AppStarting1" xml:space="preserve">
-    <value>Запуск приложения. Инициализация службы логирования.</value>
-    <comment>Информационное сообщение. Используется до применения локализации.</comment>
-  </data>
   <data name="Log_BaseDirectoryNotExist" xml:space="preserve">
     <value>Базовая директория '{0}' не существует. Сканирование сателлитных сборок невозможно.</value>
     <comment>Предупреждение. Параметры: {0} Путь к директории (строка).</comment>
@@ -320,10 +316,6 @@
   <data name="Log_FlushingLogs" xml:space="preserve">
     <value>Завершение работы приложения. Сброс буферов лога...</value>
     <comment>Log message (Info). Используется при выходе из приложения.</comment>
-  </data>
-  <data name="Log_FlushingLogs1" xml:space="preserve">
-    <value>Завершение работы приложения. Сброс буферов лога...</value>
-    <comment>Информационное сообщение. Используется при выходе.</comment>
   </data>
   <data name="Log_FoundLanguagesResult" xml:space="preserve">
     <value>Обнаружено {0} поддерживаемых языков: {1}</value>

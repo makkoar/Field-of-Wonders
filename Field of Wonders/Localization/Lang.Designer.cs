@@ -412,15 +412,6 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Запуск приложения. Инициализация службы логирования..
-        /// </summary>
-        public static string Log_AppStarting1 {
-            get {
-                return ResourceManager.GetString("Log_AppStarting1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Ищет локализованную строку, похожую на Базовая директория &apos;{0}&apos; не существует. Сканирование сателлитных сборок невозможно..
         /// </summary>
         public static string Log_BaseDirectoryNotExist {
@@ -516,15 +507,6 @@ namespace Field_of_Wonders.Localization {
         public static string Log_FlushingLogs {
             get {
                 return ResourceManager.GetString("Log_FlushingLogs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Завершение работы приложения. Сброс буферов лога....
-        /// </summary>
-        public static string Log_FlushingLogs1 {
-            get {
-                return ResourceManager.GetString("Log_FlushingLogs1", resourceCulture);
             }
         }
         

@@ -9,8 +9,6 @@ public partial class App : Application
     /// <param name="e">Аргументы события запуска.</param>
     protected override void OnStartup(StartupEventArgs e)
     {
-        LoggingService.Logger.Information(Lang.Log_AppStarting);
-
         base.OnStartup(e);
 
         AppDomain.CurrentDomain.UnhandledException += OnUnhandledException;

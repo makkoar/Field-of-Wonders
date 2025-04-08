@@ -234,9 +234,6 @@
   <data name="Log_AppStarting" xml:space="preserve">
     <value>Demarrage de l'application. Service de journalisation initialise.</value>
   </data>
-  <data name="Log_AppStarting1" xml:space="preserve">
-    <value>Demarrage de l'application. Service de journalisation initialise.</value>
-  </data>
   <data name="Log_BaseDirectoryNotExist" xml:space="preserve">
     <value>Le repertoire de base « {0} » n'existe pas. Impossible de rechercher des assemblys satellites.</value>
   </data>
@@ -268,9 +265,6 @@
     <value>Culture de repli « Russe » ajout?e, car d'autres langues n'ont pas pu ?tre d?termin?es.</value>
   </data>
   <data name="Log_FlushingLogs" xml:space="preserve">
-    <value>Arret de l'application. Vidage des journaux...</value>
-  </data>
-  <data name="Log_FlushingLogs1" xml:space="preserve">
     <value>Arret de l'application. Vidage des journaux...</value>
   </data>
   <data name="Log_FoundLanguagesResult" xml:space="preserve">

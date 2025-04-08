@@ -234,9 +234,6 @@
   <data name="Log_AppStarting" xml:space="preserve">
     <value>Iniciando aplicativo. Servico de log inicializado.</value>
   </data>
-  <data name="Log_AppStarting1" xml:space="preserve">
-    <value>Iniciando aplicativo. Servico de log inicializado.</value>
-  </data>
   <data name="Log_BaseDirectoryNotExist" xml:space="preserve">
     <value>O diretorio base '{0}' nao existe. Nao e possivel verificar assemblies satelite.</value>
   </data>
@@ -268,9 +265,6 @@
     <value>Cultura de fallback "Russo" adicionada, pois outros idiomas n?o puderam ser determinados.</value>
   </data>
   <data name="Log_FlushingLogs" xml:space="preserve">
-    <value>Desligando o aplicativo. Descarregando logs...</value>
-  </data>
-  <data name="Log_FlushingLogs1" xml:space="preserve">
     <value>Desligando o aplicativo. Descarregando logs...</value>
   </data>
   <data name="Log_FoundLanguagesResult" xml:space="preserve">

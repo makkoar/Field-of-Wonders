@@ -234,9 +234,6 @@
   <data name="Log_AppStarting" xml:space="preserve">
     <value>Anwendung wird gestartet. Protokollierungsdienst wird initialisiert.</value>
   </data>
-  <data name="Log_AppStarting1" xml:space="preserve">
-    <value>Anwendung wird gestartet. Protokollierungsdienst wird initialisiert.</value>
-  </data>
   <data name="Log_BaseDirectoryNotExist" xml:space="preserve">
     <value>Basisverzeichnis „{0}“ existiert nicht. Scannen nach Satellitenassemblys nicht moglich.</value>
   </data>
@@ -268,9 +265,6 @@
     <value>Fallback-Kultur "Russisch" hinzugef?gt, da andere Sprachen nicht ermittelt werden konnten.</value>
   </data>
   <data name="Log_FlushingLogs" xml:space="preserve">
-    <value>Anwendung wird heruntergefahren. Protokollpuffer werden geleert...</value>
-  </data>
-  <data name="Log_FlushingLogs1" xml:space="preserve">
     <value>Anwendung wird heruntergefahren. Protokollpuffer werden geleert...</value>
   </data>
   <data name="Log_FoundLanguagesResult" xml:space="preserve">
