@@ -13,4 +13,5 @@ global using System.Reflection;
 global using System.Resources;
 global using System.Threading;
 global using System.Windows;
+global using System.Windows.Threading;
 global using ILogger = Serilog.ILogger;

@@ -1,6 +1,4 @@
-﻿using System.Windows.Threading;
-
-namespace Field_of_Wonders;
+﻿namespace Field_of_Wonders;
 
 /// <summary>Управляет жизненным циклом приложения, инициализирует локализацию и главное окно.</summary>
 public partial class App : Application
