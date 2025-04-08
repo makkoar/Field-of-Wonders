@@ -6,6 +6,9 @@ public class LocalizationService
     /// <summary>Получает информацию о культуре, успешно примененной к текущему потоку UI.</summary>
     public CultureInfo? CurrentAppliedCulture { get; private set; }
 
+    /// <summary>Статическое событие, вызываемое при изменении культуры приложения.</summary>
+    public static event EventHandler? CultureChanged;
+
     /// <summary>Динамически обнаруживает поддерживаемые языки на основе ресурсных сборок.</summary>
     /// <returns>Список <see cref="LanguageInfo"/> поддерживаемых языков, отсортированный по имени.</returns>
     public static List<LanguageInfo> DiscoverSupportedLanguages()
@@ -92,6 +95,8 @@ public class LocalizationService
             CultureInfo.DefaultThreadCurrentUICulture = cultureToApply;
             CurrentAppliedCulture = cultureToApply;
             LoggingService.Logger.Information(Lang.Log_CultureApplied, cultureCode); // Логгируем успех
+            CultureChanged?.Invoke(this, EventArgs.Empty); // Вызываем статическое событие
+
             return true;
         }
         catch (CultureNotFoundException ex)

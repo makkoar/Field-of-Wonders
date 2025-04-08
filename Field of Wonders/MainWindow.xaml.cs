@@ -1,4 +1,6 @@
-﻿namespace Field_of_Wonders;
+﻿using Field_of_Wonders.ViewModels;
+
+namespace Field_of_Wonders;
 
 /// <summary>Логика взаимодействия для главного окна приложения MainWindow.xaml.</summary>
 public partial class MainWindow : Window
@@ -7,7 +9,7 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-
+        DataContext = new MainViewModel();
         try
         {
             // TODO: Здесь будет основная инициализация ViewModel и привязка DataContext
