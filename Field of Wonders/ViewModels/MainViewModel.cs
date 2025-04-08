@@ -4,7 +4,7 @@
 public partial class MainViewModel : ObservableObject
 {
     [ObservableProperty]
-    private string _mainWindowTitle;
+    private string _mainWindowTitle = string.Empty;
 
     /// <summary>Инициализирует новый экземпляр класса <see cref="MainViewModel"/>.</summary>
     public MainViewModel()
@@ -13,15 +13,9 @@ public partial class MainViewModel : ObservableObject
         UpdateMainWindowTitle(); // Устанавливаем начальный заголовок
     }
 
-    private void UpdateMainWindowTitle()
-    {
-        MainWindowTitle = Lang.MainWindow_Title;
-    }
+    private void UpdateMainWindowTitle() => MainWindowTitle = Lang.MainWindow_Title;
 
-    private void OnCultureChanged(object? sender, EventArgs e)
-    {
-        UpdateMainWindowTitle(); // Обновляем заголовок при изменении культуры
-    }
+    private void OnCultureChanged(object? sender, EventArgs e) => UpdateMainWindowTitle(); // Обновляем заголовок при изменении культуры
 
     // TODO: Добавьте остальные свойства и команды для MainViewModel
 }

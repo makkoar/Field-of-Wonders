@@ -52,7 +52,6 @@ public static class LoggingService
             encoding: System.Text.Encoding.UTF8
         );
 
-
         // Лог критических ошибок (Fatal)
         _ = loggerConfiguration.WriteTo.File(
             fatalLogFilePath,
