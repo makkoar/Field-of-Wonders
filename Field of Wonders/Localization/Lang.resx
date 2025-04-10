@@ -213,10 +213,6 @@
     <value>Критическая ошибка. Необработанное исключение, детали недоступны.</value>
     <comment>Сообщение об ошибке для пользователя.</comment>
   </data>
-  <data name="Key" xml:space="preserve">
-    <value>ru-RU</value>
-    <comment>Описание</comment>
-  </data>
   <data name="Log_AddedCultureToList" xml:space="preserve">
     <value>Культура '{0}' добавлена в список.</value>
     <comment>Отладочное сообщение. Параметры: {0} Код культуры (строка).</comment>
@@ -377,6 +373,42 @@
     <value>Поддерживаемые языки не найдены автоматически. Попытка добавить резервные.</value>
     <comment>Предупреждение.</comment>
   </data>
+  <data name="Log_PlayerNameDefault_Format" xml:space="preserve">
+    <value>Имя игрока не указано. Используется имя по умолчанию: '{0}'.</value>
+    <comment>Формат сообщения лога. {0}: Имя игрока по умолчанию.</comment>
+  </data>
+  <data name="Log_PlayerNameDefault_Format" xml:space="preserve">
+    <value>Имя игрока не указано. Используется имя по умолчанию: '{0}'.</value>
+    <comment>Формат сообщения лога. {0}: Имя игрока по умолчанию.</comment>
+  </data>
+  <data name="Log_PlayerNameDefault_Format1" xml:space="preserve">
+    <value>Имя игрока не указано. Используется имя по умолчанию: '{0}'.</value>
+    <comment>Формат сообщения лога. {0}: Имя игрока по умолчанию.</comment>
+  </data>
+  <data name="Log_PlayerScoreAdded_Format" xml:space="preserve">
+    <value>Игроку '{0}' добавлено {1} очков. Новый счет: {2}. (Было: {3})</value>
+    <comment>Формат сообщения лога. {0}: Имя игрока, {1}: Добавленные очки, {2}: Новый общий счет, {3}: Счет до добавления.</comment>
+  </data>
+  <data name="Log_PlayerScoreAdded_Format" xml:space="preserve">
+    <value>Игроку '{0}' добавлено {1} очков. Новый счет: {2}. (Было: {3})</value>
+    <comment>Формат сообщения лога. {0}: Имя игрока, {1}: Добавленные очки, {2}: Новый общий счет, {3}: Счет до добавления.</comment>
+  </data>
+  <data name="Log_PlayerScoreAdded_Format1" xml:space="preserve">
+    <value>Игроку '{0}' добавлено {1} очков. Новый счет: {2}. (Было: {3})</value>
+    <comment>Формат сообщения лога. {0}: Имя игрока, {1}: Добавленные очки, {2}: Новый общий счет, {3}: Счет до добавления.</comment>
+  </data>
+  <data name="Log_PlayerScoreReset_Format" xml:space="preserve">
+    <value>Счет игрока '{0}' сброшен на 0. (Было: {1})</value>
+    <comment>Формат сообщения лога. {0}: Имя игрока, {1}: Счет до сброса.</comment>
+  </data>
+  <data name="Log_PlayerScoreReset_Format" xml:space="preserve">
+    <value>Счет игрока '{0}' сброшен на 0. (Было: {1})</value>
+    <comment>Формат сообщения лога. {0}: Имя игрока, {1}: Счет до сброса.</comment>
+  </data>
+  <data name="Log_PlayerScoreReset_Format1" xml:space="preserve">
+    <value>Счет игрока '{0}' сброшен на 0. (Было: {1})</value>
+    <comment>Формат сообщения лога. {0}: Имя игрока, {1}: Счет до сброса.</comment>
+  </data>
   <data name="Log_SaveLanguageSettingFailed" xml:space="preserve">
     <value>Не удалось сохранить настройку выбранного языка.</value>
     <comment>Предупреждение.</comment>
@@ -448,5 +480,13 @@
   <data name="MainWindow_Title" xml:space="preserve">
     <value>Поле Чудес</value>
     <comment>Заголовок главного окна приложения.</comment>
+  </data>
+  <data name="Player_DefaultName" xml:space="preserve">
+    <value>Игрок</value>
+    <comment>Имя игрока, используемое по умолчанию, если не указано при создании.</comment>
+  </data>
+  <data name="Player_DefaultName" xml:space="preserve">
+    <value>Игрок</value>
+    <comment>Имя игрока, используемое по умолчанию, если не указано при создании.</comment>
   </data>
 </root>

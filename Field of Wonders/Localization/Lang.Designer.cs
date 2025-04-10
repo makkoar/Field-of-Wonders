@@ -277,15 +277,6 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на ru-RU.
-        /// </summary>
-        public static string Key {
-            get {
-                return ResourceManager.GetString("Key", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Ищет локализованную строку, похожую на Культура &apos;{0}&apos; добавлена в список..
         /// </summary>
         public static string Log_AddedCultureToList {
@@ -646,6 +637,60 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Имя игрока не указано. Используется имя по умолчанию: &apos;{0}&apos;..
+        /// </summary>
+        public static string Log_PlayerNameDefault_Format {
+            get {
+                return ResourceManager.GetString("Log_PlayerNameDefault_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Имя игрока не указано. Используется имя по умолчанию: &apos;{0}&apos;..
+        /// </summary>
+        public static string Log_PlayerNameDefault_Format1 {
+            get {
+                return ResourceManager.GetString("Log_PlayerNameDefault_Format1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Игроку &apos;{0}&apos; добавлено {1} очков. Новый счет: {2}. (Было: {3}).
+        /// </summary>
+        public static string Log_PlayerScoreAdded_Format {
+            get {
+                return ResourceManager.GetString("Log_PlayerScoreAdded_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Игроку &apos;{0}&apos; добавлено {1} очков. Новый счет: {2}. (Было: {3}).
+        /// </summary>
+        public static string Log_PlayerScoreAdded_Format1 {
+            get {
+                return ResourceManager.GetString("Log_PlayerScoreAdded_Format1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Счет игрока &apos;{0}&apos; сброшен на 0. (Было: {1}).
+        /// </summary>
+        public static string Log_PlayerScoreReset_Format {
+            get {
+                return ResourceManager.GetString("Log_PlayerScoreReset_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Счет игрока &apos;{0}&apos; сброшен на 0. (Было: {1}).
+        /// </summary>
+        public static string Log_PlayerScoreReset_Format1 {
+            get {
+                return ResourceManager.GetString("Log_PlayerScoreReset_Format1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Не удалось сохранить настройку выбранного языка..
         /// </summary>
         public static string Log_SaveLanguageSettingFailed {
@@ -804,6 +849,15 @@ namespace Field_of_Wonders.Localization {
         public static string MainWindow_Title {
             get {
                 return ResourceManager.GetString("MainWindow_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Игрок.
+        /// </summary>
+        public static string Player_DefaultName {
+            get {
+                return ResourceManager.GetString("Player_DefaultName", resourceCulture);
             }
         }
     }

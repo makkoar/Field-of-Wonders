@@ -189,9 +189,6 @@
   <data name="Error_UnhandledException_NoExceptionObject" xml:space="preserve">
     <value>Error critico. Excepcion no controlada, detalles no disponibles.</value>
   </data>
-  <data name="Key" xml:space="preserve">
-    <value>es-ES</value>
-  </data>
   <data name="Log_AddedCultureToList" xml:space="preserve">
     <value>Cultura '{0}' agregada a la lista.</value>
   </data>
@@ -312,6 +309,33 @@
   <data name="Log_NoLanguagesFound_AddingFallbacks" xml:space="preserve">
     <value>No se encontraron idiomas admitidos automaticamente. Intentando agregar respaldos.</value>
   </data>
+  <data name="Log_PlayerNameDefault_Format" xml:space="preserve">
+    <value>Nombre de jugador no proporcionado. Usando nombre predeterminado: '{0}'.</value>
+  </data>
+  <data name="Log_PlayerNameDefault_Format" xml:space="preserve">
+    <value>Nombre de jugador no proporcionado. Usando nombre predeterminado: '{0}'.</value>
+  </data>
+  <data name="Log_PlayerNameDefault_Format1" xml:space="preserve">
+    <value>Nombre de jugador no proporcionado. Usando nombre predeterminado: '{0}'.</value>
+  </data>
+  <data name="Log_PlayerScoreAdded_Format" xml:space="preserve">
+    <value>El jugador '{0}' obtuvo {1} puntos. Nueva puntuaci?n: {2}. (Anterior: {3})</value>
+  </data>
+  <data name="Log_PlayerScoreAdded_Format" xml:space="preserve">
+    <value>El jugador '{0}' obtuvo {1} puntos. Nueva puntuaci?n: {2}. (Anterior: {3})</value>
+  </data>
+  <data name="Log_PlayerScoreAdded_Format1" xml:space="preserve">
+    <value>El jugador '{0}' obtuvo {1} puntos. Nueva puntuaci?n: {2}. (Anterior: {3})</value>
+  </data>
+  <data name="Log_PlayerScoreReset_Format" xml:space="preserve">
+    <value>Puntuaci?n del jugador '{0}' restablecida a 0. (Anterior: {1})</value>
+  </data>
+  <data name="Log_PlayerScoreReset_Format" xml:space="preserve">
+    <value>Puntuaci?n del jugador '{0}' restablecida a 0. (Anterior: {1})</value>
+  </data>
+  <data name="Log_PlayerScoreReset_Format1" xml:space="preserve">
+    <value>Puntuaci?n del jugador '{0}' restablecida a 0. (Anterior: {1})</value>
+  </data>
   <data name="Log_SaveLanguageSettingFailed" xml:space="preserve">
     <value>No se pudo guardar la configuracion del idioma seleccionado.</value>
   </data>
@@ -365,5 +389,11 @@
   </data>
   <data name="MainWindow_Title" xml:space="preserve">
     <value>Campo de Maravillas</value>
+  </data>
+  <data name="Player_DefaultName" xml:space="preserve">
+    <value>Jugador</value>
+  </data>
+  <data name="Player_DefaultName" xml:space="preserve">
+    <value>Jugador</value>
   </data>
 </root>

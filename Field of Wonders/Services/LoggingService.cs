@@ -14,60 +14,51 @@ public static class LoggingService
     private static ILogger InitializeLogger()
     {
         string logsDirectory = Path.Combine(AppContext.BaseDirectory, "Logs");
-        string logFilePath = Path.Combine(logsDirectory, "log-.txt");
-        string fatalLogFilePath = Path.Combine(logsDirectory, "log-fatal-.txt");
-        string errorsOnlyFilePath = Path.Combine(logsDirectory, "log-errors-only-.txt");
-        string fullLogsFilePath = Path.Combine(logsDirectory, "log-full-.txt");
+        string logFilePath = Path.Combine(logsDirectory, "log-.txt"); // Info+
+        string errorsOnlyFilePath = Path.Combine(logsDirectory, "log-errors-only-.txt"); // Error+
+        string fullLogsFilePath = Path.Combine(logsDirectory, "log-full-.txt"); // Verbose+
+
+        const int retainedFileCount = 15; // Хранить логи 15 дней
 
         LoggerConfiguration loggerConfiguration = new LoggerConfiguration()
-            .MinimumLevel.Information() // Глобальный минимальный уровень, фильтрация происходит на уровне приемников (Sinks).
-            .Enrich.FromLogContext(); // Добавляет контекстную информацию (например, из LogContext.PushProperty).
+            .MinimumLevel.Verbose() // Глобальный минимальный уровень Verbose
+            .Enrich.FromLogContext();
 
-        // Лог 1: Инфо и выше (log-.txt)
+        // Лог 1: Основной лог (Information и выше)
         _ = loggerConfiguration.WriteTo.File(
             logFilePath,
             restrictedToMinimumLevel: LogEventLevel.Information,
             rollingInterval: RollingInterval.Day,
-            retainedFileCountLimit: 7,
-            outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}",
-            encoding: System.Text.Encoding.UTF8 // Явное указание кодировки UTF-8
-        );
-
-        // Лог 2: Полные логи (Инфо, Варнинг, Еррор, Фатал) (log-full-.txt)
-        _ = loggerConfiguration.WriteTo.File(
-            fullLogsFilePath,
-            restrictedToMinimumLevel: LogEventLevel.Debug,
-            rollingInterval: RollingInterval.Day,
-            retainedFileCountLimit: 3,
-            outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}" // SourceContext убран
-        );
-
-        // Лог 3: Только ошибки (log-errors-only-.txt)
-        _ = loggerConfiguration.WriteTo.File(
-            errorsOnlyFilePath,
-            restrictedToMinimumLevel: LogEventLevel.Error,
-            rollingInterval: RollingInterval.Month, // Реже ротация для ошибок
-            retainedFileCountLimit: 12,
+            retainedFileCountLimit: retainedFileCount,
             outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}",
             encoding: System.Text.Encoding.UTF8
         );
 
-        // Лог критических ошибок (Fatal)
+        // Лог 2: Полные логи (Verbose и выше)
         _ = loggerConfiguration.WriteTo.File(
-            fatalLogFilePath,
-            restrictedToMinimumLevel: LogEventLevel.Fatal,
-            rollingInterval: RollingInterval.Month,
-            retainedFileCountLimit: 12,
+            fullLogsFilePath,
+            restrictedToMinimumLevel: LogEventLevel.Verbose,
+            rollingInterval: RollingInterval.Day,
+            retainedFileCountLimit: retainedFileCount,
+            outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}",
+            encoding: System.Text.Encoding.UTF8
+        );
+
+        // Лог 3: Только ошибки (Error и Fatal)
+        _ = loggerConfiguration.WriteTo.File(
+            errorsOnlyFilePath,
+            restrictedToMinimumLevel: LogEventLevel.Error,
+            rollingInterval: RollingInterval.Day,
+            retainedFileCountLimit: retainedFileCount,
             outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}",
             encoding: System.Text.Encoding.UTF8
         );
 
         Log.Logger = loggerConfiguration.CreateLogger();
 
-        // Логгируем сообщение о старте.
-        // На данном этапе Lang будет использовать ресурсы по умолчанию (вероятно, русский), т.к. культура приложения еще не установлена.
+        // Логгируем сообщение о старте НА РУССКОМ ЯЗЫКЕ, так как локаль еще не установлена.
         Log.Information(new string('=', 80));
-        Log.Information(Lang.Log_AppStarting);
+        Log.Information("Запуск приложения \"Поле Чудес\"...");
 
         return Log.Logger;
     }
@@ -75,8 +66,6 @@ public static class LoggingService
     /// <summary>Закрывает и сбрасывает буферы логгера Serilog, обеспечивая запись всех оставшихся сообщений.</summary>
     public static void CloseAndFlushLogger()
     {
-        // Используем локализованную строку, если культура уже была применена,
-        // иначе будет использована строка из Lang.resx (ресурс по умолчанию).
         Logger.Information(Lang.Log_FlushingLogs);
         Log.CloseAndFlush();
     }
