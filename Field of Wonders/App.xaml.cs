@@ -3,7 +3,13 @@
 /// <summary>Управляет жизненным циклом приложения, инициализирует локализацию и главное окно.</summary>
 public partial class App : Application
 {
+    #region Поля
+
     private readonly LocalizationService _localizationService = new();
+
+    #endregion
+
+    #region Обработчики событий приложения
 
     /// <summary>Инициализирует приложение: определяет язык, применяет культуру и отображает главное окно.</summary>
     /// <param name="e">Аргументы события запуска.</param>
@@ -135,6 +141,10 @@ public partial class App : Application
         e.Handled = true; // Предотвращаем стандартное завершение приложения после исключения в UI
     }
 
+    #endregion
+
+    #region Внутренние и Вспомогательные Методы
+
     /// <summary>Отображает критическое сообщение об ошибке и логирует его как Fatal. Использует локализованные строки.</summary>
     /// <param name="message">Текст сообщения (уже локализованный).</param>
     internal static void ShowAndLogCriticalError(string message)
@@ -144,19 +154,20 @@ public partial class App : Application
         {
             if (Current?.Dispatcher != null)
             {
+                // Игнорируем результат MessageBox, т.к. важно само отображение
                 _ = Current.Dispatcher.Invoke(() =>
                     _ = MessageBox.Show(message, Lang.Error_Critical_Title, MessageBoxButton.OK, MessageBoxImage.Error));
             }
             else
             {
                 LoggingService.Logger.Error("Не удалось получить доступ к Current.Dispatcher для отображения критической ошибки.");
-                Environment.FailFast(message); // Аварийное завершение
+                Environment.FailFast(message); // Аварийное завершение, если UI недоступен
             }
         }
         catch (Exception exInner)
         {
             LoggingService.Logger.Fatal(exInner, "Критическая ошибка (не удалось показать MessageBox.Show)");
-            Environment.FailFast($"{message} (MessageBox.Show failed: {exInner.Message})"); // Аварийное завершение
+            Environment.FailFast($"{message} (MessageBox.Show failed: {exInner.Message})");
         }
     }
 
@@ -213,4 +224,6 @@ public partial class App : Application
             LoggingService.Logger.Warning(Lang.Log_CultureAddNotFound, cultureCodeToAdd);
         }
     }
+
+    #endregion
 }
