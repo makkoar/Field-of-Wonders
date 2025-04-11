@@ -28,8 +28,9 @@ public partial class App : Application
         {
             string errorMessage = "Критическая ошибка: Не найдены поддерживаемые языки (отсутствует даже нейтральный язык).";
             LoggingService.Logger.Fatal("Критическая ошибка: {ErrorMessage}", errorMessage);
-            ShowAndLogCriticalError(errorMessage, "Критическая ошибка");
-            Shutdown(1);
+            // Язык еще не выбран, используем нелокализованный заголовок
+            ShowAndLogCriticalError(errorMessage, "Критическая ошибка", useLocalization: false);
+            // Shutdown(1) вызывается внутри ShowAndLogCriticalError
             return;
         }
         LoggingService.Logger.Information("Найдено {Count} языков: {CultureCodes}", supportedLanguages.Count, string.Join(", ", supportedLanguages.Select(l => l.CultureCode)));
@@ -41,7 +42,7 @@ public partial class App : Application
                               !supportedLanguages.Any(l => l.CultureCode.Equals(selectedCultureName, StringComparison.OrdinalIgnoreCase));
 
         LoggingService.Logger.Information("Инициализация главного окна...");
-        MainWindow? mainWindow = new();
+        MainWindow? mainWindow = new(); // Создаем заранее, но показываем после локализации
 
         if (needsSelection)
         {
@@ -63,7 +64,8 @@ public partial class App : Application
             else
             {
                 LoggingService.Logger.Warning("Окно выбора языка было закрыто пользователем без подтверждения. Завершение работы приложения.");
-                Shutdown(0);
+                // mainWindow?.Close(); // <-- Удалено: Избыточно, т.к. Shutdown(0) закроет все окна.
+                Shutdown(0); // Завершаем приложение с кодом 0 (успех, но без запуска)
                 return;
             }
         }
@@ -76,8 +78,9 @@ public partial class App : Application
         {
             string errorMessage = $"Критическая ошибка: Не удалось применить необходимую культуру '{cultureToApply}'.";
             LoggingService.Logger.Fatal("Критическая ошибка: {ErrorMessage}", errorMessage);
-            ShowAndLogCriticalError(errorMessage, Lang.ResourceManager.GetString("Error_Critical_Title") ?? "Критическая ошибка");
-            Shutdown(1);
+            // Пытаемся использовать локализацию для заголовка, но с fallback'ом
+            ShowAndLogCriticalError(errorMessage, useLocalization: true); // По умолчанию "Критическая ошибка" если Lang недоступен
+            // Shutdown(1) вызывается внутри ShowAndLogCriticalError
             return;
         }
 
@@ -101,18 +104,19 @@ public partial class App : Application
     /// <param name="e">Аргументы события.</param>
     private static void OnUnhandledException(object sender, UnhandledExceptionEventArgs e)
     {
-        // Исключение может произойти до установки культуры, используем Lang с осторожностью
+        // Локализация может быть недоступна, используем ее с осторожностью
         if (e.ExceptionObject is Exception exception)
         {
-            LoggingService.Logger.Fatal(exception, Lang.Log_UnhandledExceptionAppDomain, e.IsTerminating);
-            string errorMessage = string.Format(Lang.Error_UnhandledException_Format, exception.Message);
-            ShowAndLogCriticalError(errorMessage, Lang.ResourceManager.GetString("Error_Critical_Title") ?? "Критическая ошибка");
+            LoggingService.Logger.Fatal(exception, Lang.Log_UnhandledExceptionAppDomain ?? "Unhandled exception in AppDomain (terminating: {IsTerminating})", e.IsTerminating);
+            string errorMessage = string.Format(Lang.Error_UnhandledException_Format ?? "Unhandled exception occurred: {0}", exception.Message);
+            ShowAndLogCriticalError(errorMessage, useLocalization: true); // Пытаемся использовать локализацию для заголовка
         }
         else
         {
-            LoggingService.Logger.Fatal(Lang.Log_UnhandledExceptionAppDomain_NoException, e.IsTerminating);
-            ShowAndLogCriticalError(Lang.Error_UnhandledException_NoExceptionObject, Lang.ResourceManager.GetString("Error_Critical_Title") ?? "Критическая ошибка");
+            LoggingService.Logger.Fatal(Lang.Log_UnhandledExceptionAppDomain_NoException ?? "Unhandled exception in AppDomain (no Exception object, terminating: {IsTerminating})", e.IsTerminating);
+            ShowAndLogCriticalError(Lang.Error_UnhandledException_NoExceptionObject ?? "An unknown unhandled exception occurred.", useLocalization: true);
         }
+        // Неявное завершение приложения здесь, так как ShowAndLogCriticalError вызывает Shutdown/FailFast
     }
 
     /// <summary>Обработчик необработанных исключений в Dispatcher (UI thread).</summary>
@@ -120,40 +124,65 @@ public partial class App : Application
     /// <param name="e">Аргументы события.</param>
     private void OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
     {
-        // Исключение может произойти до установки культуры, используем Lang с осторожностью
+        // Локализация должна быть доступна, если ошибка произошла после инициализации
         LoggingService.Logger.Fatal(e.Exception, Lang.Log_UnhandledExceptionDispatcher);
         string errorMessage = string.Format(Lang.Error_DispatcherUnhandledException_Format, e.Exception.Message);
-        ShowAndLogCriticalError(errorMessage, Lang.ResourceManager.GetString("Error_Critical_Title") ?? "Критическая ошибка");
-        e.Handled = true; // Предотвращаем стандартное завершение приложения
+        ShowAndLogCriticalError(errorMessage, useLocalization: true);
+        e.Handled = true; // Предотвращаем стандартное завершение приложения, т.к. ShowAndLogCriticalError его выполнит.
     }
 
     #endregion
 
-    #region Внутренние Методы
+    #region Внутренние Статические Методы
 
-    /// <summary>Отображает критическое сообщение об ошибке и логирует его как Fatal.</summary>
-    /// <param name="message">Текст сообщения (предпочтительно уже локализованный).</param>
-    /// <param name="title">Заголовок окна сообщения (предпочтительно локализованный или строка по умолчанию).</param>
-    internal static void ShowAndLogCriticalError(string message, string title = "Критическая ошибка")
+    /// <summary>Отображает критическое сообщение об ошибке, логирует его и завершает приложение.</summary>
+    /// <param name="message">Текст сообщения (может быть локализованным или нет).</param>
+    /// <param name="defaultTitle">Заголовок окна сообщения по умолчанию, если локализация не используется или недоступна.</param>
+    /// <param name="useLocalization">Указывает, следует ли пытаться использовать локализованный заголовок из ресурсов.</param>
+    internal static void ShowAndLogCriticalError(string message, string defaultTitle = "Критическая ошибка", bool useLocalization = true)
     {
         LoggingService.Logger.Fatal("Критическая ошибка: {ErrorMessage}", message);
+
+        string title = defaultTitle;
+        if (useLocalization)
+        {
+            // Пытаемся получить локализованный заголовок, если не удается - используем defaultTitle
+            title = Lang.ResourceManager.GetString("Error_Critical_Title") ?? defaultTitle;
+        }
+
         try
         {
-            if (Current?.Dispatcher != null)
+            // Проверяем, доступен ли Dispatcher текущего приложения
+            if (Current?.Dispatcher != null && Current.Dispatcher.CheckAccess())
+            {
+                _ = MessageBox.Show(message, title, MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (Current?.Dispatcher != null) // Если нужен Invoke
             {
                 _ = Current.Dispatcher.Invoke(() =>
                     _ = MessageBox.Show(message, title, MessageBoxButton.OK, MessageBoxImage.Error));
             }
             else
             {
+                // Если Dispatcher недоступен (очень ранняя ошибка), логгируем и завершаем
                 LoggingService.Logger.Error("Не удалось получить доступ к Current.Dispatcher для отображения критической ошибки.");
-                Environment.FailFast(message); // Аварийное завершение
+                Environment.FailFast($"Критическая ошибка (UI недоступен): {message}");
             }
         }
         catch (Exception exInner)
         {
-            LoggingService.Logger.Fatal(exInner, "Критическая ошибка (не удалось показать MessageBox.Show)");
+            LoggingService.Logger.Fatal(exInner, "Критическая ошибка при попытке показать MessageBox: {ErrorMessage}", exInner.Message);
             Environment.FailFast($"{message} (MessageBox.Show failed: {exInner.Message})"); // Аварийное завершение
+        }
+
+        // Завершаем приложение после отображения сообщения
+        if (Current != null)
+        {
+            Current.Shutdown(1); // Код 1 - ошибка
+        }
+        else
+        {
+            Environment.Exit(1); // Запасной вариант завершения
         }
     }
 

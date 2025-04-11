@@ -3,11 +3,21 @@
 /// <summary>Предоставляет статический доступ к настроенному экземпляру логгера Serilog.</summary>
 public static class LoggingService
 {
+    #region Поля (статические)
+
     /// <summary>Экземпляр логгера, инициализируемый при первом обращении.</summary>
     private static readonly Lazy<ILogger> _lazyLogger = new(InitializeLogger, LazyThreadSafetyMode.ExecutionAndPublication);
 
+    #endregion
+
+    #region Свойства (статические)
+
     /// <summary>Получает основной экземпляр логгера приложения.</summary>
     public static ILogger Logger => _lazyLogger.Value;
+
+    #endregion
+
+    #region Статические Методы
 
     /// <summary>Инициализирует глобальный логгер Serilog с настроенными приемниками.</summary>
     /// <returns>Настроенный экземпляр логгера.</returns>
@@ -69,4 +79,6 @@ public static class LoggingService
         Logger.Information(Lang.Log_FlushingLogs);
         Log.CloseAndFlush();
     }
+
+    #endregion
 }

@@ -1,6 +1,7 @@
 ﻿<Window x:Class="Field_of_Wonders.Views.LanguageSelectionWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:Field_of_Wonders.ViewModels"
         xmlns:models="clr-namespace:Field_of_Wonders.Models"
         Title="Выбор языка / Language Selection" Height="150" Width="300"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize" ShowInTaskbar="False"
@@ -9,7 +10,10 @@
 
         <Label Name="LabelSelect" Content="Выберите язык / Select language:" FontWeight="Bold"/>
 
-        <ComboBox Name="LanguageComboBox" ItemsSource="{Binding}" VerticalAlignment="Center" Margin="0,5,0,10">
+        <ComboBox Name="LanguageComboBox"
+                  ItemsSource="{Binding AvailableLanguages}"
+                  SelectedItem="{Binding SelectedLanguage}"
+                  VerticalAlignment="Center" Margin="0,5,0,10">
             <ComboBox.ItemTemplate>
                 <DataTemplate DataType="{x:Type models:LanguageInfo}">
                     <TextBlock Text="{Binding DisplayName}"/>

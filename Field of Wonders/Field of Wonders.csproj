@@ -34,26 +34,32 @@
     <EmbeddedResource Update="Localization\Lang.pt.resx">
       <LastGenOutput>Lang.pt.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>ResXFileCodeGenerator</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Update="Localization\Lang.it.resx">
       <LastGenOutput>Lang.it.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>ResXFileCodeGenerator</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Update="Localization\Lang.es.resx">
       <LastGenOutput>Lang.es.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>ResXFileCodeGenerator</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Update="Localization\Lang.fr.resx">
       <LastGenOutput>Lang.fr.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>ResXFileCodeGenerator</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Update="Localization\Lang.de.resx">
       <LastGenOutput>Lang.de.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>ResXFileCodeGenerator</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Update="Localization\Lang.en.resx">
       <LastGenOutput>Lang.en.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>ResXFileCodeGenerator</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Update="Localization\Lang.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

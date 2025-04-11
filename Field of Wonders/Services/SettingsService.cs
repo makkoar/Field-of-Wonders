@@ -3,10 +3,21 @@
 /// <summary>Сервис для сохранения и загрузки настроек приложения.</summary>
 public class SettingsService
 {
+    #region Константы
+
     /// <summary>Имя файла для сохранения настроек.</summary>
     private const string SettingsFileName = "Settings.msgpack";
+
+    #endregion
+
+    #region Поля (статические)
+
     /// <summary>Полный путь к файлу настроек.</summary>
     private static readonly string SettingsFilePath = Path.Combine(AppContext.BaseDirectory, SettingsFileName);
+
+    #endregion
+
+    #region Статические Методы
 
     /// <summary>Загружает настройки приложения из файла.</summary>
     /// <returns>Объект <see cref="AppSettings"/> или null при ошибке или отсутствии файла.</returns>
@@ -92,7 +103,7 @@ public class SettingsService
         }
     }
 
-    /// <summary>Безопасно пытается удалить файл настроек. Ошибки игнорируются.</summary>
+    /// <summary>Безопасно пытается удалить файл настроек. Ошибки логгируются как Warning.</summary>
     private static void TryDeleteSettingsFile()
     {
         try
@@ -100,7 +111,7 @@ public class SettingsService
             if (File.Exists(SettingsFilePath))
             {
                 File.Delete(SettingsFilePath);
-                LoggingService.Logger.Debug(Lang.Log_SettingsFileDeleted, SettingsFileName);
+                LoggingService.Logger.Information(Lang.Log_SettingsFileDeleted, SettingsFileName);
             }
         }
         catch (Exception ex)
@@ -108,4 +119,6 @@ public class SettingsService
             LoggingService.Logger.Warning(ex, Lang.Log_SettingsFileDeleteFailed, SettingsFileName);
         }
     }
+
+    #endregion
 }
