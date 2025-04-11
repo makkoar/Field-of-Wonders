@@ -28,10 +28,9 @@ public class Player
         }
         else
         {
-            Name = name.Trim(); // Убираем лишние пробелы по краям
+            Name = name.Trim();
         }
-
-        Score = 0; // Инициализируем счет нулем при создании игрока
+        Score = 0;
     }
 
     #endregion

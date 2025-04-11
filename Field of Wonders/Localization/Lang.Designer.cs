@@ -61,7 +61,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Ответ не может быть пустым..
+        ///   Ищет локализованную строку, похожую на Текст ответа не может быть пустым..
         /// </summary>
         public static string Error_AnswerCannotBeEmpty {
             get {
@@ -70,88 +70,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Выбранный язык &apos;{0}&apos; не найден ({1}).\nБудет использован язык по умолчанию..
-        /// </summary>
-        public static string Error_ApplyCulture_NotFound_Format {
-            get {
-                return ResourceManager.GetString("Error_ApplyCulture_NotFound_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Ошибка установки языка.
-        /// </summary>
-        public static string Error_ApplyCulture_Title {
-            get {
-                return ResourceManager.GetString("Error_ApplyCulture_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Произошла непредвиденная ошибка при установке языка:\n{0}.
-        /// </summary>
-        public static string Error_ApplyCulture_Unexpected_Format {
-            get {
-                return ResourceManager.GetString("Error_ApplyCulture_Unexpected_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Критическая ошибка: Не удалось установить ни один из доступных языков. Приложение будет закрыто..
-        /// </summary>
-        public static string Error_Critical_CannotSetAnyLanguage {
-            get {
-                return ResourceManager.GetString("Error_Critical_CannotSetAnyLanguage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Не удалось обнаружить поддерживаемые языки. Приложение будет закрыто..
-        /// </summary>
-        public static string Error_Critical_NoLanguagesFound {
-            get {
-                return ResourceManager.GetString("Error_Critical_NoLanguagesFound", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Критическая ошибка.
-        /// </summary>
-        public static string Error_Critical_Title {
-            get {
-                return ResourceManager.GetString("Error_Critical_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Ошибка инициализации данных игры:\n{0}.
-        /// </summary>
-        public static string Error_DataInitializationFailed_Format {
-            get {
-                return ResourceManager.GetString("Error_DataInitializationFailed_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Произошла ошибка при автоматическом определении языков:\n{0}\n\nБудет использован язык по умолчанию..
-        /// </summary>
-        public static string Error_DiscoverLanguages_Failed_Format {
-            get {
-                return ResourceManager.GetString("Error_DiscoverLanguages_Failed_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Ошибка определения языков.
-        /// </summary>
-        public static string Error_DiscoverLanguages_Title {
-            get {
-                return ResourceManager.GetString("Error_DiscoverLanguages_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Необработанное исключение UI: {0}.
+        ///   Ищет локализованную строку, похожую на Произошла ошибка в UI потоке: {0}.
         /// </summary>
         public static string Error_DispatcherUnhandledException_Format {
             get {
@@ -160,61 +79,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Ошибка UI.
-        /// </summary>
-        public static string Error_DispatcherUnhandledException_Title {
-            get {
-                return ResourceManager.GetString("Error_DispatcherUnhandledException_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Ошибка чтения файла настроек &apos;{0}&apos;:\n{1}\n\nПроверьте права доступа к папке приложения..
-        /// </summary>
-        public static string Error_LoadSettings_IOException_Format {
-            get {
-                return ResourceManager.GetString("Error_LoadSettings_IOException_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Ошибка при чтении файла настроек &apos;{0}&apos;:\n{1}\n\nФайл будет удален. При следующем запуске потребуется выбрать язык..
-        /// </summary>
-        public static string Error_LoadSettings_ReadFailed_Format {
-            get {
-                return ResourceManager.GetString("Error_LoadSettings_ReadFailed_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Ошибка загрузки настроек.
-        /// </summary>
-        public static string Error_LoadSettings_Title {
-            get {
-                return ResourceManager.GetString("Error_LoadSettings_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Непредвиденная ошибка при загрузке настроек из &apos;{0}&apos;:\n{1}\n\nФайл будет удален. При следующем запуске потребуется выбрать язык..
-        /// </summary>
-        public static string Error_LoadSettings_Unexpected_Format {
-            get {
-                return ResourceManager.GetString("Error_LoadSettings_Unexpected_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Критическая ошибка при инициализации главного окна: {0}. Приложение будет закрыто..
-        /// </summary>
-        public static string Error_MainWindowInitFailed_Format {
-            get {
-                return ResourceManager.GetString("Error_MainWindowInitFailed_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Вопрос не может быть пустым..
+        ///   Ищет локализованную строку, похожую на Текст вопроса не может быть пустым..
         /// </summary>
         public static string Error_QuestionCannotBeEmpty {
             get {
@@ -223,52 +88,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Не удалось сохранить настройки.\nНе удалось определить директорию для файла настроек: {0}.
-        /// </summary>
-        public static string Error_SaveSettings_DirectoryNotFound_Format {
-            get {
-                return ResourceManager.GetString("Error_SaveSettings_DirectoryNotFound_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Произошла ошибка при записи файла настроек &apos;{0}&apos;:\n{1}.
-        /// </summary>
-        public static string Error_SaveSettings_IOException_Format {
-            get {
-                return ResourceManager.GetString("Error_SaveSettings_IOException_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Ошибка сохранения настроек.
-        /// </summary>
-        public static string Error_SaveSettings_Title {
-            get {
-                return ResourceManager.GetString("Error_SaveSettings_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Не удалось сохранить настройки.\nОтказано в доступе к файлу:\n{0}\n\nПроверьте права на запись..
-        /// </summary>
-        public static string Error_SaveSettings_Unauthorized_Format {
-            get {
-                return ResourceManager.GetString("Error_SaveSettings_Unauthorized_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Произошла непредвиденная ошибка при сохранении настроек:\n{0}.
-        /// </summary>
-        public static string Error_SaveSettings_Unexpected_Format {
-            get {
-                return ResourceManager.GetString("Error_SaveSettings_Unexpected_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Непредвиденная ошибка при инициализации игры:\n{0}.
+        ///   Ищет локализованную строку, похожую на Непредвиденная ошибка при инициализации главного окна: {0}.
         /// </summary>
         public static string Error_UnexpectedInitializationFailed_Format {
             get {
@@ -286,56 +106,11 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Критическая ошибка. Необработанное исключение, детали недоступны..
+        ///   Ищет локализованную строку, похожую на Произошла необработанная ошибка без дополнительных сведений..
         /// </summary>
         public static string Error_UnhandledException_NoExceptionObject {
             get {
                 return ResourceManager.GetString("Error_UnhandledException_NoExceptionObject", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Необработанное исключение.
-        /// </summary>
-        public static string Error_UnhandledException_Title {
-            get {
-                return ResourceManager.GetString("Error_UnhandledException_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Культура &apos;{0}&apos; добавлена в список..
-        /// </summary>
-        public static string Log_AddedCultureToList {
-            get {
-                return ResourceManager.GetString("Log_AddedCultureToList", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Добавлен резервный язык: {0}..
-        /// </summary>
-        public static string Log_AddedFallbackLanguage {
-            get {
-                return ResourceManager.GetString("Log_AddedFallbackLanguage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Не удалось добавить резервные языки, кроме жестко заданного ru-RU..
-        /// </summary>
-        public static string Log_AddedHardcodedFallback {
-            get {
-                return ResourceManager.GetString("Log_AddedHardcodedFallback", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Application.Current был null. Невозможно выполнить корректное завершение..
-        /// </summary>
-        public static string Log_AppCurrentNull {
-            get {
-                return ResourceManager.GetString("Log_AppCurrentNull", resourceCulture);
             }
         }
         
@@ -349,88 +124,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Культура &quot;{0}&quot; не найдена: {1}.
-        /// </summary>
-        public static string Log_ApplyCulture_NotFound_Format {
-            get {
-                return ResourceManager.GetString("Log_ApplyCulture_NotFound_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Непредвиденная ошибка при применении культуры: {0}.
-        /// </summary>
-        public static string Log_ApplyCulture_Unexpected_Format {
-            get {
-                return ResourceManager.GetString("Log_ApplyCulture_Unexpected_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Попытка применения культуры: {0}.
-        /// </summary>
-        public static string Log_ApplyingCulture_Attempt {
-            get {
-                return ResourceManager.GetString("Log_ApplyingCulture_Attempt", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Попытка применить культуру: {CultureCode}.
-        /// </summary>
-        public static string Log_ApplyingCulture_Attempt_Format {
-            get {
-                return ResourceManager.GetString("Log_ApplyingCulture_Attempt_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Непредвиденная ошибка при применении культуры {0}..
-        /// </summary>
-        public static string Log_ApplyingCulture_Failed {
-            get {
-                return ResourceManager.GetString("Log_ApplyingCulture_Failed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Не удалось применить культуру {FailedCultureCode}. Попытка применить резервную культуру: {FallbackCultureCode}....
-        /// </summary>
-        public static string Log_ApplyingCulture_Failed_AttemptingFallback_Format {
-            get {
-                return ResourceManager.GetString("Log_ApplyingCulture_Failed_AttemptingFallback_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Не удалось применить выбранную/сохраненную культуру: {0}. Попытка использовать резервную..
-        /// </summary>
-        public static string Log_ApplyingCulture_Fallback {
-            get {
-                return ResourceManager.GetString("Log_ApplyingCulture_Fallback", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Успешно применена резервная культура: {0}.
-        /// </summary>
-        public static string Log_ApplyingCulture_FallbackSuccess {
-            get {
-                return ResourceManager.GetString("Log_ApplyingCulture_FallbackSuccess", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Культура &apos;{0}&apos; не найдена. Применение невозможно..
-        /// </summary>
-        public static string Log_ApplyingCulture_NotFound {
-            get {
-                return ResourceManager.GetString("Log_ApplyingCulture_NotFound", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Культура {0} успешно применена к текущему потоку..
+        ///   Ищет локализованную строку, похожую на Культура &apos;{0}&apos; успешно применена..
         /// </summary>
         public static string Log_ApplyingCulture_Success {
             get {
@@ -439,52 +133,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Запуск приложения. Инициализация службы логирования..
-        /// </summary>
-        public static string Log_AppStarting {
-            get {
-                return ResourceManager.GetString("Log_AppStarting", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Базовая директория &apos;{0}&apos; не существует. Сканирование сателлитных сборок невозможно..
-        /// </summary>
-        public static string Log_BaseDirectoryNotExist {
-            get {
-                return ResourceManager.GetString("Log_BaseDirectoryNotExist", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Критическая ошибка: {0}.
-        /// </summary>
-        public static string Log_CriticalError {
-            get {
-                return ResourceManager.GetString("Log_CriticalError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Культура &quot;{0}&quot; добавлена в список поддерживаемых языков..
-        /// </summary>
-        public static string Log_CultureAddedToList {
-            get {
-                return ResourceManager.GetString("Log_CultureAddedToList", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Попытка добавить культуру &apos;{0}&apos;, но она не найдена..
-        /// </summary>
-        public static string Log_CultureAddNotFound {
-            get {
-                return ResourceManager.GetString("Log_CultureAddNotFound", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Культура &quot;{0}&quot; успешно применена..
+        ///   Ищет локализованную строку, похожую на Культура {0} успешно применена к потокам..
         /// </summary>
         public static string Log_CultureApplied {
             get {
@@ -493,70 +142,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Код культуры &apos;{0}&apos; недействителен..
-        /// </summary>
-        public static string Log_CultureInvalid {
-            get {
-                return ResourceManager.GetString("Log_CultureInvalid", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Обнаружение поддерживаемых языков....
-        /// </summary>
-        public static string Log_DiscoveringLanguages {
-            get {
-                return ResourceManager.GetString("Log_DiscoveringLanguages", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Обнаружение поддерживаемых языков....
-        /// </summary>
-        public static string Log_DiscoveringLanguages1 {
-            get {
-                return ResourceManager.GetString("Log_DiscoveringLanguages1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Не удалось обнаружить языки: {0}.
-        /// </summary>
-        public static string Log_DiscoverLanguages_Failed_Format {
-            get {
-                return ResourceManager.GetString("Log_DiscoverLanguages_Failed_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Ошибка при обнаружении поддерживаемых языков..
-        /// </summary>
-        public static string Log_DiscoveryFailed {
-            get {
-                return ResourceManager.GetString("Log_DiscoveryFailed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Не удалось получить объект CultureInfo для предполагаемой нейтральной культуры &apos;{0}&apos;..
-        /// </summary>
-        public static string Log_FailedToGetNeutralCulture_Format {
-            get {
-                return ResourceManager.GetString("Log_FailedToGetNeutralCulture_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Добавлена резервная культура &quot;Русский&quot;, так как не удалось определить другие языки..
-        /// </summary>
-        public static string Log_FallbackCultureAdded {
-            get {
-                return ResourceManager.GetString("Log_FallbackCultureAdded", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Завершение работы приложения. Сброс буферов лога....
+        ///   Ищет локализованную строку, похожую на Сброс буферов логов перед закрытием....
         /// </summary>
         public static string Log_FlushingLogs {
             get {
@@ -565,34 +151,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Обнаружено {0} поддерживаемых языков: {1}.
-        /// </summary>
-        public static string Log_FoundLanguagesResult {
-            get {
-                return ResourceManager.GetString("Log_FoundLanguagesResult", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Обнаружен нейтральный язык &apos;{0}&apos; из атрибута сборки..
-        /// </summary>
-        public static string Log_FoundNeutralLanguage {
-            get {
-                return ResourceManager.GetString("Log_FoundNeutralLanguage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Найдена сателлитная сборка для культуры &apos;{0}&apos;. .
-        /// </summary>
-        public static string Log_FoundSatelliteAssembly {
-            get {
-                return ResourceManager.GetString("Log_FoundSatelliteAssembly", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Не удалось получить набор ресурсов для культуры &apos;{0}&apos;. Пропуск..
+        ///   Ищет локализованную строку, похожую на Не удалось получить набор ресурсов для культуры &apos;{0}&apos;..
         /// </summary>
         public static string Log_GetResourceSetFailed_Format {
             get {
@@ -601,70 +160,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Инициализация главного окна....
-        /// </summary>
-        public static string Log_InitializingMainWindow {
-            get {
-                return ResourceManager.GetString("Log_InitializingMainWindow", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Имя директории &apos;{0}&apos; не является валидным кодом культуры..
-        /// </summary>
-        public static string Log_InvalidCultureDirectory {
-            get {
-                return ResourceManager.GetString("Log_InvalidCultureDirectory", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Пользователь выбрал язык: {CultureCode}.
-        /// </summary>
-        public static string Log_LanguageSelectedByUser_Format {
-            get {
-                return ResourceManager.GetString("Log_LanguageSelectedByUser_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Окно выбора языка было закрыто пользователем без подтверждения. Завершение работы приложения..
-        /// </summary>
-        public static string Log_LanguageSelectionCancelled {
-            get {
-                return ResourceManager.GetString("Log_LanguageSelectionCancelled", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Не выбран или не найден допустимый язык в настройках. Отображение окна выбора языка..
-        /// </summary>
-        public static string Log_LanguageSelectionNeeded {
-            get {
-                return ResourceManager.GetString("Log_LanguageSelectionNeeded", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Требуется выбор языка..
-        /// </summary>
-        public static string Log_LanguageSelectionNeeded1 {
-            get {
-                return ResourceManager.GetString("Log_LanguageSelectionNeeded1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Найдено {Count} языков: {CultureCodes}.
-        /// </summary>
-        public static string Log_LanguagesFound_Format {
-            get {
-                return ResourceManager.GetString("Log_LanguagesFound_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Ошибка ввода/вывода при загрузке файла настроек &apos;{0}&apos;. Подробности: {1}.
+        ///   Ищет локализованную строку, похожую на Ошибка ввода-вывода при загрузке файла настроек &apos;{0}&apos;: {1}..
         /// </summary>
         public static string Log_LoadSettings_IOException_Format {
             get {
@@ -673,7 +169,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Ошибка чтения файла настроек &apos;{0}&apos;: файл поврежден или имеет неверный формат. Подробности: {1}.
+        ///   Ищет локализованную строку, похожую на Ошибка десериализации или чтения файла настроек &apos;{0}&apos;: {1}. Файл может быть поврежден..
         /// </summary>
         public static string Log_LoadSettings_ReadFailed_Format {
             get {
@@ -682,7 +178,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Непредвиденная ошибка при загрузке файла настроек &apos;{0}&apos;. Подробности: {1}.
+        ///   Ищет локализованную строку, похожую на Непредвиденная ошибка при загрузке настроек из файла &apos;{0}&apos;: {1}..
         /// </summary>
         public static string Log_LoadSettings_Unexpected_Format {
             get {
@@ -691,25 +187,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Критическая ошибка инициализации MainWindow (ArgumentException): {0}.
-        /// </summary>
-        public static string Log_MainWindowInitArgumentError {
-            get {
-                return ResourceManager.GetString("Log_MainWindowInitArgumentError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Критическая ошибка инициализации MainWindow: {0}.
-        /// </summary>
-        public static string Log_MainWindowInitError {
-            get {
-                return ResourceManager.GetString("Log_MainWindowInitError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на MainWindow успешно инициализировано (настройка ViewModel ожидается)..
+        ///   Ищет локализованную строку, похожую на Главное окно успешно инициализировано..
         /// </summary>
         public static string Log_MainWindowInitialized {
             get {
@@ -718,34 +196,16 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Инициализация MainWindow..
+        ///   Ищет локализованную строку, похожую на Открытие главного окна....
         /// </summary>
-        public static string Log_MainWindowInitializing {
+        public static string Log_MainWindowOpening {
             get {
-                return ResourceManager.GetString("Log_MainWindowInitializing", resourceCulture);
+                return ResourceManager.GetString("Log_MainWindowOpening", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Попытка завершить работу приложения из-за критической ошибки инициализации..
-        /// </summary>
-        public static string Log_MainWindowShutdownAttempt {
-            get {
-                return ResourceManager.GetString("Log_MainWindowShutdownAttempt", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Временный объект Puzzle создан для тестирования..
-        /// </summary>
-        public static string Log_MainWindowTempPuzzle {
-            get {
-                return ResourceManager.GetString("Log_MainWindowTempPuzzle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Нейтральная культура &apos;{0}&apos; добавлена в список..
+        ///   Ищет локализованную строку, похожую на Обнаружена и добавлена нейтральная культура: {0}.
         /// </summary>
         public static string Log_NeutralCultureAdded_Format {
             get {
@@ -754,25 +214,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Не удалось найти набор ресурсов для предполагаемой нейтральной культуры &apos;{0}&apos;. Локализация может работать некорректно..
-        /// </summary>
-        public static string Log_NeutralResourceSetNotFound_Format {
-            get {
-                return ResourceManager.GetString("Log_NeutralResourceSetNotFound_Format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Поддерживаемые языки не найдены автоматически. Попытка добавить резервные..
-        /// </summary>
-        public static string Log_NoLanguagesFound_AddingFallbacks {
-            get {
-                return ResourceManager.GetString("Log_NoLanguagesFound_AddingFallbacks", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Имя игрока не указано. Используется имя по умолчанию: &apos;{0}&apos;..
+        ///   Ищет локализованную строку, похожую на Имя игрока не введено, используется имя по умолчанию: &apos;{0}&apos;..
         /// </summary>
         public static string Log_PlayerNameDefault_Format {
             get {
@@ -781,16 +223,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Имя игрока не указано. Используется имя по умолчанию: &apos;{0}&apos;..
-        /// </summary>
-        public static string Log_PlayerNameDefault_Format1 {
-            get {
-                return ResourceManager.GetString("Log_PlayerNameDefault_Format1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Игроку &apos;{0}&apos; добавлено {1} очков. Новый счет: {2}. (Было: {3}).
+        ///   Ищет локализованную строку, похожую на Игроку &apos;{0}&apos; добавлено {1} очков. Текущий счет: {2} (было {3})..
         /// </summary>
         public static string Log_PlayerScoreAdded_Format {
             get {
@@ -799,16 +232,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Игроку &apos;{0}&apos; добавлено {1} очков. Новый счет: {2}. (Было: {3}).
-        /// </summary>
-        public static string Log_PlayerScoreAdded_Format1 {
-            get {
-                return ResourceManager.GetString("Log_PlayerScoreAdded_Format1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Счет игрока &apos;{0}&apos; сброшен на 0. (Было: {1}).
+        ///   Ищет локализованную строку, похожую на Счет игрока &apos;{0}&apos; сброшен (было {1})..
         /// </summary>
         public static string Log_PlayerScoreReset_Format {
             get {
@@ -817,25 +241,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Счет игрока &apos;{0}&apos; сброшен на 0. (Было: {1}).
-        /// </summary>
-        public static string Log_PlayerScoreReset_Format1 {
-            get {
-                return ResourceManager.GetString("Log_PlayerScoreReset_Format1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Не удалось сохранить настройку выбранного языка..
-        /// </summary>
-        public static string Log_SaveLanguageSettingFailed {
-            get {
-                return ResourceManager.GetString("Log_SaveLanguageSettingFailed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Не удалось сохранить настройки: директория для файла &apos;{0}&apos; не найдена..
+        ///   Ищет локализованную строку, похожую на Не удалось определить директорию для сохранения файла настроек: {0}..
         /// </summary>
         public static string Log_SaveSettings_DirectoryNotFound_Format {
             get {
@@ -844,16 +250,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Не удалось сохранить настройки..
-        /// </summary>
-        public static string Log_SaveSettings_Failed {
-            get {
-                return ResourceManager.GetString("Log_SaveSettings_Failed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Ошибка ввода/вывода при сохранении файла настроек &apos;{0}&apos;. Подробности: {1}.
+        ///   Ищет локализованную строку, похожую на Ошибка ввода-вывода при сохранении файла настроек &apos;{0}&apos;: {1}..
         /// </summary>
         public static string Log_SaveSettings_IOException_Format {
             get {
@@ -862,7 +259,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Нет прав для сохранения настроек в файл &apos;{0}&apos;..
+        ///   Ищет локализованную строку, похожую на Ошибка доступа при сохранении файла настроек &apos;{0}&apos;. Проверьте права на запись..
         /// </summary>
         public static string Log_SaveSettings_Unauthorized_Format {
             get {
@@ -871,7 +268,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Непредвиденная ошибка при сохранении файла настроек &apos;{0}&apos;. Подробности: {1}.
+        ///   Ищет локализованную строку, похожую на Непредвиденная ошибка при сохранении настроек: {0}..
         /// </summary>
         public static string Log_SaveSettings_Unexpected_Format {
             get {
@@ -880,7 +277,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Файл настроек &apos;{0}&apos; был удален..
+        ///   Ищет локализованную строку, похожую на Файл настроек &apos;{0}&apos; удален (например, т.к. был пуст или поврежден)..
         /// </summary>
         public static string Log_SettingsFileDeleted {
             get {
@@ -889,7 +286,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Не удалось удалить файл настроек &apos;{0}&apos;. Ошибка игнорируется..
+        ///   Ищет локализованную строку, похожую на Не удалось удалить файл настроек &apos;{0}&apos;..
         /// </summary>
         public static string Log_SettingsFileDeleteFailed {
             get {
@@ -898,7 +295,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Настройки загружены из файла &apos;{0}&apos;..
+        ///   Ищет локализованную строку, похожую на Настройки успешно загружены из файла &apos;{0}&apos;..
         /// </summary>
         public static string Log_SettingsLoaded {
             get {
@@ -916,7 +313,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Специфичная культура &apos;{0}&apos; добавлена в список..
+        ///   Ищет локализованную строку, похожую на Обнаружена и добавлена специфичная культура: {0}.
         /// </summary>
         public static string Log_SpecificCultureAdded_Format {
             get {
@@ -925,34 +322,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Системная культура &quot;{0}&quot; добавлена в список..
-        /// </summary>
-        public static string Log_SystemCultureAdded {
-            get {
-                return ResourceManager.GetString("Log_SystemCultureAdded", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Не удалось получить или добавить системную UI культуру как резервную..
-        /// </summary>
-        public static string Log_SystemCultureAddFailed {
-            get {
-                return ResourceManager.GetString("Log_SystemCultureAddFailed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Не удалось определить системную культуру..
-        /// </summary>
-        public static string Log_SystemCultureDiscoveryFailed {
-            get {
-                return ResourceManager.GetString("Log_SystemCultureDiscoveryFailed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Необработанное исключение в AppDomain. Завершение: {0}.
+        ///   Ищет локализованную строку, похожую на Необработанное исключение в AppDomain. Завершение: {0}..
         /// </summary>
         public static string Log_UnhandledExceptionAppDomain {
             get {
@@ -961,7 +331,7 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Необработанное исключение в AppDomain, объект исключения отсутствует. Завершение: {0}.
+        ///   Ищет локализованную строку, похожую на Необработанное исключение в AppDomain без объекта Exception. Завершение: {0}..
         /// </summary>
         public static string Log_UnhandledExceptionAppDomain_NoException {
             get {
@@ -970,29 +340,11 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Необработанное исключение в Dispatcher..
+        ///   Ищет локализованную строку, похожую на Необработанное исключение в Dispatcher (UI поток)..
         /// </summary>
         public static string Log_UnhandledExceptionDispatcher {
             get {
                 return ResourceManager.GetString("Log_UnhandledExceptionDispatcher", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Пользователь закрыл окно выбора языка или выбор не сделан. Используется первый доступный язык: {0}.
-        /// </summary>
-        public static string Log_UserClosedLanguageSelection {
-            get {
-                return ResourceManager.GetString("Log_UserClosedLanguageSelection", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Пользователь выбрал язык: {0}.
-        /// </summary>
-        public static string Log_UserSelectedLanguage {
-            get {
-                return ResourceManager.GetString("Log_UserSelectedLanguage", resourceCulture);
             }
         }
         

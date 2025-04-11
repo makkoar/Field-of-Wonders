@@ -26,16 +26,11 @@ public partial class App : Application
 
         if (supportedLanguages.Count is 0)
         {
-            LoggingService.Logger.Warning("Поддерживаемые языки не найдены. Добавляются резервные варианты.");
-            EnsureFallbackLanguages(supportedLanguages);
-            if (supportedLanguages.Count is 0)
-            {
-                string errorMessage = Lang.Error_Critical_NoLanguagesFound;
-                LoggingService.Logger.Fatal("Критическая ошибка: {ErrorMessage}", errorMessage);
-                ShowAndLogCriticalError(errorMessage);
-                Shutdown(1);
-                return;
-            }
+            string errorMessage = "Критическая ошибка: Не найдены поддерживаемые языки (отсутствует даже нейтральный язык).";
+            LoggingService.Logger.Fatal("Критическая ошибка: {ErrorMessage}", errorMessage);
+            ShowAndLogCriticalError(errorMessage, "Критическая ошибка");
+            Shutdown(1);
+            return;
         }
         LoggingService.Logger.Information("Найдено {Count} языков: {CultureCodes}", supportedLanguages.Count, string.Join(", ", supportedLanguages.Select(l => l.CultureCode)));
 
@@ -79,26 +74,15 @@ public partial class App : Application
 
         if (!cultureApplied)
         {
-            string fallbackCulture = supportedLanguages.First().CultureCode;
-            LoggingService.Logger.Warning("Не удалось применить культуру {FailedCultureCode}. Попытка применить резервную культуру: {FallbackCultureCode}...", cultureToApply, fallbackCulture);
-            cultureApplied = _localizationService.ApplyCulture(fallbackCulture);
-            if (cultureApplied)
-            {
-                LoggingService.Logger.Information("Резервная культура {FallbackCultureCode} успешно применена.", fallbackCulture);
-            }
-            else
-            {
-                string errorMessage = Lang.Error_Critical_CannotSetAnyLanguage;
-                LoggingService.Logger.Fatal("Критическая ошибка: {ErrorMessage}", errorMessage);
-                ShowAndLogCriticalError(errorMessage);
-                Shutdown(1);
-                return;
-            }
+            string errorMessage = $"Критическая ошибка: Не удалось применить необходимую культуру '{cultureToApply}'.";
+            LoggingService.Logger.Fatal("Критическая ошибка: {ErrorMessage}", errorMessage);
+            ShowAndLogCriticalError(errorMessage, Lang.ResourceManager.GetString("Error_Critical_Title") ?? "Критическая ошибка");
+            Shutdown(1);
+            return;
         }
 
-        LoggingService.Logger.Information(Lang.Log_ApplyingCulture_Success, _localizationService.CurrentAppliedCulture?.Name ?? "Неизвестно");
-
-        LoggingService.Logger.Information("Открытие главного окна...");
+        LoggingService.Logger.Information(Lang.Log_ApplyingCulture_Success, _localizationService.CurrentAppliedCulture?.Name ?? "Unknown");
+        LoggingService.Logger.Information(Lang.Log_MainWindowOpening);
         mainWindow.Show();
         LoggingService.Logger.Information(Lang.Log_MainWindowInitialized);
     }
@@ -117,16 +101,17 @@ public partial class App : Application
     /// <param name="e">Аргументы события.</param>
     private static void OnUnhandledException(object sender, UnhandledExceptionEventArgs e)
     {
+        // Исключение может произойти до установки культуры, используем Lang с осторожностью
         if (e.ExceptionObject is Exception exception)
         {
             LoggingService.Logger.Fatal(exception, Lang.Log_UnhandledExceptionAppDomain, e.IsTerminating);
             string errorMessage = string.Format(Lang.Error_UnhandledException_Format, exception.Message);
-            ShowAndLogCriticalError(errorMessage);
+            ShowAndLogCriticalError(errorMessage, Lang.ResourceManager.GetString("Error_Critical_Title") ?? "Критическая ошибка");
         }
         else
         {
             LoggingService.Logger.Fatal(Lang.Log_UnhandledExceptionAppDomain_NoException, e.IsTerminating);
-            ShowAndLogCriticalError(Lang.Error_UnhandledException_NoExceptionObject);
+            ShowAndLogCriticalError(Lang.Error_UnhandledException_NoExceptionObject, Lang.ResourceManager.GetString("Error_Critical_Title") ?? "Критическая ошибка");
         }
     }
 
@@ -135,93 +120,40 @@ public partial class App : Application
     /// <param name="e">Аргументы события.</param>
     private void OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
     {
+        // Исключение может произойти до установки культуры, используем Lang с осторожностью
         LoggingService.Logger.Fatal(e.Exception, Lang.Log_UnhandledExceptionDispatcher);
         string errorMessage = string.Format(Lang.Error_DispatcherUnhandledException_Format, e.Exception.Message);
-        ShowAndLogCriticalError(errorMessage);
-        e.Handled = true; // Предотвращаем стандартное завершение приложения после исключения в UI
+        ShowAndLogCriticalError(errorMessage, Lang.ResourceManager.GetString("Error_Critical_Title") ?? "Критическая ошибка");
+        e.Handled = true; // Предотвращаем стандартное завершение приложения
     }
 
     #endregion
 
-    #region Внутренние и Вспомогательные Методы
+    #region Внутренние Методы
 
-    /// <summary>Отображает критическое сообщение об ошибке и логирует его как Fatal. Использует локализованные строки.</summary>
-    /// <param name="message">Текст сообщения (уже локализованный).</param>
-    internal static void ShowAndLogCriticalError(string message)
+    /// <summary>Отображает критическое сообщение об ошибке и логирует его как Fatal.</summary>
+    /// <param name="message">Текст сообщения (предпочтительно уже локализованный).</param>
+    /// <param name="title">Заголовок окна сообщения (предпочтительно локализованный или строка по умолчанию).</param>
+    internal static void ShowAndLogCriticalError(string message, string title = "Критическая ошибка")
     {
         LoggingService.Logger.Fatal("Критическая ошибка: {ErrorMessage}", message);
         try
         {
             if (Current?.Dispatcher != null)
             {
-                // Игнорируем результат MessageBox, т.к. важно само отображение
                 _ = Current.Dispatcher.Invoke(() =>
-                    _ = MessageBox.Show(message, Lang.Error_Critical_Title, MessageBoxButton.OK, MessageBoxImage.Error));
+                    _ = MessageBox.Show(message, title, MessageBoxButton.OK, MessageBoxImage.Error));
             }
             else
             {
                 LoggingService.Logger.Error("Не удалось получить доступ к Current.Dispatcher для отображения критической ошибки.");
-                Environment.FailFast(message); // Аварийное завершение, если UI недоступен
+                Environment.FailFast(message); // Аварийное завершение
             }
         }
         catch (Exception exInner)
         {
             LoggingService.Logger.Fatal(exInner, "Критическая ошибка (не удалось показать MessageBox.Show)");
-            Environment.FailFast($"{message} (MessageBox.Show failed: {exInner.Message})");
-        }
-    }
-
-    /// <summary>Обеспечивает добавление резервных языков в список, если автоматическое обнаружение не дало результатов.</summary>
-    /// <param name="languages">Список языков для проверки и пополнения.</param>
-    private static void EnsureFallbackLanguages(List<LanguageInfo> languages)
-    {
-        if (languages.Count > 0) return;
-
-        CultureInfo currentUiCulture = CultureInfo.CurrentUICulture;
-
-        TryAddFallbackCulture(languages, currentUiCulture, "ru-RU");
-        if (languages.Count > 0) return;
-
-        TryAddFallbackCulture(languages, currentUiCulture, "en-US");
-        if (languages.Count > 0) return;
-
-        try
-        {
-            CultureInfo sysCulture = CultureInfo.InstalledUICulture;
-            TryAddFallbackCulture(languages, currentUiCulture, sysCulture.Name);
-            if (languages.Count > 0) return;
-        }
-        catch (Exception sysCultureEx)
-        {
-            LoggingService.Logger.Warning(sysCultureEx, Lang.Log_SystemCultureAddFailed);
-        }
-
-        if (languages.Count == 0)
-        {
-            languages.Add(new LanguageInfo("Русский (Резерв)", "ru-RU"));
-            LoggingService.Logger.Error("Ни один язык не был обнаружен или добавлен. Добавлен жестко закодированный русский язык как резервный.");
-        }
-    }
-
-    /// <summary>Вспомогательный метод для попытки добавления резервной культуры в список.</summary>
-    /// <param name="languages">Список языков для пополнения.</param>
-    /// <param name="currentUiCulture">Текущая UI культура для форматирования имени языка.</param>
-    /// <param name="cultureCodeToAdd">Код культуры для добавления.</param>
-    private static void TryAddFallbackCulture(List<LanguageInfo> languages, CultureInfo currentUiCulture, string cultureCodeToAdd)
-    {
-        try
-        {
-            CultureInfo culture = CultureInfo.GetCultureInfo(cultureCodeToAdd);
-            if (!languages.Any(l => l.CultureCode.Equals(culture.Name, StringComparison.OrdinalIgnoreCase)))
-            {
-                string displayName = currentUiCulture.TextInfo.ToTitleCase(culture.NativeName) + " (Резерв)";
-                languages.Add(new LanguageInfo(displayName, culture.Name));
-                LoggingService.Logger.Debug(Lang.Log_AddedCultureToList, cultureCodeToAdd);
-            }
-        }
-        catch (CultureNotFoundException)
-        {
-            LoggingService.Logger.Warning(Lang.Log_CultureAddNotFound, cultureCodeToAdd);
+            Environment.FailFast($"{message} (MessageBox.Show failed: {exInner.Message})"); // Аварийное завершение
         }
     }
 

@@ -38,7 +38,7 @@ public class Puzzle
             throw new ArgumentException(Lang.Error_AnswerCannotBeEmpty, nameof(answer));
 
         Question = question;
-        Answer = answer.ToUpperInvariant(); // Нормализуем ответ к верхнему регистру
+        Answer = answer.ToUpperInvariant();
         Category = category ?? string.Empty;
 
         _revealedLetters = new char[Answer.Length];
@@ -63,16 +63,16 @@ public class Puzzle
     public bool GuessLetter(char letter)
     {
         bool letterFound = false;
-        char upperLetter = char.ToUpperInvariant(letter); // Сравниваем без учета регистра
+        char upperLetter = char.ToUpperInvariant(letter);
 
-        if (!char.IsLetter(upperLetter)) return false; // Игнорируем не-буквы
+        if (!char.IsLetter(upperLetter)) return false;
 
         for (int i = 0; i < Answer.Length; i++)
         {
             if (Answer[i] == upperLetter && _revealedLetters[i] == Placeholder)
             {
                 _revealedLetters[i] = upperLetter;
-                letterFound = true; // Отмечаем, что нашли и открыли хотя бы одну букву
+                letterFound = true;
             }
         }
         return letterFound;
@@ -90,7 +90,7 @@ public class Puzzle
                 return false;
             }
         }
-        return true; // Все буквы открыты
+        return true;
     }
 
     /// <summary>Проверяет, совпадает ли предложенное слово с загаданным (без учета регистра).</summary>

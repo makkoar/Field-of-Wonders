@@ -9,13 +9,13 @@ public partial class MainViewModel : ObservableObject
     /// <summary>Инициализирует новый экземпляр класса <see cref="MainViewModel"/>.</summary>
     public MainViewModel()
     {
-        LocalizationService.CultureChanged += OnCultureChanged; // Подписываемся на событие смены культуры
-        UpdateMainWindowTitle(); // Устанавливаем начальный заголовок
+        LocalizationService.CultureChanged += OnCultureChanged;
+        UpdateMainWindowTitle();
     }
 
     private void UpdateMainWindowTitle() => MainWindowTitle = Lang.MainWindow_Title;
 
-    private void OnCultureChanged(object? sender, EventArgs e) => UpdateMainWindowTitle(); // Обновляем заголовок при изменении культуры
+    private void OnCultureChanged(object? sender, EventArgs e) => UpdateMainWindowTitle();
 
-    // TODO: Добавьте остальные свойства и команды для MainViewModel
+    // TODO: Добавить остальные свойства и команды для MainViewModel
 }

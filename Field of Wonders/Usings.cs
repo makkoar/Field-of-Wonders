@@ -3,6 +3,7 @@ global using Field_of_Wonders.Localization;
 global using Field_of_Wonders.MessagePackModels;
 global using Field_of_Wonders.Models;
 global using Field_of_Wonders.Services;
+global using Field_of_Wonders.ViewModels;
 global using Field_of_Wonders.Views;
 global using MessagePack;
 global using Serilog;

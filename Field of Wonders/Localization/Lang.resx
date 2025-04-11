@@ -118,420 +118,132 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Error_AnswerCannotBeEmpty" xml:space="preserve">
-    <value>Ответ не может быть пустым.</value>
-    <comment>Сообщение об ошибке, если при создании экземпляра Puzzle передан пустой ответ.</comment>
-  </data>
-  <data name="Error_ApplyCulture_NotFound_Format" xml:space="preserve">
-    <value>Выбранный язык '{0}' не найден ({1}).\nБудет использован язык по умолчанию.</value>
-    <comment>Сообщение об ошибке, если указанная культура не найдена в системе. {0} - код культуры, {1} - сообщение исключения CultureNotFoundException.</comment>
-  </data>
-  <data name="Error_ApplyCulture_Title" xml:space="preserve">
-    <value>Ошибка установки языка</value>
-    <comment>Заголовок окна сообщения об ошибке при применении выбранной культуры к потоку.</comment>
-  </data>
-  <data name="Error_ApplyCulture_Unexpected_Format" xml:space="preserve">
-    <value>Произошла непредвиденная ошибка при установке языка:\n{0}</value>
-    <comment>Сообщение о непредвиденной ошибке при применении культуры к потоку. {0} - сообщение общего исключения Exception.</comment>
-  </data>
-  <data name="Error_Critical_CannotSetAnyLanguage" xml:space="preserve">
-    <value>Критическая ошибка: Не удалось установить ни один из доступных языков. Приложение будет закрыто.</value>
-    <comment>Критическая ошибка: не удалось применить ни выбранный/сохраненный язык, ни язык по умолчанию. Приложение не может запуститься.</comment>
-  </data>
-  <data name="Error_Critical_NoLanguagesFound" xml:space="preserve">
-    <value>Не удалось обнаружить поддерживаемые языки. Приложение будет закрыто.</value>
-    <comment>Критическая ошибка: не найдено ни одного языка (даже резервного). Приложение не может запуститься.</comment>
-  </data>
-  <data name="Error_Critical_Title" xml:space="preserve">
-    <value>Критическая ошибка</value>
-    <comment>Общий заголовок окна для критических ошибок, приводящих к завершению приложения.</comment>
-  </data>
-  <data name="Error_DataInitializationFailed_Format" xml:space="preserve">
-    <value>Ошибка инициализации данных игры:\n{0}</value>
-    <comment>Формат сообщения об ошибке валидации данных при инициализации игры. {0} - сообщение исключения ArgumentException.</comment>
-  </data>
-  <data name="Error_DiscoverLanguages_Failed_Format" xml:space="preserve">
-    <value>Произошла ошибка при автоматическом определении языков:\n{0}\n\nБудет использован язык по умолчанию.</value>
-    <comment>Сообщение об ошибке при сбое автоматического определения доступных языков. {0} - сообщение исключения Exception.</comment>
-  </data>
-  <data name="Error_DiscoverLanguages_Title" xml:space="preserve">
-    <value>Ошибка определения языков</value>
-    <comment>Заголовок окна сообщения об ошибке при автоматическом определении доступных языков.</comment>
+    <value>Текст ответа не может быть пустым.</value>
+    <comment>Сообщение об ошибке при создании Puzzle.</comment>
   </data>
   <data name="Error_DispatcherUnhandledException_Format" xml:space="preserve">
-    <value>Необработанное исключение UI: {0}</value>
-    <comment>Сообщение об ошибке для пользователя. Параметры: {0} Сообщение об исключении (строка).</comment>
-  </data>
-  <data name="Error_DispatcherUnhandledException_Title" xml:space="preserve">
-    <value>Ошибка UI</value>
-    <comment>Заголовок окна для необработанных исключений в потоке UI.</comment>
-  </data>
-  <data name="Error_LoadSettings_IOException_Format" xml:space="preserve">
-    <value>Ошибка чтения файла настроек '{0}':\n{1}\n\nПроверьте права доступа к папке приложения.</value>
-    <comment>Сообщение об ошибке ввода-вывода при чтении файла настроек. {0} - имя файла, {1} - сообщение исключения IOException.</comment>
-  </data>
-  <data name="Error_LoadSettings_ReadFailed_Format" xml:space="preserve">
-    <value>Ошибка при чтении файла настроек '{0}':\n{1}\n\nФайл будет удален. При следующем запуске потребуется выбрать язык.</value>
-    <comment>Сообщение об ошибке при сбое десериализации файла настроек MessagePack. {0} - имя файла, {1} - сообщение исключения MessagePackSerializationException.</comment>
-  </data>
-  <data name="Error_LoadSettings_Title" xml:space="preserve">
-    <value>Ошибка загрузки настроек</value>
-    <comment>Заголовок окна сообщения об ошибке при загрузке файла настроек.</comment>
-  </data>
-  <data name="Error_LoadSettings_Unexpected_Format" xml:space="preserve">
-    <value>Непредвиденная ошибка при загрузке настроек из '{0}':\n{1}\n\nФайл будет удален. При следующем запуске потребуется выбрать язык.</value>
-    <comment>Сообщение о непредвиденной ошибке при загрузке настроек. {0} - имя файла, {1} - сообщение общего исключения Exception.</comment>
-  </data>
-  <data name="Error_MainWindowInitFailed_Format" xml:space="preserve">
-    <value>Критическая ошибка при инициализации главного окна: {0}. Приложение будет закрыто.</value>
-    <comment>Ошибка, возникшая при создании экземпляра MainWindow или его ViewModel.</comment>
+    <value>Произошла ошибка в UI потоке: {0}</value>
+    <comment>Текст сообщения об ошибке для пользователя при ошибке в UI. {0} - сообщение исключения.</comment>
   </data>
   <data name="Error_QuestionCannotBeEmpty" xml:space="preserve">
-    <value>Вопрос не может быть пустым.</value>
-    <comment>Сообщение об ошибке, если при создании экземпляра Puzzle передан пустой вопрос.</comment>
-  </data>
-  <data name="Error_SaveSettings_DirectoryNotFound_Format" xml:space="preserve">
-    <value>Не удалось сохранить настройки.\nНе удалось определить директорию для файла настроек: {0}</value>
-    <comment>Сообщение об ошибке, если не удалось получить путь к директории для сохранения файла настроек. {0} - полный путь к файлу.</comment>
-  </data>
-  <data name="Error_SaveSettings_IOException_Format" xml:space="preserve">
-    <value>Произошла ошибка при записи файла настроек '{0}':\n{1}</value>
-    <comment>Сообщение об ошибке ввода-вывода при записи файла настроек. {0} - имя файла, {1} - сообщение исключения IOException.</comment>
-  </data>
-  <data name="Error_SaveSettings_Title" xml:space="preserve">
-    <value>Ошибка сохранения настроек</value>
-    <comment>Заголовок окна сообщения об ошибке при сохранении файла настроек.</comment>
-  </data>
-  <data name="Error_SaveSettings_Unauthorized_Format" xml:space="preserve">
-    <value>Не удалось сохранить настройки.\nОтказано в доступе к файлу:\n{0}\n\nПроверьте права на запись.</value>
-    <comment>Сообщение об ошибке при отсутствии прав на запись файла настроек. {0} - полный путь к файлу.</comment>
-  </data>
-  <data name="Error_SaveSettings_Unexpected_Format" xml:space="preserve">
-    <value>Произошла непредвиденная ошибка при сохранении настроек:\n{0}</value>
-    <comment>Сообщение о непредвиденной ошибке при сохранении настроек. {0} - сообщение общего исключения Exception.</comment>
+    <value>Текст вопроса не может быть пустым.</value>
+    <comment>Сообщение об ошибке при создании Puzzle.</comment>
   </data>
   <data name="Error_UnexpectedInitializationFailed_Format" xml:space="preserve">
-    <value>Непредвиденная ошибка при инициализации игры:\n{0}</value>
-    <comment>Формат сообщения о других непредвиденных ошибках при инициализации игры. {0} - сообщение исключения Exception.</comment>
+    <value>Непредвиденная ошибка при инициализации главного окна: {0}</value>
+    <comment>Текст сообщения при ошибке инициализации MainWindow. {0} - сообщение исключения.</comment>
   </data>
   <data name="Error_UnhandledException_Format" xml:space="preserve">
     <value>Необработанное исключение: {0}</value>
-    <comment>Сообщение об ошибке для пользователя. Параметры: {0} Сообщение об исключении (строка).</comment>
+    <comment>Текст сообщения об ошибке для пользователя при необработанном исключении. {0} - сообщение исключения.</comment>
   </data>
   <data name="Error_UnhandledException_NoExceptionObject" xml:space="preserve">
-    <value>Критическая ошибка. Необработанное исключение, детали недоступны.</value>
-    <comment>Сообщение об ошибке для пользователя.</comment>
-  </data>
-  <data name="Error_UnhandledException_Title" xml:space="preserve">
-    <value>Необработанное исключение</value>
-    <comment>Заголовок окна для необработанных исключений в AppDomain.</comment>
-  </data>
-  <data name="Log_AddedCultureToList" xml:space="preserve">
-    <value>Культура '{0}' добавлена в список.</value>
-    <comment>Отладочное сообщение. Параметры: {0} Код культуры (строка).</comment>
-  </data>
-  <data name="Log_AddedFallbackLanguage" xml:space="preserve">
-    <value>Добавлен резервный язык: {0}.</value>
-    <comment>Информационное сообщение. Параметры: {0} Код культуры (строка).</comment>
-  </data>
-  <data name="Log_AddedHardcodedFallback" xml:space="preserve">
-    <value>Не удалось добавить резервные языки, кроме жестко заданного ru-RU.</value>
-    <comment>Сообщение об ошибке.</comment>
-  </data>
-  <data name="Log_AppCurrentNull" xml:space="preserve">
-    <value>Application.Current был null. Невозможно выполнить корректное завершение.</value>
-    <comment>Сообщение об ошибке.</comment>
+    <value>Произошла необработанная ошибка без дополнительных сведений.</value>
+    <comment>Текст сообщения об ошибке, если исключение не содержит объект Exception.</comment>
   </data>
   <data name="Log_AppExiting" xml:space="preserve">
     <value>Завершение работы приложения с кодом {0}.</value>
-    <comment>Информационное сообщение. Параметры: {0} Код выхода (целое число).</comment>
-  </data>
-  <data name="Log_ApplyCulture_NotFound_Format" xml:space="preserve">
-    <value>Культура "{0}" не найдена: {1}</value>
-    <comment>Культура не найдена при попытке применения. {0} - код культуры, {1} - сообщение об исключении.</comment>
-  </data>
-  <data name="Log_ApplyCulture_Unexpected_Format" xml:space="preserve">
-    <value>Непредвиденная ошибка при применении культуры: {0}</value>
-    <comment>Непредвиденная ошибка при применении культуры. {0} - сообщение об исключении.</comment>
-  </data>
-  <data name="Log_ApplyingCulture_Attempt" xml:space="preserve">
-    <value>Попытка применения культуры: {0}</value>
-    <comment>Информационное сообщение. Параметры: {0} Код культуры (строка).</comment>
-  </data>
-  <data name="Log_ApplyingCulture_Attempt_Format" xml:space="preserve">
-    <value>Попытка применить культуру: {CultureCode}</value>
-    <comment>Лог: Начало применения выбранной/сохраненной культуры.</comment>
-  </data>
-  <data name="Log_ApplyingCulture_Failed" xml:space="preserve">
-    <value>Непредвиденная ошибка при применении культуры {0}.</value>
-    <comment>Сообщение об ошибке. Параметры: {0} Код культуры (строка).</comment>
-  </data>
-  <data name="Log_ApplyingCulture_Failed_AttemptingFallback_Format" xml:space="preserve">
-    <value>Не удалось применить культуру {FailedCultureCode}. Попытка применить резервную культуру: {FallbackCultureCode}...</value>
-    <comment>Лог: Ошибка применения основной культуры, попытка применить первую из списка.</comment>
-  </data>
-  <data name="Log_ApplyingCulture_Fallback" xml:space="preserve">
-    <value>Не удалось применить выбранную/сохраненную культуру: {0}. Попытка использовать резервную.</value>
-    <comment>Предупреждение. Параметры: {0} Код культуры (строка).</comment>
-  </data>
-  <data name="Log_ApplyingCulture_FallbackSuccess" xml:space="preserve">
-    <value>Успешно применена резервная культура: {0}</value>
-    <comment>Информационное сообщение. Параметры: {0} Код культуры (строка).</comment>
-  </data>
-  <data name="Log_ApplyingCulture_NotFound" xml:space="preserve">
-    <value>Культура '{0}' не найдена. Применение невозможно.</value>
-    <comment>Сообщение об ошибке. Параметры: {0} Код культуры (строка).</comment>
+    <comment>Сообщение в логе при выходе из приложения. {0} - код выхода.</comment>
   </data>
   <data name="Log_ApplyingCulture_Success" xml:space="preserve">
-    <value>Культура {0} успешно применена к текущему потоку.</value>
-    <comment>Информационное сообщение. Параметры: {0} Код культуры (строка).</comment>
-  </data>
-  <data name="Log_AppStarting" xml:space="preserve">
-    <value>Запуск приложения. Инициализация службы логирования.</value>
-    <comment>Log message (Info). Используется до применения локализации.</comment>
-  </data>
-  <data name="Log_BaseDirectoryNotExist" xml:space="preserve">
-    <value>Базовая директория '{0}' не существует. Сканирование сателлитных сборок невозможно.</value>
-    <comment>Предупреждение. Параметры: {0} Путь к директории (строка).</comment>
-  </data>
-  <data name="Log_CriticalError" xml:space="preserve">
-    <value>Критическая ошибка: {0}</value>
-    <comment>Критическая ошибка. Параметры: {0} Сообщение об ошибке (строка).</comment>
-  </data>
-  <data name="Log_CultureAddedToList" xml:space="preserve">
-    <value>Культура "{0}" добавлена в список поддерживаемых языков.</value>
-    <comment>Культура добавлена в список. {0} - код культуры.</comment>
-  </data>
-  <data name="Log_CultureAddNotFound" xml:space="preserve">
-    <value>Попытка добавить культуру '{0}', но она не найдена.</value>
-    <comment>Предупреждение. Параметры: {0} Код культуры (строка).</comment>
+    <value>Культура '{0}' успешно применена.</value>
+    <comment>Сообщение в логе после успешного применения культуры. {0} - код культуры (например, ru-RU).</comment>
   </data>
   <data name="Log_CultureApplied" xml:space="preserve">
-    <value>Культура "{0}" успешно применена.</value>
-    <comment>Культура успешно применена. {0} - код культуры.</comment>
-  </data>
-  <data name="Log_CultureInvalid" xml:space="preserve">
-    <value>Код культуры '{0}' недействителен.</value>
-    <comment>Предупреждение. Параметры: {0} Код культуры (строка).</comment>
-  </data>
-  <data name="Log_DiscoveringLanguages" xml:space="preserve">
-    <value>Обнаружение поддерживаемых языков...</value>
-    <comment>Информационное сообщение.</comment>
-  </data>
-  <data name="Log_DiscoveringLanguages1" xml:space="preserve">
-    <value>Обнаружение поддерживаемых языков...</value>
-    <comment>Лог: Начало процесса поиска доступных языков.</comment>
-  </data>
-  <data name="Log_DiscoverLanguages_Failed_Format" xml:space="preserve">
-    <value>Не удалось обнаружить языки: {0}</value>
-    <comment>Не удалось обнаружить языки. {0} - сообщение об исключении.</comment>
-  </data>
-  <data name="Log_DiscoveryFailed" xml:space="preserve">
-    <value>Ошибка при обнаружении поддерживаемых языков.</value>
-    <comment>Сообщение об ошибке.</comment>
-  </data>
-  <data name="Log_FailedToGetNeutralCulture_Format" xml:space="preserve">
-    <value>Не удалось получить объект CultureInfo для предполагаемой нейтральной культуры '{0}'.</value>
-    <comment>Ошибка, если не удалось создать CultureInfo для нейтрального языка.</comment>
-  </data>
-  <data name="Log_FallbackCultureAdded" xml:space="preserve">
-    <value>Добавлена резервная культура "Русский", так как не удалось определить другие языки.</value>
-    <comment>Резервная культура добавлена в список, как крайняя мера.</comment>
+    <value>Культура {0} успешно применена к потокам.</value>
+    <comment>Сообщение в логе после успешного применения культуры к потокам. {0} - код культуры.</comment>
   </data>
   <data name="Log_FlushingLogs" xml:space="preserve">
-    <value>Завершение работы приложения. Сброс буферов лога...</value>
-    <comment>Log message (Info). Используется при выходе из приложения.</comment>
-  </data>
-  <data name="Log_FoundLanguagesResult" xml:space="preserve">
-    <value>Обнаружено {0} поддерживаемых языков: {1}</value>
-    <comment>Информационное сообщение. Параметры: {0} Количество (целое число), {1} Коды языков (строка).</comment>
-  </data>
-  <data name="Log_FoundNeutralLanguage" xml:space="preserve">
-    <value>Обнаружен нейтральный язык '{0}' из атрибута сборки.</value>
-    <comment>Отладочное сообщение. Параметры: {0} Код культуры (строка).</comment>
-  </data>
-  <data name="Log_FoundSatelliteAssembly" xml:space="preserve">
-    <value>Найдена сателлитная сборка для культуры '{0}'. </value>
-    <comment>Отладочное сообщение. Параметры: {0} Код культуры (строка).</comment>
+    <value>Сброс буферов логов перед закрытием...</value>
+    <comment>Сообщение в логе перед закрытием логгера.</comment>
   </data>
   <data name="Log_GetResourceSetFailed_Format" xml:space="preserve">
-    <value>Не удалось получить набор ресурсов для культуры '{0}'. Пропуск.</value>
-    <comment>Предупреждение об ошибке при попытке получить набор ресурсов для конкретной культуры.</comment>
-  </data>
-  <data name="Log_InitializingMainWindow" xml:space="preserve">
-    <value>Инициализация главного окна...</value>
-    <comment>Лог: Начало создания и отображения главного окна.</comment>
-  </data>
-  <data name="Log_InvalidCultureDirectory" xml:space="preserve">
-    <value>Имя директории '{0}' не является валидным кодом культуры.</value>
-    <comment>Отладочное сообщение. Параметры: {0} Имя директории (строка).</comment>
-  </data>
-  <data name="Log_LanguageSelectedByUser_Format" xml:space="preserve">
-    <value>Пользователь выбрал язык: {CultureCode}</value>
-    <comment>Лог: Язык, выбранный пользователем в окне.</comment>
-  </data>
-  <data name="Log_LanguageSelectionCancelled" xml:space="preserve">
-    <value>Окно выбора языка было закрыто пользователем без подтверждения. Завершение работы приложения.</value>
-    <comment>Лог: Пользователь закрыл окно выбора языка.</comment>
-  </data>
-  <data name="Log_LanguageSelectionNeeded" xml:space="preserve">
-    <value>Не выбран или не найден допустимый язык в настройках. Отображение окна выбора языка.</value>
-    <comment>Информационное сообщение.</comment>
-  </data>
-  <data name="Log_LanguageSelectionNeeded1" xml:space="preserve">
-    <value>Требуется выбор языка.</value>
-    <comment>Лог: Пользователю будет показано окно выбора языка.</comment>
-  </data>
-  <data name="Log_LanguagesFound_Format" xml:space="preserve">
-    <value>Найдено {Count} языков: {CultureCodes}</value>
-    <comment>Лог: Список найденных языков.</comment>
+    <value>Не удалось получить набор ресурсов для культуры '{0}'.</value>
+    <comment>Сообщение в логе при ошибке получения ResourceSet. {0} - код культуры.</comment>
   </data>
   <data name="Log_LoadSettings_IOException_Format" xml:space="preserve">
-    <value>Ошибка ввода/вывода при загрузке файла настроек '{0}'. Подробности: {1}</value>
-    <comment>Ошибка ввода/вывода при загрузке файла настроек '{0}'. Подробности: {1}</comment>
+    <value>Ошибка ввода-вывода при загрузке файла настроек '{0}': {1}.</value>
+    <comment>Сообщение в логе при ошибке IO во время загрузки настроек. {0} - имя файла, {1} - сообщение ошибки.</comment>
   </data>
   <data name="Log_LoadSettings_ReadFailed_Format" xml:space="preserve">
-    <value>Ошибка чтения файла настроек '{0}': файл поврежден или имеет неверный формат. Подробности: {1}</value>
-    <comment>Ошибка чтения файла настроек '{0}': файл поврежден или имеет неверный формат. Подробности: {1}</comment>
+    <value>Ошибка десериализации или чтения файла настроек '{0}': {1}. Файл может быть поврежден.</value>
+    <comment>Сообщение в логе при ошибке чтения/десериализации файла настроек. {0} - имя файла, {1} - сообщение ошибки.</comment>
   </data>
   <data name="Log_LoadSettings_Unexpected_Format" xml:space="preserve">
-    <value>Непредвиденная ошибка при загрузке файла настроек '{0}'. Подробности: {1}</value>
-    <comment>Непредвиденная ошибка при загрузке файла настроек '{0}'. Подробности: {1}</comment>
-  </data>
-  <data name="Log_MainWindowInitArgumentError" xml:space="preserve">
-    <value>Критическая ошибка инициализации MainWindow (ArgumentException): {0}</value>
-    <comment>Критическая ошибка. Параметры: {0} Сообщение об ошибке (строка).</comment>
-  </data>
-  <data name="Log_MainWindowInitError" xml:space="preserve">
-    <value>Критическая ошибка инициализации MainWindow: {0}</value>
-    <comment>Критическая ошибка. Параметры: {0} Сообщение об ошибке (строка).</comment>
+    <value>Непредвиденная ошибка при загрузке настроек из файла '{0}': {1}.</value>
+    <comment>Сообщение в логе при другой ошибке загрузки настроек. {0} - имя файла, {1} - сообщение ошибки.</comment>
   </data>
   <data name="Log_MainWindowInitialized" xml:space="preserve">
-    <value>MainWindow успешно инициализировано (настройка ViewModel ожидается).</value>
-    <comment>Информационное сообщение.</comment>
+    <value>Главное окно успешно инициализировано.</value>
+    <comment>Сообщение в логе после успешного показа MainWindow.</comment>
   </data>
-  <data name="Log_MainWindowInitializing" xml:space="preserve">
-    <value>Инициализация MainWindow.</value>
-    <comment>Информационное сообщение.</comment>
-  </data>
-  <data name="Log_MainWindowShutdownAttempt" xml:space="preserve">
-    <value>Попытка завершить работу приложения из-за критической ошибки инициализации.</value>
-    <comment>Предупреждение.</comment>
-  </data>
-  <data name="Log_MainWindowTempPuzzle" xml:space="preserve">
-    <value>Временный объект Puzzle создан для тестирования.</value>
-    <comment>Отладочное сообщение.</comment>
+  <data name="Log_MainWindowOpening" xml:space="preserve">
+    <value>Открытие главного окна...</value>
+    <comment>Сообщение в логе перед показом MainWindow.</comment>
   </data>
   <data name="Log_NeutralCultureAdded_Format" xml:space="preserve">
-    <value>Нейтральная культура '{0}' добавлена в список.</value>
-    <comment>Логгирование добавления нейтральной культуры в список поддерживаемых.</comment>
-  </data>
-  <data name="Log_NeutralResourceSetNotFound_Format" xml:space="preserve">
-    <value>Не удалось найти набор ресурсов для предполагаемой нейтральной культуры '{0}'. Локализация может работать некорректно.</value>
-    <comment>Предупреждение, если не найден основной набор ресурсов (например, Lang.resx).</comment>
-  </data>
-  <data name="Log_NoLanguagesFound_AddingFallbacks" xml:space="preserve">
-    <value>Поддерживаемые языки не найдены автоматически. Попытка добавить резервные.</value>
-    <comment>Предупреждение.</comment>
+    <value>Обнаружена и добавлена нейтральная культура: {0}</value>
+    <comment>Сообщение в логе при обнаружении нейтральной культуры. {0} - код культуры.</comment>
   </data>
   <data name="Log_PlayerNameDefault_Format" xml:space="preserve">
-    <value>Имя игрока не указано. Используется имя по умолчанию: '{0}'.</value>
-    <comment>Формат сообщения лога. {0}: Имя игрока по умолчанию.</comment>
-  </data>
-  <data name="Log_PlayerNameDefault_Format1" xml:space="preserve">
-    <value>Имя игрока не указано. Используется имя по умолчанию: '{0}'.</value>
-    <comment>Формат сообщения лога. {0}: Имя игрока по умолчанию.</comment>
+    <value>Имя игрока не введено, используется имя по умолчанию: '{0}'.</value>
+    <comment>Сообщение в логе, когда используется имя игрока по умолчанию. {0} - имя по умолчанию.</comment>
   </data>
   <data name="Log_PlayerScoreAdded_Format" xml:space="preserve">
-    <value>Игроку '{0}' добавлено {1} очков. Новый счет: {2}. (Было: {3})</value>
-    <comment>Формат сообщения лога. {0}: Имя игрока, {1}: Добавленные очки, {2}: Новый общий счет, {3}: Счет до добавления.</comment>
-  </data>
-  <data name="Log_PlayerScoreAdded_Format1" xml:space="preserve">
-    <value>Игроку '{0}' добавлено {1} очков. Новый счет: {2}. (Было: {3})</value>
-    <comment>Формат сообщения лога. {0}: Имя игрока, {1}: Добавленные очки, {2}: Новый общий счет, {3}: Счет до добавления.</comment>
+    <value>Игроку '{0}' добавлено {1} очков. Текущий счет: {2} (было {3}).</value>
+    <comment>Сообщение в логе при изменении счета игрока. {0} - имя, {1} - добавленные очки, {2} - новый счет, {3} - старый счет.</comment>
   </data>
   <data name="Log_PlayerScoreReset_Format" xml:space="preserve">
-    <value>Счет игрока '{0}' сброшен на 0. (Было: {1})</value>
-    <comment>Формат сообщения лога. {0}: Имя игрока, {1}: Счет до сброса.</comment>
-  </data>
-  <data name="Log_PlayerScoreReset_Format1" xml:space="preserve">
-    <value>Счет игрока '{0}' сброшен на 0. (Было: {1})</value>
-    <comment>Формат сообщения лога. {0}: Имя игрока, {1}: Счет до сброса.</comment>
-  </data>
-  <data name="Log_SaveLanguageSettingFailed" xml:space="preserve">
-    <value>Не удалось сохранить настройку выбранного языка.</value>
-    <comment>Предупреждение.</comment>
+    <value>Счет игрока '{0}' сброшен (было {1}).</value>
+    <comment>Сообщение в логе при сбросе счета игрока (банкротство). {0} - имя, {1} - старый счет.</comment>
   </data>
   <data name="Log_SaveSettings_DirectoryNotFound_Format" xml:space="preserve">
-    <value>Не удалось сохранить настройки: директория для файла '{0}' не найдена.</value>
-    <comment>Не удалось сохранить настройки: директория для файла '{0}' не найдена.</comment>
-  </data>
-  <data name="Log_SaveSettings_Failed" xml:space="preserve">
-    <value>Не удалось сохранить настройки.</value>
-    <comment>Лог: Ошибка при сохранении файла настроек (например, языка).</comment>
+    <value>Не удалось определить директорию для сохранения файла настроек: {0}.</value>
+    <comment>Сообщение в логе, если не удалось получить путь к директории. {0} - полный путь к файлу.</comment>
   </data>
   <data name="Log_SaveSettings_IOException_Format" xml:space="preserve">
-    <value>Ошибка ввода/вывода при сохранении файла настроек '{0}'. Подробности: {1}</value>
-    <comment>Ошибка ввода/вывода при сохранении файла настроек '{0}'. Подробности: {1}</comment>
+    <value>Ошибка ввода-вывода при сохранении файла настроек '{0}': {1}.</value>
+    <comment>Сообщение в логе при ошибке IO во время сохранения. {0} - имя файла, {1} - сообщение ошибки.</comment>
   </data>
   <data name="Log_SaveSettings_Unauthorized_Format" xml:space="preserve">
-    <value>Нет прав для сохранения настроек в файл '{0}'.</value>
-    <comment>Нет прав для сохранения настроек в файл '{0}'.</comment>
+    <value>Ошибка доступа при сохранении файла настроек '{0}'. Проверьте права на запись.</value>
+    <comment>Сообщение в логе при ошибке прав доступа. {0} - полный путь к файлу.</comment>
   </data>
   <data name="Log_SaveSettings_Unexpected_Format" xml:space="preserve">
-    <value>Непредвиденная ошибка при сохранении файла настроек '{0}'. Подробности: {1}</value>
-    <comment>Непредвиденная ошибка при сохранении файла настроек '{0}'. Подробности: {1}</comment>
+    <value>Непредвиденная ошибка при сохранении настроек: {0}.</value>
+    <comment>Сообщение в логе при другой ошибке сохранения. {0} - сообщение ошибки.</comment>
   </data>
   <data name="Log_SettingsFileDeleted" xml:space="preserve">
-    <value>Файл настроек '{0}' был удален.</value>
-    <comment>Файл настроек '{0}' был удален.</comment>
+    <value>Файл настроек '{0}' удален (например, т.к. был пуст или поврежден).</value>
+    <comment>Сообщение в логе (уровень Debug) при удалении файла настроек. {0} - имя файла.</comment>
   </data>
   <data name="Log_SettingsFileDeleteFailed" xml:space="preserve">
-    <value>Не удалось удалить файл настроек '{0}'. Ошибка игнорируется.</value>
-    <comment>Не удалось удалить файл настроек '{0}'. Ошибка игнорируется.</comment>
+    <value>Не удалось удалить файл настроек '{0}'.</value>
+    <comment>Сообщение в логе (уровень Warning) при ошибке удаления файла настроек. {0} - имя файла.</comment>
   </data>
   <data name="Log_SettingsLoaded" xml:space="preserve">
-    <value>Настройки загружены из файла '{0}'.</value>
-    <comment>Настройки загружены из файла '{0}'.</comment>
+    <value>Настройки успешно загружены из файла '{0}'.</value>
+    <comment>Сообщение в логе при успешной загрузке настроек. {0} - имя файла.</comment>
   </data>
   <data name="Log_SettingsSaved" xml:space="preserve">
     <value>Настройки успешно сохранены в файл '{0}'.</value>
-    <comment>Настройки успешно сохранены в файл '{0}'.</comment>
+    <comment>Сообщение в логе при успешном сохранении настроек. {0} - имя файла.</comment>
   </data>
   <data name="Log_SpecificCultureAdded_Format" xml:space="preserve">
-    <value>Специфичная культура '{0}' добавлена в список.</value>
-    <comment>Логгирование добавления специфичной (не нейтральной) культуры в список поддерживаемых.</comment>
-  </data>
-  <data name="Log_SystemCultureAdded" xml:space="preserve">
-    <value>Системная культура "{0}" добавлена в список.</value>
-    <comment>Системная культура добавлена в список. {0} - код культуры.</comment>
-  </data>
-  <data name="Log_SystemCultureAddFailed" xml:space="preserve">
-    <value>Не удалось получить или добавить системную UI культуру как резервную.</value>
-    <comment>Предупреждение.</comment>
-  </data>
-  <data name="Log_SystemCultureDiscoveryFailed" xml:space="preserve">
-    <value>Не удалось определить системную культуру.</value>
-    <comment>Не удалось определить системную культуру при поиске поддерживаемых языков.</comment>
+    <value>Обнаружена и добавлена специфичная культура: {0}</value>
+    <comment>Сообщение в логе при обнаружении специфичной культуры. {0} - код культуры.</comment>
   </data>
   <data name="Log_UnhandledExceptionAppDomain" xml:space="preserve">
-    <value>Необработанное исключение в AppDomain. Завершение: {0}</value>
-    <comment>Критическая ошибка. Параметры: {0} IsTerminating (логическое значение).</comment>
+    <value>Необработанное исключение в AppDomain. Завершение: {0}.</value>
+    <comment>Сообщение в логе при фатальной ошибке в AppDomain. {0} - true/false (завершается ли приложение).</comment>
   </data>
   <data name="Log_UnhandledExceptionAppDomain_NoException" xml:space="preserve">
-    <value>Необработанное исключение в AppDomain, объект исключения отсутствует. Завершение: {0}</value>
-    <comment>Критическая ошибка. Параметры: {0} IsTerminating (логическое значение).</comment>
+    <value>Необработанное исключение в AppDomain без объекта Exception. Завершение: {0}.</value>
+    <comment>Сообщение в логе, если исключение в AppDomain не содержит объект Exception. {0} - true/false.</comment>
   </data>
   <data name="Log_UnhandledExceptionDispatcher" xml:space="preserve">
-    <value>Необработанное исключение в Dispatcher.</value>
-    <comment>Критическая ошибка.</comment>
-  </data>
-  <data name="Log_UserClosedLanguageSelection" xml:space="preserve">
-    <value>Пользователь закрыл окно выбора языка или выбор не сделан. Используется первый доступный язык: {0}</value>
-    <comment>Предупреждение. Параметры: {0} Код культуры (строка).</comment>
-  </data>
-  <data name="Log_UserSelectedLanguage" xml:space="preserve">
-    <value>Пользователь выбрал язык: {0}</value>
-    <comment>Информационное сообщение. Параметры: {0} Код культуры (строка).</comment>
+    <value>Необработанное исключение в Dispatcher (UI поток).</value>
+    <comment>Сообщение в логе при фатальной ошибке в UI потоке.</comment>
   </data>
   <data name="MainWindow_Title" xml:space="preserve">
     <value>Поле Чудес</value>
@@ -539,6 +251,6 @@
   </data>
   <data name="Player_DefaultName" xml:space="preserve">
     <value>Игрок</value>
-    <comment>Имя игрока, используемое по умолчанию, если не указано при создании.</comment>
+    <comment>Имя игрока по умолчанию, если не введено.</comment>
   </data>
 </root>

@@ -32,7 +32,7 @@ public class SettingsService
                 TryDeleteSettingsFile();
                 return null;
             }
-            LoggingService.Logger.Information(Lang.Log_SettingsLoaded, SettingsFileName); // Логгируем успех загрузки
+            LoggingService.Logger.Information(Lang.Log_SettingsLoaded, SettingsFileName);
             return settings;
         }
         catch (MessagePackSerializationException msgPackEx) // Файл поврежден или не соответствует модели
@@ -72,7 +72,7 @@ public class SettingsService
             _ = Directory.CreateDirectory(directory); // Гарантируем наличие директории
 
             File.WriteAllBytes(SettingsFilePath, fileBytes);
-            LoggingService.Logger.Information(Lang.Log_SettingsSaved, SettingsFileName); // Логгируем успех сохранения
+            LoggingService.Logger.Information(Lang.Log_SettingsSaved, SettingsFileName);
             return true;
         }
         catch (UnauthorizedAccessException) // Нет прав на запись
@@ -100,12 +100,12 @@ public class SettingsService
             if (File.Exists(SettingsFilePath))
             {
                 File.Delete(SettingsFilePath);
-                LoggingService.Logger.Debug(Lang.Log_SettingsFileDeleted, SettingsFileName); // Логгируем удаление (debug уровень)
+                LoggingService.Logger.Debug(Lang.Log_SettingsFileDeleted, SettingsFileName);
             }
         }
         catch (Exception ex)
         {
-            LoggingService.Logger.Warning(ex, Lang.Log_SettingsFileDeleteFailed, SettingsFileName); // Логгируем ошибку удаления, но не прерываем
+            LoggingService.Logger.Warning(ex, Lang.Log_SettingsFileDeleteFailed, SettingsFileName);
         }
     }
 }
