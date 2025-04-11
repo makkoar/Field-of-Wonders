@@ -39,8 +39,7 @@ public partial class App : Application
         bool needsSelection = string.IsNullOrEmpty(selectedCultureName) ||
                               !supportedLanguages.Any(l => l.CultureCode.Equals(selectedCultureName, StringComparison.OrdinalIgnoreCase));
 
-        MainWindow mainWindow = new();
-        LoggingService.Logger.Information("Инициализация главного окна...");
+        MainWindow? mainWindow = null;
 
         if (needsSelection)
         {
@@ -61,13 +60,13 @@ public partial class App : Application
             }
             else
             {
-                string defaultCulture = supportedLanguages.First().CultureCode;
-                LoggingService.Logger.Warning("Пользователь закрыл окно выбора языка. Используется язык по умолчанию: {DefaultCultureCode}", defaultCulture);
-                selectedCultureName = defaultCulture;
+                LoggingService.Logger.Warning("Окно выбора языка было закрыто пользователем без подтверждения. Завершение работы приложения.");
+                Shutdown(0);
+                return;
             }
         }
 
-        string cultureToApply = selectedCultureName ?? supportedLanguages.First().CultureCode;
+        string cultureToApply = selectedCultureName!;
         LoggingService.Logger.Information("Попытка применить культуру: {CultureCode}", cultureToApply);
         bool cultureApplied = _localizationService.ApplyCulture(cultureToApply);
 
@@ -92,6 +91,8 @@ public partial class App : Application
 
         LoggingService.Logger.Information(Lang.Log_ApplyingCulture_Success, _localizationService.CurrentAppliedCulture?.Name ?? "Неизвестно");
 
+        LoggingService.Logger.Information("Инициализация главного окна...");
+        mainWindow = new MainWindow();
         mainWindow.Show();
         LoggingService.Logger.Information(Lang.Log_MainWindowInitialized);
     }
@@ -131,7 +132,7 @@ public partial class App : Application
         LoggingService.Logger.Fatal(e.Exception, Lang.Log_UnhandledExceptionDispatcher);
         string errorMessage = string.Format(Lang.Error_DispatcherUnhandledException_Format, e.Exception.Message);
         ShowAndLogCriticalError(errorMessage);
-        e.Handled = true;
+        e.Handled = true; // Предотвращаем стандартное завершение приложения после исключения в UI
     }
 
     /// <summary>Отображает критическое сообщение об ошибке и логирует его как Fatal. Использует локализованные строки.</summary>
@@ -149,13 +150,13 @@ public partial class App : Application
             else
             {
                 LoggingService.Logger.Error("Не удалось получить доступ к Current.Dispatcher для отображения критической ошибки.");
-                Environment.FailFast(message);
+                Environment.FailFast(message); // Аварийное завершение
             }
         }
         catch (Exception exInner)
         {
             LoggingService.Logger.Fatal(exInner, "Критическая ошибка (не удалось показать MessageBox.Show)");
-            Environment.FailFast($"{message} (MessageBox.Show failed: {exInner.Message})");
+            Environment.FailFast($"{message} (MessageBox.Show failed: {exInner.Message})"); // Аварийное завершение
         }
     }
 
