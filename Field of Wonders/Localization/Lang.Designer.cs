@@ -160,6 +160,15 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка UI.
+        /// </summary>
+        public static string Error_DispatcherUnhandledException_Title {
+            get {
+                return ResourceManager.GetString("Error_DispatcherUnhandledException_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Ошибка чтения файла настроек &apos;{0}&apos;:\n{1}\n\nПроверьте права доступа к папке приложения..
         /// </summary>
         public static string Error_LoadSettings_IOException_Format {
@@ -192,6 +201,15 @@ namespace Field_of_Wonders.Localization {
         public static string Error_LoadSettings_Unexpected_Format {
             get {
                 return ResourceManager.GetString("Error_LoadSettings_Unexpected_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Критическая ошибка при инициализации главного окна: {0}. Приложение будет закрыто..
+        /// </summary>
+        public static string Error_MainWindowInitFailed_Format {
+            get {
+                return ResourceManager.GetString("Error_MainWindowInitFailed_Format", resourceCulture);
             }
         }
         
@@ -277,6 +295,15 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Необработанное исключение.
+        /// </summary>
+        public static string Error_UnhandledException_Title {
+            get {
+                return ResourceManager.GetString("Error_UnhandledException_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Культура &apos;{0}&apos; добавлена в список..
         /// </summary>
         public static string Log_AddedCultureToList {
@@ -349,11 +376,29 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Попытка применить культуру: {CultureCode}.
+        /// </summary>
+        public static string Log_ApplyingCulture_Attempt_Format {
+            get {
+                return ResourceManager.GetString("Log_ApplyingCulture_Attempt_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Непредвиденная ошибка при применении культуры {0}..
         /// </summary>
         public static string Log_ApplyingCulture_Failed {
             get {
                 return ResourceManager.GetString("Log_ApplyingCulture_Failed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Не удалось применить культуру {FailedCultureCode}. Попытка применить резервную культуру: {FallbackCultureCode}....
+        /// </summary>
+        public static string Log_ApplyingCulture_Failed_AttemptingFallback_Format {
+            get {
+                return ResourceManager.GetString("Log_ApplyingCulture_Failed_AttemptingFallback_Format", resourceCulture);
             }
         }
         
@@ -466,6 +511,15 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Обнаружение поддерживаемых языков....
+        /// </summary>
+        public static string Log_DiscoveringLanguages1 {
+            get {
+                return ResourceManager.GetString("Log_DiscoveringLanguages1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Не удалось обнаружить языки: {0}.
         /// </summary>
         public static string Log_DiscoverLanguages_Failed_Format {
@@ -480,6 +534,15 @@ namespace Field_of_Wonders.Localization {
         public static string Log_DiscoveryFailed {
             get {
                 return ResourceManager.GetString("Log_DiscoveryFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Не удалось получить объект CultureInfo для предполагаемой нейтральной культуры &apos;{0}&apos;..
+        /// </summary>
+        public static string Log_FailedToGetNeutralCulture_Format {
+            get {
+                return ResourceManager.GetString("Log_FailedToGetNeutralCulture_Format", resourceCulture);
             }
         }
         
@@ -529,6 +592,24 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Не удалось получить набор ресурсов для культуры &apos;{0}&apos;. Пропуск..
+        /// </summary>
+        public static string Log_GetResourceSetFailed_Format {
+            get {
+                return ResourceManager.GetString("Log_GetResourceSetFailed_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Инициализация главного окна....
+        /// </summary>
+        public static string Log_InitializingMainWindow {
+            get {
+                return ResourceManager.GetString("Log_InitializingMainWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Имя директории &apos;{0}&apos; не является валидным кодом культуры..
         /// </summary>
         public static string Log_InvalidCultureDirectory {
@@ -538,11 +619,47 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Пользователь выбрал язык: {CultureCode}.
+        /// </summary>
+        public static string Log_LanguageSelectedByUser_Format {
+            get {
+                return ResourceManager.GetString("Log_LanguageSelectedByUser_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Окно выбора языка было закрыто пользователем без подтверждения. Завершение работы приложения..
+        /// </summary>
+        public static string Log_LanguageSelectionCancelled {
+            get {
+                return ResourceManager.GetString("Log_LanguageSelectionCancelled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Не выбран или не найден допустимый язык в настройках. Отображение окна выбора языка..
         /// </summary>
         public static string Log_LanguageSelectionNeeded {
             get {
                 return ResourceManager.GetString("Log_LanguageSelectionNeeded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Требуется выбор языка..
+        /// </summary>
+        public static string Log_LanguageSelectionNeeded1 {
+            get {
+                return ResourceManager.GetString("Log_LanguageSelectionNeeded1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Найдено {Count} языков: {CultureCodes}.
+        /// </summary>
+        public static string Log_LanguagesFound_Format {
+            get {
+                return ResourceManager.GetString("Log_LanguagesFound_Format", resourceCulture);
             }
         }
         
@@ -628,6 +745,24 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Нейтральная культура &apos;{0}&apos; добавлена в список..
+        /// </summary>
+        public static string Log_NeutralCultureAdded_Format {
+            get {
+                return ResourceManager.GetString("Log_NeutralCultureAdded_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Не удалось найти набор ресурсов для предполагаемой нейтральной культуры &apos;{0}&apos;. Локализация может работать некорректно..
+        /// </summary>
+        public static string Log_NeutralResourceSetNotFound_Format {
+            get {
+                return ResourceManager.GetString("Log_NeutralResourceSetNotFound_Format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Поддерживаемые языки не найдены автоматически. Попытка добавить резервные..
         /// </summary>
         public static string Log_NoLanguagesFound_AddingFallbacks {
@@ -709,6 +844,15 @@ namespace Field_of_Wonders.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Не удалось сохранить настройки..
+        /// </summary>
+        public static string Log_SaveSettings_Failed {
+            get {
+                return ResourceManager.GetString("Log_SaveSettings_Failed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Ошибка ввода/вывода при сохранении файла настроек &apos;{0}&apos;. Подробности: {1}.
         /// </summary>
         public static string Log_SaveSettings_IOException_Format {
@@ -768,6 +912,15 @@ namespace Field_of_Wonders.Localization {
         public static string Log_SettingsSaved {
             get {
                 return ResourceManager.GetString("Log_SettingsSaved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Специфичная культура &apos;{0}&apos; добавлена в список..
+        /// </summary>
+        public static string Log_SpecificCultureAdded_Format {
+            get {
+                return ResourceManager.GetString("Log_SpecificCultureAdded_Format", resourceCulture);
             }
         }
         

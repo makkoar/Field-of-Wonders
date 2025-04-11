@@ -150,6 +150,9 @@
   <data name="Error_DispatcherUnhandledException_Format" xml:space="preserve">
     <value>Unbehandelte UI-Ausnahme: {0}</value>
   </data>
+  <data name="Error_DispatcherUnhandledException_Title" xml:space="preserve">
+    <value>UI-Fehler</value>
+  </data>
   <data name="Error_LoadSettings_IOException_Format" xml:space="preserve">
     <value>Fehler beim Lesen der Einstellungsdatei '{0}':\n{1}\n\nUberprufen Sie die Zugriffsberechtigungen fur den Anwendungsordner.</value>
   </data>
@@ -161,6 +164,9 @@
   </data>
   <data name="Error_LoadSettings_Unexpected_Format" xml:space="preserve">
     <value>Unerwarteter Fehler beim Laden der Einstellungen aus '{0}':\n{1}\n\nDie Datei wird geloscht. Beim nachsten Start muss die Sprache ausgewahlt werden.</value>
+  </data>
+  <data name="Error_MainWindowInitFailed_Format" xml:space="preserve">
+    <value>Kritischer Fehler beim Initialisieren des Hauptfensters: {0}. Die Anwendung wird geschlossen.</value>
   </data>
   <data name="Error_QuestionCannotBeEmpty" xml:space="preserve">
     <value>Die Frage darf nicht leer sein.</value>
@@ -189,6 +195,9 @@
   <data name="Error_UnhandledException_NoExceptionObject" xml:space="preserve">
     <value>Kritischer Fehler. Unbehandelte Ausnahme, Details nicht verfugbar.</value>
   </data>
+  <data name="Error_UnhandledException_Title" xml:space="preserve">
+    <value>Unbehandelte Ausnahme</value>
+  </data>
   <data name="Log_AddedCultureToList" xml:space="preserve">
     <value>Kultur „{0}“ zur Liste hinzugefugt.</value>
   </data>
@@ -213,8 +222,14 @@
   <data name="Log_ApplyingCulture_Attempt" xml:space="preserve">
     <value>Versuch, Kultur anzuwenden: {0}</value>
   </data>
+  <data name="Log_ApplyingCulture_Attempt_Format" xml:space="preserve">
+    <value>Versuch, Kultur anzuwenden: {CultureCode}</value>
+  </data>
   <data name="Log_ApplyingCulture_Failed" xml:space="preserve">
     <value>Unerwarteter Fehler beim Anwenden der Kultur {0}.</value>
+  </data>
+  <data name="Log_ApplyingCulture_Failed_AttemptingFallback_Format" xml:space="preserve">
+    <value>Kultur {FailedCultureCode} konnte nicht angewendet werden. Versuch, Fallback-Kultur anzuwenden: {FallbackCultureCode}...</value>
   </data>
   <data name="Log_ApplyingCulture_Fallback" xml:space="preserve">
     <value>Ausgewahlte/gespeicherte Kultur konnte nicht angewendet werden: {0}. Versuche Fallback.</value>
@@ -252,11 +267,17 @@
   <data name="Log_DiscoveringLanguages" xml:space="preserve">
     <value>Unterstutzte Sprachen werden erkannt...</value>
   </data>
+  <data name="Log_DiscoveringLanguages1" xml:space="preserve">
+    <value>Unterst?tzte Sprachen werden erkannt...</value>
+  </data>
   <data name="Log_DiscoverLanguages_Failed_Format" xml:space="preserve">
     <value>Sprachen konnten nicht erkannt werden: {0}</value>
   </data>
   <data name="Log_DiscoveryFailed" xml:space="preserve">
     <value>Fehler beim Erkennen unterstutzter Sprachen.</value>
+  </data>
+  <data name="Log_FailedToGetNeutralCulture_Format" xml:space="preserve">
+    <value>Fehler beim Abrufen des CultureInfo-Objekts f?r die angenommene neutrale Kultur '{0}'.</value>
   </data>
   <data name="Log_FallbackCultureAdded" xml:space="preserve">
     <value>Fallback-Kultur "Russisch" hinzugef?gt, da andere Sprachen nicht ermittelt werden konnten.</value>
@@ -273,11 +294,29 @@
   <data name="Log_FoundSatelliteAssembly" xml:space="preserve">
     <value>Satellitenassembly fur Kultur „{0}“ gefunden.</value>
   </data>
+  <data name="Log_GetResourceSetFailed_Format" xml:space="preserve">
+    <value>Fehler beim Abrufen des Ressourcensatzes f?r die Kultur '{0}'. ?berspringen.</value>
+  </data>
+  <data name="Log_InitializingMainWindow" xml:space="preserve">
+    <value>Hauptfenster wird initialisiert...</value>
+  </data>
   <data name="Log_InvalidCultureDirectory" xml:space="preserve">
     <value>Verzeichnisname „{0}“ ist kein gultiger Kulturcode.</value>
   </data>
+  <data name="Log_LanguageSelectedByUser_Format" xml:space="preserve">
+    <value>Benutzer hat Sprache ausgew?hlt: {CultureCode}</value>
+  </data>
+  <data name="Log_LanguageSelectionCancelled" xml:space="preserve">
+    <value>Sprachauswahlfenster wurde vom Benutzer ohne Best?tigung geschlossen. Anwendung wird beendet.</value>
+  </data>
   <data name="Log_LanguageSelectionNeeded" xml:space="preserve">
     <value>Keine gultige Sprache in den Einstellungen ausgewahlt oder gefunden. Sprachauswahlfenster wird angezeigt.</value>
+  </data>
+  <data name="Log_LanguageSelectionNeeded1" xml:space="preserve">
+    <value>Sprachauswahl erforderlich.</value>
+  </data>
+  <data name="Log_LanguagesFound_Format" xml:space="preserve">
+    <value>{Count} Sprachen gefunden: {CultureCodes}</value>
   </data>
   <data name="Log_LoadSettings_IOException_Format" xml:space="preserve">
     <value>E/A-Fehler beim Laden der Einstellungsdatei '{0}'. Details: {1}</value>
@@ -306,11 +345,14 @@
   <data name="Log_MainWindowTempPuzzle" xml:space="preserve">
     <value>Temporares Puzzle-Objekt zum Testen erstellt.</value>
   </data>
+  <data name="Log_NeutralCultureAdded_Format" xml:space="preserve">
+    <value>Neutrale Kultur '{0}' zur Liste hinzugef?gt.</value>
+  </data>
+  <data name="Log_NeutralResourceSetNotFound_Format" xml:space="preserve">
+    <value>Ressourcensatz f?r die angenommene neutrale Kultur '{0}' konnte nicht gefunden werden. Die Lokalisierung funktioniert m?glicherweise nicht korrekt.</value>
+  </data>
   <data name="Log_NoLanguagesFound_AddingFallbacks" xml:space="preserve">
     <value>Keine unterstutzten Sprachen automatisch gefunden. Versuch, Fallbacks hinzuzufugen.</value>
-  </data>
-  <data name="Log_PlayerNameDefault_Format" xml:space="preserve">
-    <value>Spielername nicht angegeben. Standardname wird verwendet: '{0}'.</value>
   </data>
   <data name="Log_PlayerNameDefault_Format" xml:space="preserve">
     <value>Spielername nicht angegeben. Standardname wird verwendet: '{0}'.</value>
@@ -321,14 +363,8 @@
   <data name="Log_PlayerScoreAdded_Format" xml:space="preserve">
     <value>Spieler '{0}' erhielt {1} Punkte. Neuer Punktestand: {2}. (Vorher: {3})</value>
   </data>
-  <data name="Log_PlayerScoreAdded_Format" xml:space="preserve">
-    <value>Spieler '{0}' erhielt {1} Punkte. Neuer Punktestand: {2}. (Vorher: {3})</value>
-  </data>
   <data name="Log_PlayerScoreAdded_Format1" xml:space="preserve">
     <value>Spieler '{0}' erhielt {1} Punkte. Neuer Punktestand: {2}. (Vorher: {3})</value>
-  </data>
-  <data name="Log_PlayerScoreReset_Format" xml:space="preserve">
-    <value>Punktestand von Spieler '{0}' auf 0 zur?ckgesetzt. (Vorher: {1})</value>
   </data>
   <data name="Log_PlayerScoreReset_Format" xml:space="preserve">
     <value>Punktestand von Spieler '{0}' auf 0 zur?ckgesetzt. (Vorher: {1})</value>
@@ -341,6 +377,9 @@
   </data>
   <data name="Log_SaveSettings_DirectoryNotFound_Format" xml:space="preserve">
     <value>Einstellungen konnten nicht gespeichert werden: Verzeichnis fur Datei '{0}' nicht gefunden.</value>
+  </data>
+  <data name="Log_SaveSettings_Failed" xml:space="preserve">
+    <value>Einstellungen konnten nicht gespeichert werden.</value>
   </data>
   <data name="Log_SaveSettings_IOException_Format" xml:space="preserve">
     <value>E/A-Fehler beim Speichern der Einstellungsdatei '{0}'. Details: {1}</value>
@@ -362,6 +401,9 @@
   </data>
   <data name="Log_SettingsSaved" xml:space="preserve">
     <value>Einstellungen erfolgreich in Datei '{0}' gespeichert.</value>
+  </data>
+  <data name="Log_SpecificCultureAdded_Format" xml:space="preserve">
+    <value>Spezifische Kultur '{0}' zur Liste hinzugef?gt.</value>
   </data>
   <data name="Log_SystemCultureAdded" xml:space="preserve">
     <value>Systemkultur "{0}" zur Liste hinzugef?gt.</value>
@@ -389,9 +431,6 @@
   </data>
   <data name="MainWindow_Title" xml:space="preserve">
     <value>Glucksrad (Feld der Wunder)</value>
-  </data>
-  <data name="Player_DefaultName" xml:space="preserve">
-    <value>Spieler</value>
   </data>
   <data name="Player_DefaultName" xml:space="preserve">
     <value>Spieler</value>

@@ -39,7 +39,8 @@ public partial class App : Application
         bool needsSelection = string.IsNullOrEmpty(selectedCultureName) ||
                               !supportedLanguages.Any(l => l.CultureCode.Equals(selectedCultureName, StringComparison.OrdinalIgnoreCase));
 
-        MainWindow? mainWindow = null;
+        LoggingService.Logger.Information("Инициализация главного окна...");
+        MainWindow? mainWindow = new();
 
         if (needsSelection)
         {
@@ -91,8 +92,7 @@ public partial class App : Application
 
         LoggingService.Logger.Information(Lang.Log_ApplyingCulture_Success, _localizationService.CurrentAppliedCulture?.Name ?? "Неизвестно");
 
-        LoggingService.Logger.Information("Инициализация главного окна...");
-        mainWindow = new MainWindow();
+        LoggingService.Logger.Information("Открытие главного окна...");
         mainWindow.Show();
         LoggingService.Logger.Information(Lang.Log_MainWindowInitialized);
     }
