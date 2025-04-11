@@ -15,22 +15,23 @@ public partial class App : Application
         DispatcherUnhandledException += OnDispatcherUnhandledException;
         Exit += OnAppExit;
 
-        LoggingService.Logger.Information(Lang.Log_DiscoveringLanguages);
+        LoggingService.Logger.Information("Обнаружение поддерживаемых языков...");
         List<LanguageInfo> supportedLanguages = LocalizationService.DiscoverSupportedLanguages();
 
         if (supportedLanguages.Count is 0)
         {
-            LoggingService.Logger.Warning(Lang.Log_NoLanguagesFound_AddingFallbacks);
+            LoggingService.Logger.Warning("Поддерживаемые языки не найдены. Добавляются резервные варианты.");
             EnsureFallbackLanguages(supportedLanguages);
             if (supportedLanguages.Count is 0)
             {
-                LoggingService.Logger.Fatal(Lang.Log_CriticalError, Lang.Error_Critical_NoLanguagesFound);
-                ShowAndLogCriticalError(Lang.Error_Critical_NoLanguagesFound);
+                string errorMessage = Lang.Error_Critical_NoLanguagesFound;
+                LoggingService.Logger.Fatal("Критическая ошибка: {ErrorMessage}", errorMessage);
+                ShowAndLogCriticalError(errorMessage);
                 Shutdown(1);
                 return;
             }
         }
-        LoggingService.Logger.Information(Lang.Log_FoundLanguagesResult, supportedLanguages.Count, string.Join(", ", supportedLanguages.Select(l => l.CultureCode)));
+        LoggingService.Logger.Information("Найдено {Count} языков: {CultureCodes}", supportedLanguages.Count, string.Join(", ", supportedLanguages.Select(l => l.CultureCode)));
 
         AppSettings? settings = SettingsService.LoadSettings();
         string? selectedCultureName = settings?.SelectedCulture;
@@ -39,53 +40,57 @@ public partial class App : Application
                               !supportedLanguages.Any(l => l.CultureCode.Equals(selectedCultureName, StringComparison.OrdinalIgnoreCase));
 
         MainWindow mainWindow = new();
-        LoggingService.Logger.Information(Lang.Log_MainWindowInitializing);
+        LoggingService.Logger.Information("Инициализация главного окна...");
 
         if (needsSelection)
         {
-            LoggingService.Logger.Information(Lang.Log_LanguageSelectionNeeded);
+            LoggingService.Logger.Information("Требуется выбор языка.");
             LanguageSelectionWindow selectionWindow = new(supportedLanguages);
             bool? dialogResult = selectionWindow.ShowDialog();
 
             if (dialogResult == true && selectionWindow.SelectedLanguage != null)
             {
                 selectedCultureName = selectionWindow.SelectedLanguage.CultureCode;
-                LoggingService.Logger.Information(Lang.Log_UserSelectedLanguage, selectedCultureName);
+                LoggingService.Logger.Information("Пользователь выбрал язык: {CultureCode}", selectedCultureName);
                 AppSettings newSettings = settings ?? new AppSettings();
                 newSettings.SelectedCulture = selectedCultureName;
                 if (!SettingsService.SaveSettings(newSettings))
                 {
-                    LoggingService.Logger.Warning(Lang.Log_SaveLanguageSettingFailed);
+                    LoggingService.Logger.Warning("Не удалось сохранить настройку языка.");
                 }
             }
             else
             {
-                LoggingService.Logger.Warning(Lang.Log_UserClosedLanguageSelection, supportedLanguages.First().CultureCode);
-                selectedCultureName = supportedLanguages.First().CultureCode;
+                string defaultCulture = supportedLanguages.First().CultureCode;
+                LoggingService.Logger.Warning("Пользователь закрыл окно выбора языка. Используется язык по умолчанию: {DefaultCultureCode}", defaultCulture);
+                selectedCultureName = defaultCulture;
             }
         }
 
         string cultureToApply = selectedCultureName ?? supportedLanguages.First().CultureCode;
-        LoggingService.Logger.Information(Lang.Log_ApplyingCulture_Attempt, cultureToApply);
+        LoggingService.Logger.Information("Попытка применить культуру: {CultureCode}", cultureToApply);
         bool cultureApplied = _localizationService.ApplyCulture(cultureToApply);
 
         if (!cultureApplied)
         {
-            LoggingService.Logger.Warning(Lang.Log_ApplyingCulture_Fallback, cultureToApply);
-            cultureApplied = _localizationService.ApplyCulture(supportedLanguages.First().CultureCode);
+            string fallbackCulture = supportedLanguages.First().CultureCode;
+            LoggingService.Logger.Warning("Не удалось применить культуру {FailedCultureCode}. Попытка применить резервную культуру: {FallbackCultureCode}...", cultureToApply, fallbackCulture);
+            cultureApplied = _localizationService.ApplyCulture(fallbackCulture);
             if (cultureApplied)
             {
-                LoggingService.Logger.Information(Lang.Log_ApplyingCulture_FallbackSuccess, supportedLanguages.First().CultureCode);
+                LoggingService.Logger.Information("Резервная культура {FallbackCultureCode} успешно применена.", fallbackCulture);
             }
             else
             {
-                LoggingService.Logger.Fatal(Lang.Log_CriticalError, Lang.Error_Critical_CannotSetAnyLanguage);
-                ShowAndLogCriticalError(Lang.Error_Critical_CannotSetAnyLanguage);
+                string errorMessage = Lang.Error_Critical_CannotSetAnyLanguage;
+                LoggingService.Logger.Fatal("Критическая ошибка: {ErrorMessage}", errorMessage);
+                ShowAndLogCriticalError(errorMessage);
                 Shutdown(1);
                 return;
             }
         }
-        LoggingService.Logger.Information(Lang.Log_ApplyingCulture_Success, cultureToApply);
+
+        LoggingService.Logger.Information(Lang.Log_ApplyingCulture_Success, _localizationService.CurrentAppliedCulture?.Name ?? "Неизвестно");
 
         mainWindow.Show();
         LoggingService.Logger.Information(Lang.Log_MainWindowInitialized);
@@ -129,11 +134,11 @@ public partial class App : Application
         e.Handled = true;
     }
 
-    /// <summary>Отображает критическое сообщение об ошибке и логирует его как Fatal.</summary>
-    /// <param name="message">Текст сообщения.</param>
+    /// <summary>Отображает критическое сообщение об ошибке и логирует его как Fatal. Использует локализованные строки.</summary>
+    /// <param name="message">Текст сообщения (уже локализованный).</param>
     internal static void ShowAndLogCriticalError(string message)
     {
-        LoggingService.Logger.Fatal(Lang.Log_CriticalError, message);
+        LoggingService.Logger.Fatal("Критическая ошибка: {ErrorMessage}", message);
         try
         {
             if (Current?.Dispatcher != null)
@@ -143,13 +148,13 @@ public partial class App : Application
             }
             else
             {
-                LoggingService.Logger.Error(Lang.Log_AppCurrentNull);
+                LoggingService.Logger.Error("Не удалось получить доступ к Current.Dispatcher для отображения критической ошибки.");
                 Environment.FailFast(message);
             }
         }
         catch (Exception exInner)
         {
-            LoggingService.Logger.Fatal(exInner, Lang.Log_CriticalError + " (MessageBox.Show failed)");
+            LoggingService.Logger.Fatal(exInner, "Критическая ошибка (не удалось показать MessageBox.Show)");
             Environment.FailFast($"{message} (MessageBox.Show failed: {exInner.Message})");
         }
     }
@@ -182,7 +187,7 @@ public partial class App : Application
         if (languages.Count == 0)
         {
             languages.Add(new LanguageInfo("Русский (Резерв)", "ru-RU"));
-            LoggingService.Logger.Error(Lang.Log_AddedHardcodedFallback);
+            LoggingService.Logger.Error("Ни один язык не был обнаружен или добавлен. Добавлен жестко закодированный русский язык как резервный.");
         }
     }
 
